@@ -31,3 +31,54 @@
     border-radius: 30px; /* Ajusta el valor según el nivel de redondeo deseado */
     overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondos */
 }
+
+.contenedor-crear{
+ margin-bottom: 2dvh;
+}
+.btn-custom{ 
+    background-color: #13245E;
+    color: #F8F8F8;
+}
+/*Footer*/
+#footer {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding: 10px;
+    background: #D67E18;
+    height: 50px;
+  }
+  .imagen-con-textoF{
+    display: flex;
+    align-items: center;
+  }
+  .texto-con-lineaF{
+    display: flex;
+    align-items: center;
+  }
+  .texto-con-lineaF{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 14px; /* Tamaño de fuente deseado */
+    color: aliceblue;
+    margin-left: 20px;
+    
+  }
+  .texto-con-lineaF span{
+    padding-left: 15px;
+    margin-right: 10px; /* Ajusta el espacio entre el texto y la línea vertical */
+    
+  }
+  .linea-verticalF {
+    border-right: 2px solid rgb(255, 255, 255);
+    padding-right: 15px; /* Añade espacio entre la línea y el texto */
+    margin-right: 15px; 
+  
+  }
+  .footer-con-imagen {
+    padding-left: 10px;
+  }
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
