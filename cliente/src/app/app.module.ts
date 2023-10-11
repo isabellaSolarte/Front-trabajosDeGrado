@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdministradorEditarComponent } from './componentes/administrador-editar/administrador-editar.component';
 import { AdministradorCrearComponent } from './componentes/administrador-crear/administrador-crear.component';
 
+import{ AdministradorService }  from './services/administrador.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import { AdministradorCrearComponent } from './componentes/administrador-crear/a
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AdministradorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
