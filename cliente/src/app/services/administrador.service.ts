@@ -10,8 +10,8 @@ import{Usuario} from '../componentes/modelo/usuario';
 export class AdministradorService {
   API_URI = "http://localhost:3000/api";
 
-  constructor(private http: HttpClient) { }
-  getUser(){
+  constructor(private http:HttpClient) { }
+  getUsers(){
     return this.http.get(`${this.API_URI}/usuarios`);
   }
   saveUser(usuario: Usuario) {

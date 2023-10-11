@@ -18,20 +18,23 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Usuario</th>
+                        <th>Login</th>
                         <th>Rol</th>
                         <th>Acciones</th>
                     </tr>
                     
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>101</td>
-                        <td>Carlos</td>
-                        <td>Ardila</td>
-                        <td>cardila</td>
-                        <td>docente</td>
+                    <tr *ngFor="let usuario of usuarios" >
+                        <td>{{usuario._id}}</td>
+                        <td>{{usuario._nombre}}</td>
+                        <td>{{usuario._login}}</td>
+                        <td> 
+                            <ul>
+                                <li *ngFor="let rol of usuario._rol">{{rol._nombre}}</li>
+                            </ul>
+                        </td>
+                        <td>{{usuario._correo}}</td>
                         <td>
                             <button class="btn btn-primary" title="Editar">
                                 <i class="fas fa-pencil-alt"></i>

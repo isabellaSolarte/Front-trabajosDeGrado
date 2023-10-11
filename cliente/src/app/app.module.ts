@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule}from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AdministradorComponent } from './componentes/administrador/administrador.component';
 import { DirectorComponent } from './componentes/director/director.component';
@@ -20,7 +20,8 @@ import{ AdministradorService }  from './services/administrador.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [AdministradorService],
   bootstrap: [AppComponent]
