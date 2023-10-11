@@ -1,7 +1,10 @@
+import { rol } from "./rol";
+
 export interface Usuario {
-    usr_codigo: number;
-    usr_nombre: string;
-    usr_login: string;
-    usr_password: string;
-    usr_correo: string;
+    _id: number;
+    _nombre: string;
+    _login: string;
+    _password: string;
+    _rol:rol[];
+    _correo: string;
   }
