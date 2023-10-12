@@ -16,13 +16,13 @@ export class AdministradorComponent {
     this.usuarios.forEach(() => this.passwordVisibility.push(false));
   }
   //cuando recargue la página liste
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.getUsuarios();
   }
   getUsuarios(){ //listar usuarios
     this.services.getUsers().subscribe(
       (res: any) => {
-        console.log(res); 
+        console.log(res);
         this.usuarios = res;
       },
       err => console.log(err)
@@ -33,5 +33,28 @@ export class AdministradorComponent {
   }
   crearUsuario(){
     this.router.navigate(['/crearUsuario']);
+  }
+  ////////////////////////////////////
+  //eliminar
+  mostrar: boolean = false;
+  deleteUsuario(id: number) {
+    this.services.deleteUser(id).subscribe(
+      () => {
+        this.mostrar = true;
+        console.log("Usuario eliminado exitosamente");
+        this.getUsuarios(); // Vuelve a cargar los usuarios después de eliminar uno
+
+      },
+      err => console.error(err)
+    );
+  }
+  confirmarEliminarUsuario(id: number) {
+    const confirmacion = window.confirm('¿Está seguro de que desea eliminar este usuario?');
+    if (confirmacion) {
+      this.deleteUsuario(id);
+    }
+  }
+  cerrarModal() {
+    this.mostrar = false;
   }
 }
