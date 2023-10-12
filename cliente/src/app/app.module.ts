@@ -10,6 +10,7 @@ import { AdministradorCrearComponent } from './componentes/administrador-crear/a
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import{ AdministradorService }  from './services/administrador.service';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import{ AdministradorService }  from './services/administrador.service';
     AdministradorComponent,
     DirectorComponent,
     AdministradorEditarComponent,
-    AdministradorCrearComponent
+    AdministradorCrearComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

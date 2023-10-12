@@ -14,6 +14,10 @@ export class AdministradorService {
   getUsers(){
     return this.http.get(`${this.API_URI}/usuarios`);
   }
+  getUser(id:number){
+    return this.http.get(`${this.API_URI}/usuarios/${id}`);
+  }
+
   saveUser(usuario: Usuario) {
     console.log(usuario._nombre);
     return this.http.post(`${this.API_URI}/usuarios/`, usuario);
