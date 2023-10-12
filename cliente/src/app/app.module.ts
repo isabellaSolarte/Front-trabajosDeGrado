@@ -7,7 +7,8 @@ import { DirectorComponent } from './componentes/director/director.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdministradorEditarComponent } from './componentes/administrador-editar/administrador-editar.component';
 import { AdministradorCrearComponent } from './componentes/administrador-crear/administrador-crear.component';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import{ AdministradorService }  from './services/administrador.service';
 
 @NgModule({
@@ -21,7 +22,9 @@ import{ AdministradorService }  from './services/administrador.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [AdministradorService],
   bootstrap: [AppComponent]

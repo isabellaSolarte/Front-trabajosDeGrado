@@ -10,8 +10,10 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 })
 export class AdministradorComponent {
   usuarios:Usuario[] = [];
-  constructor(private services:AdministradorService,private router: Router){
+  passwordVisibility: boolean[] = [];
 
+  constructor(private services:AdministradorService,private router: Router){
+    this.usuarios.forEach(() => this.passwordVisibility.push(false));
   }
   //cuando recargue la página liste
   ngOnInit(): void { 
@@ -25,5 +27,11 @@ export class AdministradorComponent {
       },
       err => console.log(err)
     );
+  }
+  togglePassword(index: number) {
+    this.passwordVisibility[index] = !this.passwordVisibility[index];
+  }
+  crearUsuario(){
+    this.router.navigate(['/crearUsuario']);
   }
 }

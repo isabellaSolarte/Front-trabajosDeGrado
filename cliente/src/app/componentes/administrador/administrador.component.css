@@ -39,6 +39,21 @@
     background-color: #13245E;
     color: #F8F8F8;
 }
+/*tabla*/
+.password-cell {
+  display: flex;
+  align-items: center;
+  border: none; /* Eliminar los bordes de la celda */
+ 
+}
+
+.password-text {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 /*Footer*/
 #footer {
     display: flex;

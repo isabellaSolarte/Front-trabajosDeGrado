@@ -10,7 +10,7 @@
     </div>
     <div class="container py-4">
         <div class="contenedor-crear">
-            <button class="btn btn-custom">Crear  <i class="fas fa-plus"></i></button>
+            <button (click)= "crearUsuario()" class="btn btn-custom">Crear  <i class="fas fa-plus"></i></button>
         </div>
         <div class="table-responsive ">
             <table class="table table-striped rounded">
@@ -19,31 +19,41 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Login</th>
+                        <th>Contraseña</th>
                         <th>Rol</th>
                         <th>Acciones</th>
                     </tr>
                     
                 </thead>
                 <tbody>
-                    <tr *ngFor="let usuario of usuarios" >
-                        <td>{{usuario._id}}</td>
-                        <td>{{usuario._nombre}}</td>
-                        <td>{{usuario._login}}</td>
-                        <td> 
+                    <ng-container *ngFor="let usuario of usuarios; let i = index">
+                        <tr>
+                          <td>{{usuario._id}}</td>
+                          <td>{{usuario._nombre}}</td>
+                          <td>{{usuario._login}}</td>
+                          <td class="password-cell">
+                            <div class="password-text">
+                              <span *ngIf="passwordVisibility[i]">{{usuario._password}}</span>
+                              <span *ngIf="!passwordVisibility[i]">********</span>
+                            </div>
+                            <i class="fas" [ngClass]="{'fa-eye-slash': !passwordVisibility[i], 'fa-eye': passwordVisibility[i]}" (click)="togglePassword(i)"></i>
+                          </td>
+                          <td>
                             <ul>
-                                <li *ngFor="let rol of usuario._rol">{{rol._nombre}}</li>
+                              <li *ngFor="let rol of usuario._rol">{{rol._nombre}}</li>
                             </ul>
-                        </td>
-                        <td>{{usuario._correo}}</td>
-                        <td>
+                          </td>
+                          <td>{{usuario._correo}}</td>
+                          <td>
                             <button class="btn btn-primary" title="Editar">
-                                <i class="fas fa-pencil-alt"></i>
+                              <i class="fas fa-pencil-alt"></i>
                             </button>
                             <button class="btn btn-danger" title="Eliminar" style="margin-left: 5px;">
-                                <i class="fas fa-trash-alt"></i>
+                              <i class="fas fa-trash-alt"></i>
                             </button>
-                        </td>
-                    </tr>
+                          </td>
+                        </tr>
+                      </ng-container>
                 </tbody>
             </table>
         </div>
@@ -61,3 +71,4 @@
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>
