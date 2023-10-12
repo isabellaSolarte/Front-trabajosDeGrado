@@ -50,8 +50,11 @@
         </div>
          </div>
     </div>
-    <div class="alert alert-success" *ngIf="mostrarMensaje">
-        El usuario se ha agregado correctamente.
+    <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
+        El usuario se ha eliminado correctamente.
+        <button type="button" class="close" (click)="cerrarMensaje()">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     
 

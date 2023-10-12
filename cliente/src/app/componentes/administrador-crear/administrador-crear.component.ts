@@ -42,5 +42,8 @@ export class AdministradorCrearComponent {
       
     }
   }
+  cerrarMensaje() {
+    this.mostrarMensaje = false;
+  }
  
 }
