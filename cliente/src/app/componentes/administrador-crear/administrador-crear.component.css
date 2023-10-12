@@ -26,6 +26,11 @@
 .titulo-pagina h1{
     color: #525663;
 }
+@media (max-width: 768px) {
+  .titulo {
+      font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+}
 /*Form*/
 
 /* Estilo personalizado para el formulario */

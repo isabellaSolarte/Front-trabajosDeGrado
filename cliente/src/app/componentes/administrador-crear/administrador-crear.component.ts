@@ -11,6 +11,7 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 })
 export class AdministradorCrearComponent {
   roles:rol[] = [];
+  usuario_id:string = '';
   usuario:Usuario ={
     _id:0,
     _nombre: '',
@@ -29,6 +30,7 @@ export class AdministradorCrearComponent {
   guardarUsuario() {
     if (this.usuario) {
       this.usuario._rol = this.roles;
+      this.usuario._id = parseInt(this.usuario_id);
       console.log(this.usuario._id);
       this.services.saveUser(this.usuario).subscribe(
         res => {
@@ -39,11 +41,12 @@ export class AdministradorCrearComponent {
         err => console.error(err)
         
       );
+      this.mostrarMensaje = true;
       
     }
   }
   cerrarMensaje() {
-    this.mostrarMensaje = false;
+    this.router.navigate(['/administrador']);
   }
  
 }
