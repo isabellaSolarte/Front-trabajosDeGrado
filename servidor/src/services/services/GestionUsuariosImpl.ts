@@ -14,6 +14,7 @@ class GestionUsuariosImpl implements IGestionUsuarios{
         const usuarioDTO = this.mapper.jsonToDTO(usuario);
         const usuarioEntity:UsuarioRolEntity[] = this.mapper.dtoToEntity(usuarioDTO);
         const res = await this.accesoPersistencia.crearUsuarioRol(usuarioEntity);
+        console.log(res);
         return this.mapper.entityToDTO(res);     
     }
     async actualizarUsuario(id: number, usuario: UsuarioRolDTO): Promise<UsuarioRolDTO> {
