@@ -1,1 +1,66 @@
-<p>director works!</p>
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1>GESTIÓN DE TRABAJOS DE GRADO</h1>
+        </div>
+    </div>
+    <div class="navbar-top">
+
+    </div>
+
+    <div class="container py-4">
+        <div class="row">
+            <!-- Columna Izquierda -->
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="objetivos">Objetivos<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="Objetivos" name="_objetivos" [(ngModel)]="formato._objetivos" placeholder="Identificación">
+                    </div>
+                    <div class="form-group">
+                        <label for="con_entrega">Condiciones de entrega <span class="required">*</span></label>
+                        <input type="text" class="form-control" id="con_entrega" name="_con_entrega" [(ngModel)]="formato._con_entrega" placeholder="Nombres">
+                    </div>
+                    <div class="form-group">
+                        <label for="realizacion">Tiempo estimado de realización<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="realizacion" name="_realizacion" [(ngModel)]="formato._realizacion" placeholder="Correo">
+                    </div>
+                    
+                    
+                </form>
+            </div>
+
+            <!-- Columna Derecha -->
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="recursos">Recursos requeridos<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="recursos" name="_recursos" [(ngModel)]="formato._recursos" placeholder="Usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="financiacion">Definición de fuentes de financiación<span class="required">*</span></label>
+                        <input type="financiacion" class="form-control" id="financiacion" name="_financiacion" [(ngModel)]="formato._financiacion" placeholder="Contraseña">
+                    </div>
+                </form>
+            </div>
+    </div>
+    
+
+
+
+
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
