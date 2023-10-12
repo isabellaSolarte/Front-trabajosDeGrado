@@ -34,7 +34,7 @@
                         <td class="password-cell">
                           <div class="password-text">
                             <span *ngIf="passwordVisibility[i]">{{usuario._password}}</span>
-                            <span ngIf="!passwordVisibility[i]">***</span>
+                            <span *ngIf="!passwordVisibility[i]">********</span>
                           </div>
                           <i class="fas" [ngClass]="{'fa-eye-slash': !passwordVisibility[i], 'fa-eye': passwordVisibility[i]}" (click)="togglePassword(i)"></i>
                         </td>
@@ -45,8 +45,7 @@
                         </td>
                         <td>{{usuario._correo}}</td>
                         <td>
-                          
-                          <button class="btn btn-primary"(click)="editUsuario(usuario._id)" title="Editar">
+                          <button class="btn btn-primary" title="Editar">
                             <i class="fas fa-pencil-alt"></i>
                           </button>
                           <button class="btn btn-danger" (click)="confirmarEliminarUsuario(usuario._id)"title="Eliminar" style="margin-left: 5px;" >

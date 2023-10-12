@@ -31,15 +31,10 @@ export class AdministradorComponent {
   togglePassword(index: number) {
     this.passwordVisibility[index] = !this.passwordVisibility[index];
   }
-  //Crear
   crearUsuario(){
     this.router.navigate(['/crearUsuario']);
   }
-  //eliminar
-  editUsuario(id: number){
-    console.log(id);
-    this.router.navigate(['/editarUsuario/'+id]);
-  }
+
   //eliminar
   mostrarMensaje: boolean = false;
   deleteUsuario(id: number) {
