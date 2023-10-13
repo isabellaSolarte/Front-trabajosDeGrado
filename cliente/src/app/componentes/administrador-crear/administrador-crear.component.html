@@ -1,83 +1,75 @@
-<div class="wrapper">  
+<div class="wrapper">
     <div class="cabecera">
         <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
         <div class="titulo-pagina">
             <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
         </div>
     </div>
-
+  
     <div class="navbar-top">
-    <div>
-        <div class="container py-4">
-              <div class="row">
-                    <!-- Columna Izquierda -->
-                    <div class="col-md-6 col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <form>
-                            <div class="form-group ">
-                                <label for="identificacion">Identificación<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="identificacion" name="_id" [(ngModel)]="usuario_id" placeholder="Identificación">
-                            </div>
-                            <div class="form-group">
-                                <label for="nombres">Nombre <span class="required">*</span></label>
-                                <input type="text" class="form-control" id="nombres" name="_nombre" [(ngModel)]="usuario._nombre" placeholder="Nombres">
-                            </div>
-                            <div class="form-group">
-                                <label for="correo">Correo<span class="required">*</span></label>
-                                <input type="email" class="form-control" id="correo" name="_correo" [(ngModel)]="usuario._correo" placeholder="Correo">
-                            </div>
-                            
-                            
-                        </form>
+      <div class="container py-4">
+        <div class="row">
+          <!-- Columna Izquierda -->
+          <div class="col-md-6 col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <form class="scrollable-form">
+                <div class="form-group ">
+                    <label for="identificacion">Identificación<span class="required">*</span></label>
+                    <input type="text" class="form-control" id="identificacion" name="_id" [(ngModel)]="usuario_id" placeholder="Identificación">
+                </div>
+                <div class="form-group">
+                    <label for="nombres">Nombre <span class="required">*</span></label>
+                    <input type="text" class="form-control" id="nombres" name="_nombre" [(ngModel)]="usuario._nombre" placeholder="Nombres">
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo<span class="required">*</span></label>
+                    <input type="email" class="form-control" id="correo" name="_correo" [(ngModel)]="usuario._correo" placeholder="Correo">
+                </div>
+            </form>
+          </div>
+  
+          <!-- Columna Derecha -->
+          <div class="col-md-6 col-md-6 col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <form class="scrollable-form">
+                <div class="form-group">
+                    <label for="usuario">Usuario<span class="required">*</span></label>
+                    <input type="text" class="form-control" id="usuario" name="_login" [(ngModel)]="usuario._login" placeholder="Usuario">
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña<span class="required">*</span></label>
+                    <input type="password" class="form-control" id="contrasena" name="_password" [(ngModel)]="usuario._password" placeholder="Contraseña">
+                </div>
+                <div class="form-group checkbox-list">
+                    <label for="roles">Roles <span class="required">*</span></label>
+                    <div *ngFor="let role of roles" class="checkbox-item">
+                        <input type="checkbox" id="role_{{role._id}}" (change)="toggleRoleSelection(role)">
+                        <label for="role_{{role._id}}">{{role._nombre}}</label>
                     </div>
-                    
-                    <!-- Columna Derecha -->
-                    <div class="col-md-6">
-                        <form>
-                            <div class="form-group">
-                                <label for="usuario">Usuario<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="usuario" name="_login" [(ngModel)]="usuario._login" placeholder="Usuario">
-                            </div>
-                            <div class="form-group">
-                                <label for="contrasena">Contraseña<span class="required">*</span></label>
-                                <input type="password" class="form-control" id="contrasena" name="_password" [(ngModel)]="usuario._password" placeholder="Contraseña">
-                            </div>
-                            <div class="form-group checkbox-list">
-                                <label for="roles">Roles </label>
-                                <div *ngFor="let role of roles" class="checkbox-item">
-                                    <input type="checkbox" id="role_{{role._id}}" (change)="toggleRoleSelection(role)">
-                                    <label for="role_{{role._id}}">{{role._nombre}}</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-         <!-- Botón de "Guardar" centrado -->
-        <div class="Botón-crear">
-            <button class="btn btn-custom" (click)="guardarUsuario()" >Guardar</button>
+                </div>
+            </form>
+          </div>
         </div>
-
-        </div>
-         </div>
+      </div>
+      <div class="Botón-crear">
+        <button class="btn btn-custom" (click)="guardarUsuario()" >Guardar</button>
     </div>
-    <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
+      <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
         El usuario se ha creado correctamente.
         <button type="button" class="close" (click)="cerrarMensaje()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-    
-
     </div>
-    
-    <div id="footer" class="footer-con-imagen">
-        <div class="imagen-con-textoF">
-        <div class="texto-con-lineaF">
-            <div class="linea-verticalF">
-            <span>
-                © 2023 Universidad del Cauca, Inc.
-            </span>
-            </div>
-            <span>Terms Privacy Security</span>
+  </div>
+  
+  <div id="footer" class="footer-con-imagen d-none d-md-block" >
+    <div class="imagen-con-textoF">
+      <div class="texto-con-lineaF">
+        <div class="linea-verticalF">
+          <span>
+            © 2023 Universidad del Cauca, Inc.
+          </span>
         </div>
-        </div>
+        <span>Terms Privacy Security</span>
+      </div>
     </div>
-</div>
+  </div>

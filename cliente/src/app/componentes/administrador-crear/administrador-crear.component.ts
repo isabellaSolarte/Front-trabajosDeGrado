@@ -57,8 +57,6 @@ export class AdministradorCrearComponent {
     if (this.usuario) {
       this.usuario._rol = this.selectedRoles;
       this.usuario._id = parseInt(this.usuario_id);
-      console.log("enviando datos");
-      console.log(this.usuario);
       this.services.saveUser(this.usuario).subscribe(
         res => {
           console.log(res);
@@ -68,7 +66,6 @@ export class AdministradorCrearComponent {
         err => console.error(err)
         
       );
-      this.mostrarMensaje = true;
       
     }
   }
