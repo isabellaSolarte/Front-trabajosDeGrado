@@ -31,4 +31,10 @@ export class AdministradorService {
   deleteUser(id: number): Observable<any> {
     return this.http.delete(`${this.API_URI}/usuarios/${id}`);
   }
+
+  getRoles()
+  {
+    return this.http.get(`${this.API_URI}/roles`);
+
+  }
 }
