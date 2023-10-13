@@ -32,8 +32,6 @@
   }
 }
 /*Form*/
-
-/* Estilo personalizado para el formulario */
 .container {
   background-color: #f7f7f7;
   padding: 20px; /* Reducimos el relleno para hacerlo más pequeño */
@@ -71,9 +69,26 @@ display: flex;
 }
 /* Estilo para el asterisco rojo */
 .required {
-color: red;
-margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
+  color: red;
+  margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
 }
+
+/* En tu archivo CSS global o en el archivo de estilos del componente */
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-list .checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-list .checkbox-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
 /*Footer*/
 #footer {
     display: flex;
