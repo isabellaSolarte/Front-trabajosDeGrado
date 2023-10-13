@@ -11,6 +11,7 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 })
 export class AdministradorEditarComponent {
   roles:rol[] = [];
+  selectedRoles: rol[] = [];
     usuario:Usuario ={
     _id:0,
     _nombre: '',
@@ -20,9 +21,8 @@ export class AdministradorEditarComponent {
     _correo: ''
   };
   constructor(private router:Router,private activeRouter: ActivatedRoute,private services:AdministradorService){
-    this.roles = [
-      { _id: 1, _nombre: 'Director' },
-    ];
+    this.getRoles();
+    
   }
   edit: boolean = false;
   ngOnInit(): void {
@@ -39,6 +39,7 @@ export class AdministradorEditarComponent {
           }
         );
       }
+      this.selectedRoles = this.usuario._rol;
     }
   
 
@@ -53,7 +54,7 @@ export class AdministradorEditarComponent {
     //if (this.usuario) {
       console.log(this.usuario);
       // Asignar los roles
-      this.usuario._rol = this.roles;
+      this.usuario._rol = this.selectedRoles;
       console.log(this.roles);
       
       this.services.updateUser(this.usuario._id, this.usuario).subscribe(
@@ -62,17 +63,41 @@ export class AdministradorEditarComponent {
           // Mostrar un mensaje de confirmación
           this.mostrarMensaje = true;
           // Redirigir al usuario a la lista de usuarios u otra página
-          this.router.navigate(['/administrador']);
+          //this.router.navigate(['/administrador']);
         },
         err => console.error(err)
       );
+      this.mostrarMensaje=true;
     //}
   }
+  
+  getRoles(){
+    this.services.getRoles().subscribe(
+      (res: any) => {
+        console.log(res);
+        this.roles = res;
+      },
+      err => console.log(err)
+    );
+  }
+  toggleRoleSelection(role: rol) {
+    const index = this.selectedRoles.findIndex(selectedRole => selectedRole._id === role._id);
+  
+    if (index === -1) {
+      // Si el rol no está seleccionado, agrégalo
+      this.selectedRoles.push(role);
+    } else {
+      // Si el rol ya está seleccionado, deselíminalo
+      this.selectedRoles.splice(index, 1);
+    }
+  }
+  
+  
 
   cerrarModal() {
-    this.mostrarMensaje = false;
+    
     this.router.navigate(['/administrador']);
 
   }
-
+  isDisabled: boolean = true;
 }

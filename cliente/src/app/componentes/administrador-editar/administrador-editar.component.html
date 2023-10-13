@@ -14,7 +14,7 @@
                         <form>
                             <div class="form-group">
                                 <label for="identificacion">Identificación<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="identificacion" name="_id" [(ngModel)]="usuario._id" placeholder="Identificación">
+                                <input type="text" class="form-control" id="identificacion" name="_id" [(ngModel)]="usuario._id" placeholder="Identificación"[disabled]="isDisabled">
                             </div>
                             <div class="form-group">
                                 <label for="nombres">Nombre <span class="required">*</span></label>
@@ -38,8 +38,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="contrasena">Contraseña<span class="required">*</span></label>
-                                <input type="password" class="form-control" id="contrasena" name="_password" [(ngModel)]="usuario._password" placeholder="Contraseña">
+                                <input type="password" class="form-control" id="contrasena" name="_password" [(ngModel)]="usuario._password" placeholder="Contraseña"[disabled]="isDisabled">
                             </div>
+                            <div class="form-group checkbox-list">
+                                <label for="roles">Roles</label>
+                                <div *ngFor="let role of roles" class="checkbox-item">
+                                    <input type="checkbox" id="role_{{role._id}}" 
+                                           [checked]="selectedRoles.includes(role)" 
+                                           (change)="toggleRoleSelection(role)">
+                                    <label for="role_{{role._id}}">{{role._nombre}}</label>
+                                </div>
+                            </div>
+                            
                         </form>
             </div>
          <!-- Botón de "Guardar" centrado -->

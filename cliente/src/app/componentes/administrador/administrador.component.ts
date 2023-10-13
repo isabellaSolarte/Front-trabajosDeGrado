@@ -60,6 +60,7 @@ export class AdministradorComponent {
       this.deleteUsuario(id);
     }
   }
+  
   cerrarMensaje() {
     this.mostrarMensaje = false;
   }
