@@ -34,6 +34,12 @@ export class AdministradorComponent {
   crearUsuario(){
     this.router.navigate(['/crearUsuario']);
   }
+    //eliminar
+    editUsuario(id: number){
+      console.log(id);
+      this.router.navigate(['/editarUsuario/'+id]);
+    }
+  
 
   //eliminar
   mostrarMensaje: boolean = false;

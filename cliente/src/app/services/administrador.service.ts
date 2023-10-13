@@ -14,9 +14,11 @@ export class AdministradorService {
   getUsers(){
     return this.http.get(`${this.API_URI}/usuarios`);
   }
-  getUser(id:number){
+
+  getUser(id:number) {
+    console.log( this.http.get(`${this.API_URI}/usuarios/${id}`));
     return this.http.get(`${this.API_URI}/usuarios/${id}`);
-  }
+    }
 
   saveUser(usuario: Usuario) {
     console.log(usuario._nombre);
@@ -25,7 +27,7 @@ export class AdministradorService {
   updateUser(id: number, updatedUsuario: Usuario) {
     console.log(updatedUsuario);
     return this.http.put(`${this.API_URI}/usuarios/${id}`, updatedUsuario);
-  }
+  } 
   deleteUser(id: number): Observable<any> {
     return this.http.delete(`${this.API_URI}/usuarios/${id}`);
   }

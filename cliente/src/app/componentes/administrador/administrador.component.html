@@ -46,9 +46,10 @@
                         </td>
                         <td>{{usuario._correo}}</td>
                         <td>
-                          <button class="btn btn-primary" title="Editar">
+                          <button class="btn btn-primary"(click)="editUsuario(usuario._id)" title="Editar">
                             <i class="fas fa-pencil-alt"></i>
                           </button>
+
                           <button class="btn btn-danger" (click)="confirmarEliminarUsuario(usuario._id)"title="Eliminar" style="margin-left: 5px;" >
                             <i class="fas fa-trash-alt"></i>
                           </button>
