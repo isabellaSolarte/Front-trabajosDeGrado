@@ -26,6 +26,11 @@
 .titulo-pagina h1{
     color: #525663;
 }
+@media (max-width: 768px) {
+  .titulo {
+      font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+}
 /*Form*/
 
 /* Estilo personalizado para el formulario */
@@ -37,8 +42,19 @@
   margin-top: 60px;
   max-width: 700px; /* Ajusta el ancho máximo según tus preferencias */
 }
+.scrollable-form {
+  max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto;
+}
+.checkbox-list .checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-
+.checkbox-list .checkbox-item input[type="checkbox"] {
+  margin-right: 10px;
+}
 .form-group {
 margin-bottom: 10px;
 }

@@ -2,7 +2,7 @@
     <div class="cabecera">
         <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
         <div class="titulo-pagina">
-            <h1>GESTIÓN DE TRABAJOS DE GRADO</h1>
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
         </div>
     </div>
     <div class="navbar-top">
@@ -10,8 +10,8 @@
         <div class="container py-4">
               <div class="row">
                     <!-- Columna Izquierda -->
-                    <div class="col-md-6">
-                        <form>
+                    <div class="col-md-6 col-md-6 col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <form class="scrollable-form">
                             <div class="form-group">
                                 <label for="identificacion">Identificación<span class="required">*</span></label>
                                 <input type="text" class="form-control" id="identificacion" name="_id" [(ngModel)]="usuario._id" placeholder="Identificación"[disabled]="isDisabled">
@@ -30,8 +30,8 @@
                     </div>
                     
                     <!-- Columna Derecha -->
-                    <div class="col-md-6">
-                        <form>
+                    <div class="col-md-6 col-md-6 col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <form class="scrollable-form">
                             <div class="form-group">
                                 <label for="usuario">Usuario<span class="required">*</span></label>
                                 <input type="text" class="form-control" id="usuario" name="_login" [(ngModel)]="usuario._login" placeholder="Usuario">
@@ -70,7 +70,7 @@
 
     </div>
     
-    <div id="footer" class="footer-con-imagen">
+    <div id="footer" class="footer-con-imagen d-none d-md-block">
         <div class="imagen-con-textoF">
         <div class="texto-con-lineaF">
             <div class="linea-verticalF">
