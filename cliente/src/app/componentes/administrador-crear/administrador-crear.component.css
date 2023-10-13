@@ -72,7 +72,10 @@ display: flex;
   color: red;
   margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
 }
-
+.scrollable-form {
+  max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
+  overflow-y: auto;
+}
 /* En tu archivo CSS global o en el archivo de estilos del componente */
 .checkbox-list {
   display: flex;
