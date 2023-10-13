@@ -11,7 +11,7 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 })
 export class AdministradorEditarComponent {
   roles:rol[] = [];
-  usuario:Usuario ={
+    usuario:Usuario ={
     _id:0,
     _nombre: '',
     _login: '',
@@ -27,41 +27,46 @@ export class AdministradorEditarComponent {
   edit: boolean = false;
   ngOnInit(): void {
     const params = this.activeRouter.snapshot.params;
-    if (params['id']) {
-      this.services.getUser(params['id']).subscribe(
-        res => {
-          console.log(res);
-          this.usuario = Object.assign({}, res) as Usuario;
-          console.log(this.usuario);
-          this.edit = true;
-         
-
-        },
-        err => console.error(err)
-      );
+      if (params['id']) {
+        this.services.getUser(params['id']).subscribe(
+          (res) => {
+            console.log(res);
+             Object.assign(this.usuario,res) ;
+          },
+          (err) => {
+            console.error(err);
+           
+          }
+        );
+      }
     }
-  }
+  
 
-  obtenerId(): number {
+  /*obtenerId(): number {
     return this.usuario._id;
-  }
+  }*/
 
   mostrarMensaje: boolean = false;
 
 
   updateUsuario(): void {
-    console.log(this.usuario._id);
-    this.mostrarMensaje = true;
-    this.services.updateUser(
-      this.usuario._id,
-      this.usuario
-    ).subscribe(
-      res => {
-        this.mostrarMensaje = true;
-        console.log(res);
-      },
-      err => console.error(err)
-    );
+    //if (this.usuario) {
+      console.log(this.usuario);
+      // Asignar los roles
+      this.usuario._rol = this.roles;
+      console.log(this.roles);
+      
+      this.services.updateUser(this.usuario._id, this.usuario).subscribe(
+        res => {
+          console.log(res);
+          // Mostrar un mensaje de confirmación
+          this.mostrarMensaje = true;
+          // Redirigir al usuario a la lista de usuarios u otra página
+          this.router.navigate(['/administrador']);
+        },
+        err => console.error(err)
+      );
+    //}
   }
 
   cerrarModal() {
