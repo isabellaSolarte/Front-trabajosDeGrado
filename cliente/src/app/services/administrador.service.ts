@@ -3,7 +3,7 @@ import{HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import{Usuario} from '../componentes/modelo/usuario';
-
+import { Formato } from '../componentes/modelo/FormatoADirector';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,5 +34,8 @@ export class AdministradorService {
   {
     return this.http.get(`${this.API_URI}/roles`);
 
+  }
+  saveFormatoA(form: Formato){
+    return this.http.post(`${this.API_URI}/formatoA/`, form);
   }
 }
