@@ -49,16 +49,40 @@
   display: flex;
   align-items: center;
   border: none; /* Eliminar los bordes de la celda */
- 
 }
 
 .password-text {
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left: 4px; /* Agrega un espacio de 4px a la izquierda del texto */
 }
 
+.password-text span {
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+/*Botón tabla*/
+.button-container {
+  display: flex;
+  flex-direction: column; /* Los botones se apilarán verticalmente */
+}
 
+/* Estilos adicionales para ajustar el espaciado y alineación */
+.button-container button {
+  margin-bottom: 5px; /* Espaciado entre botones */
+}
+
+@media screen and (max-width: 768px) {
+  /* Media query para pantallas más pequeñas */
+  .button-container {
+    flex-direction: row; /* Los botones se alinearán horizontalmente */
+  }
+
+  .button-container button {
+    margin-bottom: 0; /* Eliminar el espaciado entre botones */
+    margin-right: 5px; /* Espaciado horizontal entre botones */
+  }
+}
 /*Footer*/
 #footer {
     display: flex;
