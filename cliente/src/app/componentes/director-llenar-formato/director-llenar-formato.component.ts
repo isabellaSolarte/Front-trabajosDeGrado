@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { AdministradorService } from 'src/app/services/administrador.service';
 @Component({
   selector: 'app-director',
-  templateUrl: './director.component.html',
-  styleUrls: ['./director.component.css']
+  templateUrl: './director-llenar-formato.component.html',
+  styleUrls: ['./director-llenar-formato.component.css']
 })
 export class DirectorComponent {
   mostrarMensaje: boolean = false;

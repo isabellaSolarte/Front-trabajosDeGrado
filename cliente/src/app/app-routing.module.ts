@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AdministradorComponent} from './componentes/administrador/administrador.component';
 import { AdministradorCrearComponent} from './componentes/administrador-crear/administrador-crear.component';
 import { AdministradorEditarComponent } from './componentes/administrador-editar/administrador-editar.component';
-import { DirectorComponent } from './componentes/director/director.component';
+import { DirectorComponent } from './componentes/director-llenar-formato/director-llenar-formato.component';
 
 
 const routes: Routes = [

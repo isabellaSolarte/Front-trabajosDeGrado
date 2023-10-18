@@ -39,11 +39,12 @@
     background-color: #13245E;
     color: #F8F8F8;
 }
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .titulo {
-      font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+      font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas 
   }
 }
+
 /*tabla*/
 .password-cell {
   display: flex;
