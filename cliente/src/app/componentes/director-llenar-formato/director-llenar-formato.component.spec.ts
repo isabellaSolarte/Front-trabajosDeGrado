@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DirectorComponent } from './director-llenar-formato.component';
+import { DirectorLlenarFormatoComponent } from './director-llenar-formato.component';
 
-describe('DirectorComponent', () => {
-  let component: DirectorComponent;
-  let fixture: ComponentFixture<DirectorComponent>;
+describe('DirectorLlenarFormatoComponent', () => {
+  let component: DirectorLlenarFormatoComponent;
+  let fixture: ComponentFixture<DirectorLlenarFormatoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DirectorComponent]
+      declarations: [DirectorLlenarFormatoComponent]
     });
-    fixture = TestBed.createComponent(DirectorComponent);
+    fixture = TestBed.createComponent(DirectorLlenarFormatoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

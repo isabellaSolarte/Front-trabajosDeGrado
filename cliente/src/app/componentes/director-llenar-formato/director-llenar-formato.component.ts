@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Formato } from '../modelo/FormatoADirector';
 import { Router } from '@angular/router';
 import { AdministradorService } from 'src/app/services/administrador.service';
+
 @Component({
-  selector: 'app-director',
+  selector: 'app-director-llenar-formato',
   templateUrl: './director-llenar-formato.component.html',
   styleUrls: ['./director-llenar-formato.component.css']
 })
-export class DirectorComponent {
+export class DirectorLlenarFormatoComponent {
   mostrarMensaje: boolean = false;
   formato:Formato={
     _id:0,
@@ -21,25 +22,24 @@ export class DirectorComponent {
     _recibido:'',
     _observaciones:'',
     _no_revision:0
+};
+constructor(private router: Router,private services:AdministradorService){
 
-  };
-  constructor(private router: Router,private services:AdministradorService){
+}
+guardarFormato(){
+  if(this.formato)
+  console.log(this.formato);
+  this.services.saveFormatoA(this.formato).subscribe(
+    res => {
+      console.log(res);
+      // Mostrar el mensaje de confirmación
+      this.mostrarMensaje = true;
+    },
+    err => console.error(err)
+    )
 
-  }
-  guardarFormato(){
-    if(this.formato)
-    console.log(this.formato);
-    this.services.saveFormatoA(this.formato).subscribe(
-      res => {
-        console.log(res);
-        // Mostrar el mensaje de confirmación
-        this.mostrarMensaje = true;
-      },
-      err => console.error(err)
-      )
-
-  }
-  cerrarMensaje() {
-    this.router.navigate(['/administrador']);
-  }
+}
+cerrarMensaje() {
+  this.router.navigate(['/administrador']);
+}
 }
