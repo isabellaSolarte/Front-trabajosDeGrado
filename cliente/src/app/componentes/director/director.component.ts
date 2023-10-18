@@ -1,10 +1,45 @@
 import { Component } from '@angular/core';
-
+import { Formato } from '../modelo/FormatoADirector';
+import { Router } from '@angular/router';
+import { AdministradorService } from 'src/app/services/administrador.service';
 @Component({
   selector: 'app-director',
   templateUrl: './director.component.html',
   styleUrls: ['./director.component.css']
 })
 export class DirectorComponent {
+  mostrarMensaje: boolean = false;
+  formato:Formato={
+    _id:0,
+    _objetivos:'',
+    _con_entrega:'',
+    _realizacion:'',
+    _recursos:'',
+    _financiacion:'',
+    _per_programa:false,
+    _revision:'',
+    _recibido:'',
+    _observaciones:'',
+    _no_revision:0
 
+  };
+  constructor(private router: Router,private services:AdministradorService){
+
+  }
+  guardarFormato(){
+    if(this.formato)
+    console.log(this.formato);
+    this.services.saveFormatoA(this.formato).subscribe(
+      res => {
+        console.log(res);
+        // Mostrar el mensaje de confirmación
+        this.mostrarMensaje = true;
+      },
+      err => console.error(err)
+      )
+
+  }
+  cerrarMensaje() {
+    this.router.navigate(['/administrador']);
+  }
 }

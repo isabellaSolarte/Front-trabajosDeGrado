@@ -1,81 +1,87 @@
 <div class="wrapper">
-    <div class="cabecera">
-        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
-        <div class="titulo-pagina">
-            <h1>GESTIÓN DE TRABAJOS DE GRADO</h1>
-        </div>
-    </div>
-    <div class="navbar-top">
+  <div class="cabecera">
+      <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+      <div class="titulo-pagina">
+          <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+      </div>
+  </div>
+  <div class="navbar-top">
 
-    </div>
-    <div class="container py-4">
-        <div class="contenedor-crear">
-            <button (click)= "crearUsuario()" class="btn btn-custom">Crear  <i class="fas fa-plus"></i></button>
-        </div>
-        <div class="table-responsive ">
-            <table class="table table-striped rounded">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Login</th>
-                        <th>Contraseña</th>
-                        <th>Rol</th>
-                        <th>Acciones</th>
-                    </tr>
+  </div>
+  <div class="container py-4">
+      <div class="contenedor-crear">
+          <button (click)= "crearUsuario()" class="btn btn-custom">Crear  <i class="fas fa-plus"></i></button>
+      </div>
+      <div class="table-responsive ">
+          <table class="table table-striped rounded">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                      <th>Login</th>
+                      <th>Contraseña</th>
+                      <th>Rol</th>
+                      <th>Correo</th>
+                      <th>Acciones</th>
+                  </tr>
 
-                </thead>
-                <tbody>
-                    <ng-container *ngFor="let usuario of usuarios; let i = index">
-                        <tr>
-                          <td>{{usuario._id}}</td>
-                          <td>{{usuario._nombre}}</td>
-                          <td>{{usuario._login}}</td>
-                          <td class="password-cell">
+              </thead>
+              <tbody>
+                  <ng-container *ngFor="let usuario of usuarios; let i = index">
+                      <tr>
+                        <td>{{usuario._id}}</td>
+                        <td>{{usuario._nombre}}</td>
+                        <td>{{usuario._login}}</td>
+                        <td>
+                          <div class="password-cell">
+                            <i class="fas" [ngClass]="{'fa-eye-slash': !passwordVisibility[i], 'fa-eye': passwordVisibility[i]}" (click)="togglePassword(i)"></i>
                             <div class="password-text">
                               <span *ngIf="passwordVisibility[i]">{{usuario._password}}</span>
                               <span *ngIf="!passwordVisibility[i]">********</span>
                             </div>
-                            <i class="fas" [ngClass]="{'fa-eye-slash': !passwordVisibility[i], 'fa-eye': passwordVisibility[i]}" (click)="togglePassword(i)"></i>
-                          </td>
-                          <td>
-                            <ul>
-                              <li *ngFor="let rol of usuario._rol">{{rol._nombre}}</li>
-                            </ul>
-                          </td>
-                          <td>{{usuario._correo}}</td>
-                          <td>
-                            <button class="btn btn-primary" title="Editar">
+                          </div>
+                        </td>
+                        <td>
+                          <ul>
+                            <li *ngFor="let rol of usuario._rol">{{rol._nombre}}</li>
+                          </ul>
+                        </td>
+                        <td>{{usuario._correo}}</td>
+                        <td>
+                          <div class="button-container">
+                            <button class="btn btn-primary" (click)="editUsuario(usuario._id)" title="Editar">
                               <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <button class="btn btn-danger" (click)="confirmarEliminarUsuario(usuario._id)"title="Eliminar" style="margin-left: 5px;" >
+                        
+                            <button class="btn btn-danger" (click)="confirmarEliminarUsuario(usuario._id)" title="Eliminar" style="margin-left: 5px;">
                               <i class="fas fa-trash-alt"></i>
                             </button>
-                          </td>
-                        </tr>
-                      </ng-container>
-                </tbody>
-            </table>
+                          </div>
+                        </td>
+                      </tr>
+                    </ng-container>
+              </tbody>
+          </table>
+      </div>
+      <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
+          El usuario se ha eliminado correctamente.
+          <button type="button" class="close" (click)="cerrarMensaje()">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
-            El usuario se ha eliminado correctamente.
-            <button type="button" class="close" (click)="cerrarMensaje()">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-    </div>
+  </div>
 
-    <div id="footer" class="footer-con-imagen">
-        <div class="imagen-con-textoF">
-        <div class="texto-con-lineaF">
-            <div class="linea-verticalF">
-            <span>
-                © 2023 Universidad del Cauca, Inc.
-            </span>
-            </div>
-            <span>Terms Privacy Security</span>
-        </div>
-        </div>
-    </div>
+  <div id="footer" class="footer-con-imagen">
+      <div class="imagen-con-textoF">
+      <div class="texto-con-lineaF">
+          <div class="linea-verticalF">
+          <span>
+              © 2023 Universidad del Cauca, Inc.
+          </span>
+          </div>
+          <span>Terms Privacy Security</span>
+      </div>
+      </div>
+  </div>
 </div>
 <router-outlet></router-outlet>
