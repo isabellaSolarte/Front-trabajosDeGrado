@@ -84,3 +84,55 @@
     display: flex;
     flex-direction: column;
   }
+
+  .rectangle {
+    width: 200px; /* Ancho deseado del rectángulo */
+    height: 50px; /* Alto deseado del rectángulo */
+    background-color: #ffffff; /* Color de fondo del rectángulo (puedes cambiarlo) */
+    border: 1px solid #000; /* Borde del rectángulo (opcional) */
+    border-radius: 10px;
+    /* Alineación a la derecha */
+     margin-left :80%;
+  }
+  .ajustado {
+    width: 150px; /* Ancho deseado del rectángulo */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 10px; /* Tamaño de fuente más pequeño */
+  }
+  
+  .ventana {
+    position: fixed;
+    top: 200px;
+    right: 70px;
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+}
+
+.icono {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contenido {
+    flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
+    display: flex;
+    flex-direction: column; /* Apila el mensaje y el nombre verticalmente */
+}
+
+.mensaje {
+    font-size: 10px;
+    margin: 0%;
+}
+
+.nombre-estudiante {
+    font-size: 10px;
+}
+
