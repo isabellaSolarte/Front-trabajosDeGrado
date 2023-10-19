@@ -37,6 +37,38 @@
 .titulo{
     color: #525663; 
 }
+/*carta*/
+.card {
+    margin-top: 5%;
+}
+
+
+  .circle {
+    margin-top: 3%;
+    width: 40px;
+    height: 40px;
+    background-color: #FF5733; /* Cambia el color del círculo según tus preferencias */
+    border-radius: 50%; /* Crea un círculo con bordes redondeados */
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  .justify-content-center {
+    justify-content: center;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+.custom-button {
+    background-color: #13245E;
+    color: #fff; /* Cambiar el color del texto si es necesario */
+    border-color: none;
+  }
+  
+  .custom-button:hover {
+    background-color: #0E1E49; /* Cambiar el color al pasar el ratón si lo deseas */
+  }
 /*Footer*/
 #footer {
     display: flex;
