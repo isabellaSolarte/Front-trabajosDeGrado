@@ -37,4 +37,7 @@ export class AdministradorService {
   saveFormatoA(form: Formato){
     return this.http.post(`${this.API_URI}/formatoA/`, form);
   }
+  getProcesses(){
+    return this.http.get(`${this.API_URI}/procesos/`);
+  }
 }
