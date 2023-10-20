@@ -51,10 +51,10 @@ Los resultados seran plasmados a detalle en un documento de excel llamado
 
 A continuacion se muestra una tabla que resume las pruebas realizadas:
 
-### **Tests de Usuario**
+### **Tests suit Users**
 | # Test | Descripcion | Resultado |
 |--------|-------------|-----------|
-| 1 | Buscar el usuario test (id = 0) | Exito |
+| 1 | Buscar userTest (id = 0) | Exito |
 | 2 | Crear el usuario (ID = 1060) | Exito |
 | 3 | Crear el usuario (ID = 1061) | Exito |
 | 4 | Buscar el usuario (ID = 1060) | Exito |
@@ -62,3 +62,8 @@ A continuacion se muestra una tabla que resume las pruebas realizadas:
 | 6 | Eliminar el usuario (ID = 1060) | Exito |
 | 7 | Eliminar el usuario (ID = 1061) | Exito |
 ||TO DO: Others||
+
+### **Tests suit Formatos**
+| # Test | Descripcion | Resultado |
+|--------|-------------|-----------|
+| 1 | Subir formato  |  |

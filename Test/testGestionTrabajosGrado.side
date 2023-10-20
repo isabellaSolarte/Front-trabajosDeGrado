@@ -541,7 +541,7 @@
       "id": "c94eaf71-4812-43f9-a561-e6a19ba98e97",
       "comment": "",
       "command": "open",
-      "target": "",
+      "target": "/administrador",
       "targets": [],
       "value": ""
     }, {
@@ -630,7 +630,7 @@
       "id": "08384762-45c6-42b1-bf0c-316ab43ee558",
       "comment": "",
       "command": "open",
-      "target": "",
+      "target": "/administrador",
       "targets": [],
       "value": ""
     }, {
@@ -648,6 +648,24 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "de290609-49c4-4d84-8324-78a543b30736",
+    "name": "Subir formato",
+    "commands": [{
+      "id": "32039c13-9974-4b4d-a9f6-0b6dc6ba3956",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c649e67-bbb4-4c57-99ed-a0bf79c73a78",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "41ed72cd-20cd-4402-914f-a5c83b7dd40d",
@@ -656,6 +674,13 @@
     "parallel": false,
     "timeout": 300,
     "tests": ["54abf11b-6f83-4b72-9e6e-7bfd8fa04d82", "fa5ee26b-369a-4c8b-bcb6-08ce01446df9", "4958a1d1-f959-492b-bb25-2a47996caf65", "79cff372-4c65-42bf-9bae-d097d384f6c6", "bd4675c8-7b5a-4389-996f-2f39b8541052", "1272ee64-d40c-4071-b30b-eefab006bd4b", "39b9bd13-9be2-446e-af56-1df2ffb6d0cb"]
+  }, {
+    "id": "4744323e-23fe-44e4-8e1f-3a08d87b485d",
+    "name": "Formatos",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
   }],
   "urls": ["http://192.168.1.7:4200/"],
   "plugins": []
