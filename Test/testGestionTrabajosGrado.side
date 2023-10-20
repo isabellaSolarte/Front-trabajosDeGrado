@@ -5,7 +5,7 @@
   "url": "http://192.168.1.7:4200",
   "tests": [{
     "id": "4958a1d1-f959-492b-bb25-2a47996caf65",
-    "name": "Crear usuario 1061",
+    "name": "Crear usuario ID = 1061",
     "commands": [{
       "id": "cb52900b-a3de-459f-bba9-22c515765cd3",
       "comment": "",
@@ -198,14 +198,10 @@
     }, {
       "id": "afd954d9-e0e5-4603-8799-be5219034f22",
       "comment": "",
-      "command": "assertText",
-      "target": "css=tr:nth-child(2) > td:nth-child(1)",
-      "targets": [
-        ["css=td:nth-child(1)", "css:finder"],
-        ["xpath=//td", "xpath:position"],
-        ["xpath=//td[contains(.,'0')]", "xpath:innerText"]
-      ],
-      "value": "1061"
+      "command": "assertElementPresent",
+      "target": "xpath=//td[1][text()=\"1061\"]",
+      "targets": [],
+      "value": ""
     }, {
       "id": "a68501d7-5a2b-4f3e-8c39-813cae64f604",
       "comment": "",
@@ -216,7 +212,7 @@
     }]
   }, {
     "id": "39b9bd13-9be2-446e-af56-1df2ffb6d0cb",
-    "name": "Eliminar usuario 1061",
+    "name": "Eliminar usuario ID = 1061",
     "commands": [{
       "id": "65c06615-df06-4b2d-a793-41d4749341ca",
       "comment": "",
@@ -232,31 +228,35 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "db6a3121-bfd8-4d6a-afd5-4accb15cb29b",
+      "id": "56609d5b-b3cd-4ec5-a58c-f96eaaa68a97",
       "comment": "",
-      "command": "click",
-      "target": "css=tr:nth-child(1) .btn-danger",
-      "targets": [
-        ["css=tr:nth-child(1) .btn-danger", "css:finder"],
-        ["xpath=//button[2]", "xpath:position"]
-      ],
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
-      "id": "470f7186-a1fe-4162-a464-7d277b125045",
+      "id": "c50e2447-dbbd-49d8-91cb-a4a6acac40fa",
+      "comment": "",
+      "command": "click",
+      "target": "//tr[td[1][text()=\"1061\"]]/td[7]//button[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86aec594-70f6-4b28-8d99-ec1e2c151ab5",
       "comment": "",
       "command": "assertConfirmation",
       "target": "¿Está seguro de que desea eliminar este usuario?",
       "targets": [],
       "value": ""
     }, {
-      "id": "41792713-4cf4-4b31-b8ad-4a68c4f6199b",
+      "id": "aeb721fa-dadf-4101-ade2-e3eed3552f05",
       "comment": "",
       "command": "webdriverChooseOkOnVisibleConfirmation",
       "target": "",
       "targets": [],
       "value": ""
     }, {
-      "id": "a8271eae-9b53-4084-b936-2b90e966f1fc",
+      "id": "2f13a602-c152-42df-bf24-df5149ec05bf",
       "comment": "",
       "command": "click",
       "target": "css=.close > span",
@@ -267,7 +267,7 @@
       ],
       "value": ""
     }, {
-      "id": "85066425-5c69-4ad6-9f47-49942f71d48e",
+      "id": "c649ce44-277d-4258-b232-a4871e317ea7",
       "comment": "",
       "command": "close",
       "target": "",
@@ -276,7 +276,7 @@
     }]
   }, {
     "id": "fa5ee26b-369a-4c8b-bcb6-08ce01446df9",
-    "name": "Crear usuario 1060",
+    "name": "Crear usuario ID = 1060",
     "commands": [{
       "id": "7b975d2f-6a6d-413b-9b80-a2d94b9aa75f",
       "comment": "",
@@ -469,81 +469,21 @@
     }, {
       "id": "4c3939d0-0213-4ffc-ab51-6c6aca56cdb1",
       "comment": "",
-      "command": "assertText",
-      "target": "xpath=//tr[1]/td",
-      "targets": [
-        ["css=tr:nth-child(2) > td:nth-child(1)", "css:finder"],
-        ["xpath=//tr[2]/td", "xpath:position"],
-        ["xpath=//td[contains(.,'1061')]", "xpath:innerText"]
-      ],
-      "value": "1060"
+      "command": "assertElementPresent",
+      "target": "xpath=//td[1][text()=\"1060\"]",
+      "targets": [],
+      "value": ""
     }, {
-      "id": "c2826821-67b8-4f1c-9df3-34a2fb0bcb0a",
+      "id": "57f7f2cd-20c9-42fb-8a07-c79db92b9acc",
       "comment": "",
       "command": "close",
       "target": "",
       "targets": [],
       "value": ""
-    }, {
-      "id": "5af4e28a-7f9c-4827-ac15-209c3e8312f2",
-      "comment": "",
-      "command": "store",
-      "target": "false",
-      "targets": [],
-      "value": "encontrado"
-    }, {
-      "id": "2f0e3401-635c-46b7-b90e-ce25d70fb964",
-      "comment": "",
-      "command": "forEach",
-      "target": "xpath=//tr/td[1]",
-      "targets": [],
-      "value": "idElement"
-    }, {
-      "id": "6d21aa84-84d1-46b5-a194-46845796d295",
-      "comment": "",
-      "command": "storeText",
-      "target": "idElement",
-      "targets": [],
-      "value": "idValue"
-    }, {
-      "id": "887fe845-d3ff-4fed-9a8a-24a12c038e94",
-      "comment": "",
-      "command": "if",
-      "target": "storedVars['idValue'] == 1060",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "1d6041fa-f4a9-4393-a318-10a863e17dd7",
-      "comment": "",
-      "command": "store",
-      "target": "true",
-      "targets": [],
-      "value": "encontrado"
-    }, {
-      "id": "9c98d790-36a6-494f-8569-ef2f4b7d6f05",
-      "comment": "",
-      "command": "end",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a101c332-1985-41c3-81eb-6d0beea181af",
-      "comment": "",
-      "command": "end",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "d50948d1-647d-4d69-8b3d-1da708cd6dfd",
-      "comment": "",
-      "command": "assert",
-      "target": "${econtrado} == true",
-      "targets": [],
-      "value": "Valor encontrado en esta iteracion"
     }]
   }, {
     "id": "54abf11b-6f83-4b72-9e6e-7bfd8fa04d82",
-    "name": "buscar 1060",
+    "name": "Buscar userTest",
     "commands": [{
       "id": "96dccc6c-180e-4dee-840f-8db862cbc28c",
       "comment": "",
@@ -559,46 +499,163 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "cdb2c5e7-28b4-47c8-82e5-65521cc531a0",
+      "id": "84778fcf-2190-4004-949f-2f835a84b134",
       "comment": "",
-      "command": "forEach",
-      "target": "css=.table-responsive",
-      "targets": [],
-      "value": "table"
-    }, {
-      "id": "b33e18a3-708b-4206-b689-64c92a33a994",
-      "comment": "",
-      "command": "echo",
-      "target": "${table} and have a nice day!",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[text()=\"0\"]",
       "targets": [],
       "value": ""
     }, {
-      "id": "7e2bfaf5-4850-41a9-91ee-5b862f55e11a",
+      "id": "f5d87dcd-0e0e-4e39-bcbd-7093172fd9f1",
       "comment": "",
-      "command": "end",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[text()=\"prueba\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f0660bc-6011-4efe-b075-ac0855c635a3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[text()=\"user\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b75c7a9d-7912-469d-b521-6e9f94a0a169",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[text()=\"user@test.com\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70e253f9-23d3-4079-b7eb-b062fed619f3",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "79cff372-4c65-42bf-9bae-d097d384f6c6",
+    "name": "Buscar ID = 1060",
+    "commands": [{
+      "id": "c94eaf71-4812-43f9-a561-e6a19ba98e97",
+      "comment": "",
+      "command": "open",
       "target": "",
       "targets": [],
       "value": ""
     }, {
-      "id": "9793b623-4149-43b9-90ff-6785837143a0",
+      "id": "2c1d44d2-6c0c-4a44-9292-dc1f3e5eec81",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[1][text()=\"1060\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a5d4bb7-423f-4eb6-bce4-f7dc8c4199bd",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "1272ee64-d40c-4071-b30b-eefab006bd4b",
+    "name": "Eliminar usuario ID = 1060",
+    "commands": [{
+      "id": "734b5427-67d5-43ee-9d2f-6ce583b0fe95",
+      "comment": "",
+      "command": "open",
+      "target": "/administrador",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed031a15-099c-43b4-b443-f39000f2a6d1",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x720",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a16beae-419a-42c0-ba61-b7db2f7d689c",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bd725ea-bc1f-4fb8-bcbc-4070edf1c99b",
       "comment": "",
       "command": "click",
-      "target": "xpath=//td[contains(.,'1061')]",
+      "target": "//tr[td[1][text()=\"1060\"]]/td[7]//button[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e6b50bc-372d-421a-ad9c-131f3c130fa9",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "¿Está seguro de que desea eliminar este usuario?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0681d18b-78f3-4758-b219-08b22160d046",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cab7d2af-6be6-4353-a21d-c380d2281116",
+      "comment": "",
+      "command": "click",
+      "target": "css=.close > span",
       "targets": [
-        ["css=tr:nth-child(2) > td:nth-child(1)", "css:finder"],
-        ["xpath=//tr[2]/td", "xpath:position"],
-        ["xpath=//td[contains(.,'1061')]", "xpath:innerText"]
+        ["css=.close > span", "css:finder"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'×')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "7ca333e1-ec3b-47f2-a6b5-de4e1959ef77",
+      "comment": "",
+      "command": "//close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "bd4675c8-7b5a-4389-996f-2f39b8541052",
+    "name": "Buscar ID = 1061",
+    "commands": [{
+      "id": "08384762-45c6-42b1-bf0c-316ab43ee558",
+      "comment": "",
+      "command": "open",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6931a44b-7713-4f76-9e27-d7f311727c23",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[1][text()=\"1061\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7b8bff4-1fd8-4acc-9da2-f2b52246a9ff",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }],
   "suites": [{
     "id": "41ed72cd-20cd-4402-914f-a5c83b7dd40d",
-    "name": "Default Suite",
+    "name": "Users",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["4958a1d1-f959-492b-bb25-2a47996caf65"]
+    "tests": ["54abf11b-6f83-4b72-9e6e-7bfd8fa04d82", "fa5ee26b-369a-4c8b-bcb6-08ce01446df9", "4958a1d1-f959-492b-bb25-2a47996caf65", "79cff372-4c65-42bf-9bae-d097d384f6c6", "bd4675c8-7b5a-4389-996f-2f39b8541052", "1272ee64-d40c-4071-b30b-eefab006bd4b", "39b9bd13-9be2-446e-af56-1df2ffb6d0cb"]
   }],
   "urls": ["http://192.168.1.7:4200/"],
   "plugins": []
