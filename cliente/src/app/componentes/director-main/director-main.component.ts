@@ -29,4 +29,7 @@ export class DirectorMainComponent {
   irSubirFormato(){
     this.router.navigate(['/directorLlenarFormato']);
   }
+  irVerFormatos(){
+    this.router.navigate(['/directorListar']); ///directorListar
+  }
 }
