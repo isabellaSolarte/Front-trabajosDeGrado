@@ -1,4 +1,4 @@
-# Reporte de Pruebas del Frontend para el Sistema de Gestión de Trabajos de Grado de la Universidad del Cauca
+# Reporte de pruebas del frontend para el Sistema de Gestión de Trabajos de Grado de la Universidad del Cauca
 Este informe detalla las pruebas de integración realizadas en el Frontend
 del Sistema de Gestión de Trabajos de Grado de la Universidad del Cauca,
 construido con Angular.
