@@ -13,16 +13,16 @@
         </div>
       </nav>
     
-      <div class="container py-4" >
+      <div class="container py-4">
         <h1 class="titulo">Procesos delegados</h1>
         <div class="d-flex flex-wrap justify-content-center">
-            <div class="card rounded" *ngFor="let proceso of procesos">
+            <div class="card rounded m-3 fixed-card" style="max-width: 300px;" *ngFor="let proceso of procesos">
                 <div class="d-flex justify-content-center align-items-center">
                     <img src="assets/investigar.png" class="book-icon" alt="Libro Abierto">
                 </div>
                 <div class="card-body text-center">
                     <h5 class="card-title">{{proceso.tipo}}</h5>
-                    <p class="card-text">{{proceso.titulo}}</p>
+                    <p class="card-text text-wrap">{{proceso.titulo}}</p>
                     <hr class="my-4" style="background-color: #ccc;">
                     <h5 class="card-title">Estudiantes</h5>
                     <p class="card-text" *ngFor="let nombre of proceso.estudiantes">{{nombre}}</p>

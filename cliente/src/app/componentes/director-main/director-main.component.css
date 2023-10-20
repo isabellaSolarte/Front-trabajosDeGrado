@@ -41,7 +41,10 @@
 .card {
     margin-top: 5%;
 }
-
+.fixed-card {
+  width: 300px; /* Establece el ancho fijo deseado */
+  height: 420px; /* Establece la altura fija deseada */
+}
 
   .book-icon {
     margin-top: 3%;
