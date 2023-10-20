@@ -24,7 +24,7 @@
               <p class="card-text">{{proceso.titulo}}</p>
               <hr class="my-4" style="background-color: #ccc;">
               <h5 class="card-title">Estudiantes</h5>
-              <p class="card-text">Isabella Solarte</p>
+              <p class="card-text" *ngFor="let nombre of proceso.estudiantes">{{nombre}}</p>
               <div class="text-center">
                 <a href="#" class="btn btn-primary custom-button">Ver formatos</a>
               </div>
