@@ -49,7 +49,11 @@ para ser modificada segun la ip de la instancia del proyecto.
 Los resultados seran plasmados a detalle en un documento de excel llamado
 `Bateria_de_pruebas_Gestion_Trabajos_grados` ubicado en Test/
 
-A continuacion se muestra una tabla que resume las pruebas realizadas:
+A continuacion se muestra un gif que muestra el proceso de ejecucion junto con una serie de tablas que resumen las pruebas realizadas, esta ejecucion tambien se encuentra como video presente en el repositorio en la ubicacion `Test/img/vid_test_run_1.mp4` o tambien en Youtube.
+
+![Selenium IDE (Run all tests)](Test/img/gif_test_run_1.gif)
+
+[![Selenium IDE (Executing run all tests)](https://i9.ytimg.com/vi/OEZgHWcUAYk/mqdefault.jpg?sqp=CJCH0KkG&rs=AOn4CLAXXoP1Wzto110K7RHre2y16GHzLg)](https://youtu.be/OEZgHWcUAYk)
 
 ### **Tests suit Users**
 | # Test | Descripcion | Resultado |

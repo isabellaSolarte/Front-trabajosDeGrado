@@ -205,7 +205,7 @@
     }, {
       "id": "a68501d7-5a2b-4f3e-8c39-813cae64f604",
       "comment": "",
-      "command": "close",
+      "command": "//close",
       "target": "",
       "targets": [],
       "value": ""
@@ -476,7 +476,7 @@
     }, {
       "id": "57f7f2cd-20c9-42fb-8a07-c79db92b9acc",
       "comment": "",
-      "command": "close",
+      "command": "//close",
       "target": "",
       "targets": [],
       "value": ""
@@ -529,7 +529,7 @@
     }, {
       "id": "70e253f9-23d3-4079-b7eb-b062fed619f3",
       "comment": "",
-      "command": "close",
+      "command": "//close",
       "target": "",
       "targets": [],
       "value": ""
@@ -554,7 +554,7 @@
     }, {
       "id": "3a5d4bb7-423f-4eb6-bce4-f7dc8c4199bd",
       "comment": "",
-      "command": "close",
+      "command": "//close",
       "target": "",
       "targets": [],
       "value": ""
@@ -643,7 +643,7 @@
     }, {
       "id": "c7b8bff4-1fd8-4acc-9da2-f2b52246a9ff",
       "comment": "",
-      "command": "close",
+      "command": "//close",
       "target": "",
       "targets": [],
       "value": ""
