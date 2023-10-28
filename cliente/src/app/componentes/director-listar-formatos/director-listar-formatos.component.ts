@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-director-listar-formatos',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./director-listar-formatos.component.css']
 })
 export class DirectorListarFormatosComponent {
-
+  constructor(private router: Router){
+    
+  }
+  irSubirFormato(){
+    this.router.navigate(['/directorLlenarFormato']);
+  }
 }

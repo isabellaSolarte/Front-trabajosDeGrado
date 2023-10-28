@@ -40,4 +40,7 @@ export class AdministradorService {
   getProcesses(){
     return this.http.get(`${this.API_URI}/procesos/`);
   }
+  getFormatos(id: number){
+    return this.http.get(`${this.API_URI}/procesos/${id}`);
+  }
 }
