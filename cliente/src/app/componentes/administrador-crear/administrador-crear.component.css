@@ -31,6 +31,11 @@
       font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
   }
 }
+.show {
+  /* Estilos para hacer visible el modal */
+  display: block; /* o visibility: visible; u otros estilos */
+}
+
 /*Form*/
 .container {
   background-color: #f7f7f7;
@@ -91,6 +96,11 @@ display: flex;
 .checkbox-list .checkbox-item input[type="checkbox"] {
   margin-right: 10px;
 }
+.alert.alert-success{
+  width: 50%; /* Establece el ancho deseado para el contenedor (por ejemplo, 50% del ancho de la pantalla) */
+  margin: 0 auto;
+}
+
 
 /*Footer*/
 #footer {

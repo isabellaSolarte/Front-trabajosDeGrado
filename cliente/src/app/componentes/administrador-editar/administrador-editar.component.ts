@@ -95,7 +95,7 @@ export class AdministradorEditarComponent {
   
 
   cerrarModal() {
-    
+    this.mostrarMensaje=false;
     this.router.navigate(['/administrador']);
 
   }

@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="navbar-top">
-    <div>
+    
         <div class="container py-4">
               <div class="row">
                     <!-- Columna Izquierda -->
@@ -52,23 +52,35 @@
                             
                         </form>
             </div>
+          </div>
+        </div>
          <!-- Botón de "Guardar" centrado -->
         <div class="Botón-crear">
             <button class="btn btn-custom" (click)="updateUsuario()" >Guardar</button>
         </div>
-
-        </div>
-         </div>
+        <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': mostrarMensaje}">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Usuario Editado</h5>
+                  <button type="button" class="close" (click)="cerrarModal()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  El usuario se ha editado correctamente.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="cerrarModal()">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+     </div>
     </div>
-    <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
-        El usuario se ha editado correctamente.
-        <button type="button" class="close" (click)="cerrarModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
     
-
-    </div>
+    
+    
     
     <div id="footer" class="footer-con-imagen d-none d-md-block">
         <div class="imagen-con-textoF">
@@ -82,4 +94,3 @@
         </div>
         </div>
     </div>
-</div>

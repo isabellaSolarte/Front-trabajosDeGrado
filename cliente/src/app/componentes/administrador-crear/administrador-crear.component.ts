@@ -62,10 +62,12 @@ export class AdministradorCrearComponent {
         err => console.error(err)
         
       );
-      
+     
     }
   }
+  
   cerrarMensaje() {
+    this.mostrarMensaje= false;
     this.router.navigate(['/administrador']);
   }
  
