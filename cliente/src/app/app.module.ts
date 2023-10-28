@@ -13,6 +13,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { DirectorMainComponent } from './componentes/director-main/director-main.component';
 import { DirectorListarFormatosComponent } from './componentes/director-listar-formatos/director-listar-formatos.component';
 import { DirectorLlenarFormatoComponent } from './componentes/director-llenar-formato/director-llenar-formato.component';
+import { DirectorService } from './services/director.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { DirectorLlenarFormatoComponent } from './componentes/director-llenar-fo
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService],
+  providers: [AdministradorService,DirectorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

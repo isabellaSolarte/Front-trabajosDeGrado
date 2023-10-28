@@ -34,13 +34,4 @@ export class AdministradorService {
   getRoles(){
     return this.http.get(`${this.API_URI}/roles`);
   }
-  saveFormatoA(form: Formato){
-    return this.http.post(`${this.API_URI}/formatoA/`, form);
-  }
-  getProcesses(){
-    return this.http.get(`${this.API_URI}/procesos/`);
-  }
-  getFormatos(id: number){
-    return this.http.get(`${this.API_URI}/procesos/${id}`);
-  }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Formato } from '../modelo/FormatoADirector';
 import { Router } from '@angular/router';
-import { AdministradorService } from 'src/app/services/administrador.service';
+import { DirectorService } from 'src/app/services/director.service';
 
 @Component({
   selector: 'app-director-llenar-formato',
@@ -23,7 +23,7 @@ export class DirectorLlenarFormatoComponent {
     _observaciones:'',
     _no_revision:0
 };
-constructor(private router: Router,private services:AdministradorService){
+constructor(private router: Router,private services:DirectorService){
 
 }
 guardarFormato(){

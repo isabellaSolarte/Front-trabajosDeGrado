@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProcesoList } from '../modelo/ProcesoList';
-import { AdministradorService } from 'src/app/services/administrador.service';
+import { DirectorService } from 'src/app/services/director.service';
 
 @Component({
   selector: 'app-director-main',
@@ -10,7 +10,7 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 })
 export class DirectorMainComponent {
   procesos:ProcesoList[] = [];
-  constructor(private router: Router,private services:AdministradorService){
+  constructor(private router: Router,private services:DirectorService){
     
   }
   ngOnInit(): void{
