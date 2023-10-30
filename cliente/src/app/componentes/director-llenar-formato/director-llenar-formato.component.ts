@@ -26,7 +26,7 @@ export class DirectorLlenarFormatoComponent {
   };
   proceso:Proceso={
     id:0,
-    usuario:546,
+    usuario:233,
     fa:0,
     fb:0,
     fc:0,
@@ -43,19 +43,18 @@ constructor(private router: Router,private services:DirectorService){
 }
 guardarFormatoProceso(){
   this.guardarProceso();
-  //this.guardarFormato();
+  this.guardarFormato();
 }
 guardarFormato(){
-  if(this.formato)
   console.log(this.formato);
- /* this.services.saveFormatoA(this.formato).subscribe(
+  this.services.saveFormatoA(this.formato,this.proceso.usuario).subscribe(
     res => {
       console.log(res);
       // Mostrar el mensaje de confirmación
       this.mostrarMensaje = true;
     },
     err => console.error(err)
-    )*/
+    )
 }
 guardarProceso(){
   console.log(this.proceso);

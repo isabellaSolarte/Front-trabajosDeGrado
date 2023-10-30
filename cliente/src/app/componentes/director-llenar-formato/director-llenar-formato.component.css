@@ -20,6 +20,10 @@
   .titulo {
       font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
   }
+  /*Botón*/
+  .btn-custom{
+    margin-bottom: 5%;
+  }
 }
 .navbar-top {
     background-color: #13245E;
@@ -43,15 +47,17 @@
   background-color: #13245E;
   color: #F8F8F8;
   margin-top: 20px; /* Espacio superior para separar el botón del formulario */
+  margin-bottom: 5px;
 }
 
 .Botón-crear{
   align-items: center;
   justify-content: center;
   display: flex;
-  }
+}
+
 /*Tabla*/
-/* Estilo personalizado para el formulario */
+
 .container {
     background-color: #f7f7f7;
     padding: 20px; /* Reducimos el relleno para hacerlo más pequeño */
