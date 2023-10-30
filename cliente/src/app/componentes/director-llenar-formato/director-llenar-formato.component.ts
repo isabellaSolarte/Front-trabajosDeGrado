@@ -26,7 +26,7 @@ export class DirectorLlenarFormatoComponent {
   };
   proceso:Proceso={
     id:0,
-    usuario:233,
+    usuario:1002777704,
     fa:0,
     fb:0,
     fc:0,
@@ -41,13 +41,16 @@ export class DirectorLlenarFormatoComponent {
 constructor(private router: Router,private services:DirectorService){
 
 }
-guardarFormatoProceso(){
-  this.guardarProceso();
-  this.guardarFormato();
+async guardarFormatoProceso(){
+  const id = await this.guardarProceso();
+  console.log(id);
+  if(id != 0)
+    this.guardarFormato(id);
+  else  console.log('error')
 }
-guardarFormato(){
+guardarFormato(id:number){
   console.log(this.formato);
-  this.services.saveFormatoA(this.formato,this.proceso.usuario).subscribe(
+  this.services.saveFormatoA(this.formato,id).subscribe(
     res => {
       console.log(res);
       // Mostrar el mensaje de confirmación
@@ -56,16 +59,30 @@ guardarFormato(){
     err => console.error(err)
     )
 }
-guardarProceso(){
+async guardarProceso(): Promise<number> {
   console.log(this.proceso);
-  this.services.createProceso(this.proceso).subscribe(
-    res => {
-      console.log(res);
-      // Mostrar el mensaje de confirmación
-      this.mostrarMensaje = true;
-    },
-    err => console.error(err)
-  )
+  try {
+    const response = await this.createProcesoAsync(this.proceso);
+    console.log(response);
+    this.mostrarMensaje = true;
+    return response.id;
+  } catch (error) {
+    console.error(error);
+    return 0; // Puedes manejar el error como mejor te parezca
+  }
+}
+
+private createProcesoAsync(proceso: Proceso): Promise<Proceso> {
+  return new Promise<Proceso>((resolve, reject) => {
+    this.services.createProceso(proceso).subscribe(
+      (res: Proceso|any) => {
+        resolve(res);
+      },
+      (err) => {
+        reject(err);
+      }
+    );
+  });
 }
 cerrarMensaje() {
   this.router.navigate(['/administrador']);
