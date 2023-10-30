@@ -37,11 +37,6 @@ debido a que estan configuradas con la ip de un equipo local,
 por lo tanto para correr las pruebas adecuadamente,
 se necesita ajustar las pruebas para que apunten a la direccion ip adecuada.
 
-Por lo pronto, este ajuste tiene que ser manual por cada prueba.
-
-TO DO: Crear una variable `varIP` en el proyecto de testing
-para ser modificada segun la ip de la instancia del proyecto.
-
 ![Selenium IDE (Run all tests)](Test/img/Selenium_IDE_tests.png)
 
 
