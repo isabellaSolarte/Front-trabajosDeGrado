@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Formato } from '../modelo/FormatoADirector';
 import { Router } from '@angular/router';
 import { DirectorService } from 'src/app/services/director.service';
+import { Proceso } from '../modelo/Proceso';
 
 @Component({
   selector: 'app-director-llenar-formato',
@@ -22,9 +23,27 @@ export class DirectorLlenarFormatoComponent {
     _recibido:'',
     _observaciones:'',
     _no_revision:0
-};
+  };
+  proceso:Proceso={
+    id:0,
+    usuario:546,
+    fa:0,
+    fb:0,
+    fc:0,
+    ase:'',
+    status_a:0,
+    status_b:0,
+    status_c:0,
+    titulo:'',
+    tipo:'',
+    estudiantes:[]
+  };
 constructor(private router: Router,private services:DirectorService){
 
+}
+guardarFormatoProceso(){
+  this.guardarProceso();
+  //this.guardarFormato();
 }
 guardarFormato(){
   if(this.formato)
@@ -37,7 +56,17 @@ guardarFormato(){
     },
     err => console.error(err)
     )*/
-
+}
+guardarProceso(){
+  console.log(this.proceso);
+  this.services.createProceso(this.proceso).subscribe(
+    res => {
+      console.log(res);
+      // Mostrar el mensaje de confirmación
+      this.mostrarMensaje = true;
+    },
+    err => console.error(err)
+  )
 }
 cerrarMensaje() {
   this.router.navigate(['/administrador']);

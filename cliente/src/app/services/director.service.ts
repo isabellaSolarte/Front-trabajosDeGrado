@@ -20,7 +20,7 @@ export class DirectorService {
     return this.http.get(`${this.API_URI}/procesos/${id}`);
   }
   createProceso(proceso:Proceso){
-    return this.http.post(`${this.API_URI}/procesos/`,proceso);
+    return this.http.post(`${this.API_URI}/procesos`,proceso);
   }
 
 }
