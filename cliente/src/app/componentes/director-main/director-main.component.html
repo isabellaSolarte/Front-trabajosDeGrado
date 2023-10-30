@@ -1,0 +1,51 @@
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+        <div class="navbar-collapse justify-content-end">
+          <button class="btn btn-custom-color" (click)="irSubirFormato()" type="button">
+            Subir formato <i class="fas fa-upload"></i>
+          </button>
+        </div>
+      </nav>
+    
+      <div class="container py-4">
+        <h1 class="titulo">Procesos delegados</h1>
+        <div class="d-flex flex-wrap justify-content-center">
+            <div class="card rounded m-3 fixed-card" style="max-width: 300px;" *ngFor="let proceso of procesos">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="assets/investigar.png" class="book-icon" alt="Libro Abierto">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{proceso.tipo}}</h5>
+                    <p class="card-text text-wrap">{{proceso.titulo}}</p>
+                    <hr class="my-4" style="background-color: #ccc;">
+                    <h5 class="card-title">Estudiantes</h5>
+                    <p class="card-text" *ngFor="let nombre of proceso.estudiantes">{{nombre}}</p>
+                    <div class="text-center">
+                        <a class="btn btn-primary custom-button" (click)="irVerFormatos()">Ver formatos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

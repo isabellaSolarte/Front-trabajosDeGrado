@@ -41,34 +41,21 @@ export class AdministradorEditarComponent {
       }
       this.selectedRoles = this.usuario._rol;
     }
-  
-
-  /*obtenerId(): number {
-    return this.usuario._id;
-  }*/
-
   mostrarMensaje: boolean = false;
-
-
   updateUsuario(): void {
-    //if (this.usuario) {
       console.log(this.usuario);
       // Asignar los roles
       this.usuario._rol = this.selectedRoles;
       console.log(this.roles);
-      
       this.services.updateUser(this.usuario._id, this.usuario).subscribe(
         res => {
           console.log(res);
           // Mostrar un mensaje de confirmación
           this.mostrarMensaje = true;
-          // Redirigir al usuario a la lista de usuarios u otra página
-          //this.router.navigate(['/administrador']);
         },
         err => console.error(err)
       );
       this.mostrarMensaje=true;
-    //}
   }
   
   getRoles(){
@@ -95,7 +82,7 @@ export class AdministradorEditarComponent {
   
 
   cerrarModal() {
-    
+    this.mostrarMensaje=false;
     this.router.navigate(['/administrador']);
 
   }

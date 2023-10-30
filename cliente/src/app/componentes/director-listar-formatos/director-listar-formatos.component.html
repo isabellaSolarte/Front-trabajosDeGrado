@@ -1,0 +1,86 @@
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+        <div class="navbar-collapse justify-content-end">
+          <button class="btn btn-custom-color" (click)="irSubirFormato()" type="button">
+            Subir formato <i class="fas fa-upload"></i>
+          </button>
+        </div>
+      </nav>
+    <div class="container py-4">
+        <h1 class="titulo">Procesos Delegados</h1> 
+        <div class="grid text-right" >
+          <div id="ventana" class="ventana">
+            <div class="icono">
+                <i class="fas fa-user-graduate"></i> <!-- Cambia "fas fa-user" por la clase del icono que desees usar -->
+            </div>
+            <div class="contenido">
+                <p class="mensaje">Se está gestionando el estudiante</p>
+                <p class="nombre-estudiante">Nombre del Estudiante</p>
+            </div>
+        </div>
+        </div>
+    </div>      
+   
+    <div class="container py-4">
+      <h2 class="titulo">Formatos</h2>
+      <div class="table-responsive ">
+        <table class="table table-striped rounded">
+            <thead>
+                <tr>
+                    <th>Tipo Formato</th>
+                    <th>Estado</th>
+                    <th>Asesor</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+              
+                </tr>
+              </thead>
+            <tbody>
+             
+                <tr>
+                  <td>A </td>
+                  <td>Aprobado</td>
+                  <td>Nestor Díaz</td>
+                  <td>17-10-23  </td>
+                  <td> 
+                    <div class="button-container">
+                      <button class="btn btn-primary"  title="Editar">
+                        <i class="fas fa-pencil-alt"></i>
+                      </button>
+                  
+                      <button class="btn btn-danger"  title="Eliminar" style="margin-left: 5px;">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+             
+        </tbody>
+                  
+        </table>
+    </div>
+    </div>
+
+  
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
+

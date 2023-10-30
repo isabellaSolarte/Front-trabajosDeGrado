@@ -24,11 +24,7 @@ export class AdministradorCrearComponent {
     _correo: ''
   };
   
-  constructor(private router:Router,private services:AdministradorService){
-    this.roles = [
-      { _id: 1, _nombre: 'Director' },
-    ];
-  }
+  constructor(private router:Router,private services:AdministradorService){}
   mostrarMensaje: boolean = false;
   ngOnInit(): void {
     this.getRoles();
@@ -66,10 +62,12 @@ export class AdministradorCrearComponent {
         err => console.error(err)
         
       );
-      
+     
     }
   }
+  
   cerrarMensaje() {
+    this.mostrarMensaje= false;
     this.router.navigate(['/administrador']);
   }
  
