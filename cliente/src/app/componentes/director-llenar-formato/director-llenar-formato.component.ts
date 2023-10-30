@@ -29,14 +29,14 @@ constructor(private router: Router,private services:DirectorService){
 guardarFormato(){
   if(this.formato)
   console.log(this.formato);
-  this.services.saveFormatoA(this.formato).subscribe(
+ /* this.services.saveFormatoA(this.formato).subscribe(
     res => {
       console.log(res);
       // Mostrar el mensaje de confirmación
       this.mostrarMensaje = true;
     },
     err => console.error(err)
-    )
+    )*/
 
 }
 cerrarMensaje() {
