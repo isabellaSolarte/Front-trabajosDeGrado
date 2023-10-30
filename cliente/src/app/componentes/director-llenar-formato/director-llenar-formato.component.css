@@ -101,6 +101,18 @@ label[for="rol"] {
   max-height: 150px; /* Altura máxima para el textarea antes de desplazarse */
   overflow-y: auto; /* Agrega desplazamiento si el contenido supera la altura máxima */
 }
+@media (max-width: 767px) {
+  .col-md-6 {
+    width: 100%; /* Asegura que cada columna ocupe todo el ancho en dispositivos pequeños */
+    margin-bottom: 20px; /* Agrega espacio entre las columnas */
+}
+  .form-group {
+      margin-bottom: 30px; /* Ajusta el margen inferior de los grupos de formulario */
+  }
+  .Botón-crear {
+      text-align: center;
+  }
+}
 
 /*Footer*/
 #footer {
