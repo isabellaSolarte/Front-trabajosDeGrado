@@ -11,6 +11,8 @@ import { Proceso } from '../modelo/Proceso';
 })
 export class DirectorLlenarFormatoComponent {
   mostrarMensaje: boolean = false;
+  bloquearAsesor = false; 
+  bloquearEstudiante2 = false;
   formato:Formato={
     _id:0,
     _objetivos:'',
@@ -68,7 +70,7 @@ async guardarProceso(): Promise<number> {
     return response.id;
   } catch (error) {
     console.error(error);
-    return 0; // Puedes manejar el error como mejor te parezca
+    return 0; 
   }
 }
 
@@ -84,7 +86,19 @@ private createProcesoAsync(proceso: Proceso): Promise<Proceso> {
     );
   });
 }
+tipoDePropuestaSeleccionado() {
+  if (this.proceso.tipo === 'Trabajo de investigación') {
+    this.bloquearAsesor = true; // Bloquear asesor
+    this.bloquearEstudiante2 = false; // Desbloquear estudiante 2
+  } else if (this.proceso.tipo === 'Práctica profesional') {
+    this.bloquearEstudiante2 = true; // Bloquear estudiante 2
+    this.bloquearAsesor = false; // Desbloquear asesor
+  } else {
+    this.bloquearAsesor = false; // Desbloquear asesor
+    this.bloquearEstudiante2 = false; // Desbloquear estudiante 2
+  }
+}
 cerrarMensaje() {
-  this.router.navigate(['/administrador']);
+  this.router.navigate(['/directorMain']);
 }
 }
