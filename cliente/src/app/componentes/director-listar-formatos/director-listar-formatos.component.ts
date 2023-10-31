@@ -12,7 +12,7 @@ import { Estudiante } from '../modelo/Estudiante';
 })
 export class DirectorListarFormatosComponent {
   constructor(private router: Router,private services:DirectorService,private route: ActivatedRoute){}
-  estudiantes:number[]=[];
+  //estudiantes:number[]=[];
   estudiante:Estudiante={
     _codigo:0,
    _proceso:0,
@@ -49,7 +49,6 @@ export class DirectorListarFormatosComponent {
   };
   ngOnInit():void{
     this.mostrarFormatosProceso();
-    this.mostrarEstudiantes();
   }
   mostrarEstudiantes(){
     console.log(this.proceso.estudiantes[0]);
@@ -97,7 +96,6 @@ export class DirectorListarFormatosComponent {
     try {
       const response = await this.mostrarFormatosAsync();
       this.proceso = response;
-      this.estudiantes = this.proceso.estudiantes;
       console.log(this.proceso);
       return response.id;
     } catch (error) {
