@@ -1,6 +1,6 @@
 export interface Estudiante{
-   EST_CODIGO:number;
-   PRC_ID:number;
-   EST_NOMBRE:string;
-   EST_CORREO:string;
+   _codigo:number;
+   _proceso:number;
+   _nombre:string;
+   _correo:string;
 }

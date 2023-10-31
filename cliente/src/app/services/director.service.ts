@@ -16,11 +16,17 @@ export class DirectorService {
   getProcesses(){
     return this.http.get(`${this.API_URI}/procesos/`);
   }
-  getFormatos(id: number){
+  getFormato(id: number){
     return this.http.get(`${this.API_URI}/formatoA/${id}`);
   }
   createProceso(proceso:Proceso){
     return this.http.post(`${this.API_URI}/procesos`,proceso);
+  }
+  getFormatosId(id:number){
+    return this.http.get(`${this.API_URI}/procesos/${id}`);
+  }
+  getEstudiante(id:number){
+    return this.http.get(`${this.API_URI}/estudiantes/${id}`);
   }
 
 }

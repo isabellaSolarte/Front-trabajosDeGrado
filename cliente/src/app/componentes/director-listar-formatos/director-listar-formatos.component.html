@@ -15,15 +15,15 @@
     <div class="container py-4">
         <h1 class="titulo">Procesos Delegados</h1> 
         <div class="grid text-right" >
-          <div id="ventana" class="ventana">
+          <!--<div id="ventana" class="ventana">
             <div class="icono">
-                <i class="fas fa-user-graduate"></i> <!-- Cambia "fas fa-user" por la clase del icono que desees usar -->
+                <i class="fas fa-user-graduate"></i> <!-- Cambia "fas fa-user" por la clase del icono que desees usar 
             </div>
             <div class="contenido">
                 <p class="mensaje">Se está gestionando el estudiante</p>
-                <p class="nombre-estudiante">Nombre del Estudiante</p>
+                <p class="nombre-estudiante">{{estudiante._nombre}}</p>
             </div>
-        </div>
+        </div>-->
         </div>
     </div>      
    
@@ -34,31 +34,19 @@
             <thead>
                 <tr>
                     <th>Tipo Formato</th>
-                    <th>Estado</th>
-                    <th>Asesor</th>
+                    <th>Título</th>
                     <th>Fecha</th>
-                    <th>Acciones</th>
+                    <th>Tiempo estimado de realización</th>
               
                 </tr>
               </thead>
             <tbody>
              
                 <tr>
-                  <td>A </td>
-                  <td>Aprobado</td>
-                  <td>Nestor Díaz</td>
-                  <td>17-10-23  </td>
-                  <td> 
-                    <div class="button-container">
-                      <button class="btn btn-primary"  title="Editar">
-                        <i class="fas fa-pencil-alt"></i>
-                      </button>
-                  
-                      <button class="btn btn-danger"  title="Eliminar" style="margin-left: 5px;">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </div>
-                  </td>
+                  <td> A </td>
+                  <td>{{proceso.titulo}}</td>
+                  <td>{{formato._revision}}</td>
+                  <td>{{formato._realizacion}}</td>
                 </tr>
              
         </tbody>
