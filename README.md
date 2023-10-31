@@ -44,11 +44,13 @@ se necesita ajustar las pruebas para que apunten a la direccion ip adecuada.
 Los resultados seran plasmados a detalle en un documento de excel llamado
 `Bateria_de_pruebas_Gestion_Trabajos_grados` ubicado en Test/
 
-A continuacion se muestra un gif que muestra el proceso de ejecucion junto con una serie de tablas que resumen las pruebas realizadas, esta ejecucion tambien se encuentra como video presente en el repositorio en la ubicacion `Test/img/vid_test_run_1.mp4` o tambien en Youtube (Click en la imagen GIF).
+A continuacion se muestra un gif que muestra el proceso de ejecucion junto con una serie de tablas que resumen las pruebas realizadas, esta ejecucion corresponde a la `iteracion 1` y tambien se encuentra como video presente en el repositorio en la ubicacion `Test/img/vid_test_run_1.mp4` o tambien en Youtube (Click en la imagen GIF).
 
 [![Selenium IDE (Executing run all tests)](Test/img/gif_test_run_1.gif)](https://www.youtube.com/embed/OEZgHWcUAYk)
 
-### **Tests suit Users**
+### **Tests Gestion de usuarios**
+
+#### Iteracion 2
 | # Test | Descripcion | Resultado | Observacion |
 |--------|-------------|-----------|-----------|
 | 1 | Buscar userTest (ID = 0) | Exito ||
@@ -67,7 +69,7 @@ A continuacion se muestra un gif que muestra el proceso de ejecucion junto con u
 | 14 | Editar usuario (ID = 0) sin rol y con los demas campos vacios | Fallo | Al presionar el boton guardar el servidor se detiene inesperadamente. |
 | 15 | Editar usuario (ID = 0) con rol seleccionado y los demas campos vacios | Fallo | Al presionar el boton guardar se permite guardar un usuario con campos vacios. |
 
-### **Tests suit Formatos**
+### **Tests Gestion de formatos**
 | # Test | Descripcion | Resultado | Observacion |
 |--------|-------------|-----------|-----------|
 | 1 | Subir formato  |  | |
