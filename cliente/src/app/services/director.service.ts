@@ -17,7 +17,7 @@ export class DirectorService {
     return this.http.get(`${this.API_URI}/procesos/`);
   }
   getFormatos(id: number){
-    return this.http.get(`${this.API_URI}/procesos/${id}`);
+    return this.http.get(`${this.API_URI}/formatoA/${id}`);
   }
   createProceso(proceso:Proceso){
     return this.http.post(`${this.API_URI}/procesos`,proceso);

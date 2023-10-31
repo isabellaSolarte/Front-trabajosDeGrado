@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'editarUsuario/:id', component: AdministradorEditarComponent },
   { path: 'directorLlenarFormato', component: DirectorLlenarFormatoComponent },
   { path: 'directorMain', component: DirectorMainComponent },
-  { path: 'directorListar', component: DirectorListarFormatosComponent }
+  { path: 'directorListar/:id', component: DirectorListarFormatosComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
