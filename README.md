@@ -48,6 +48,10 @@ A continuacion se muestra un gif que muestra el proceso de ejecucion junto con u
 
 [![Selenium IDE (Executing run all tests)](Test/img/gif_test_run_1.gif)](https://www.youtube.com/embed/OEZgHWcUAYk)
 
+El siguiente es la ejecucion del test 2 donde se prueba el modulo Gestion de formatos que corresponde a la iteracion 1, este video se encuentra disponible en e; presente repositorio en la ubicacion `Test/img/vid_test_run_2.mp4` o tambien en Youtube (Click en link).
+[vid_test_run_2](https://www.youtube.com/embed/D79x5HcFa38?si=KzgtlI_27KPd5k6v)
+
+
 ### **Tests Gestion de usuarios**
 
 #### Iteracion 2
