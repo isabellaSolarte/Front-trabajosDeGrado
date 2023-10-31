@@ -27,7 +27,7 @@
                     <h5 class="card-title">Estudiantes</h5>
                     <p class="card-text" *ngFor="let nombre of proceso.estudiantes">{{nombre}}</p>
                     <div class="text-center">
-                        <a class="btn btn-primary custom-button" (click)="irVerFormatos()">Ver formatos</a>
+                        <a class="btn btn-primary custom-button" (click)="irVerFormatos(proceso.id)">Ver formatos</a>
                     </div>
                 </div>
             </div>

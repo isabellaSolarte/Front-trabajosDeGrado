@@ -11,6 +11,8 @@ import { Proceso } from '../modelo/Proceso';
 })
 export class DirectorLlenarFormatoComponent {
   mostrarMensaje: boolean = false;
+  bloquearAsesor = false; 
+  bloquearEstudiante2 = false;
   formato:Formato={
     _id:0,
     _objetivos:'',
@@ -26,7 +28,7 @@ export class DirectorLlenarFormatoComponent {
   };
   proceso:Proceso={
     id:0,
-    usuario:546,
+    usuario:1002777704,
     fa:0,
     fb:0,
     fc:0,
@@ -41,34 +43,61 @@ export class DirectorLlenarFormatoComponent {
 constructor(private router: Router,private services:DirectorService){
 
 }
-guardarFormatoProceso(){
-  this.guardarProceso();
-  //this.guardarFormato();
-}
-guardarFormato(){
-  if(this.formato)
-  console.log(this.formato);
- /* this.services.saveFormatoA(this.formato).subscribe(
-    res => {
-      console.log(res);
-      // Mostrar el mensaje de confirmación
+  async guardarFormatoProceso(){
+    const id = await this.guardarProceso();
+    console.log(id);
+    if(id != 0)
+      this.guardarFormato(id);
+    else  console.log('error')
+  }
+  guardarFormato(id:number){
+    console.log(this.formato);
+    this.services.saveFormatoA(this.formato,id).subscribe(
+      res => {
+        console.log(res);
+        // Mostrar el mensaje de confirmación
+        this.mostrarMensaje = true;
+      },
+      err => console.error(err)
+      )
+  }
+  async guardarProceso(): Promise<number> {
+    console.log(this.proceso);
+    try {
+      const response = await this.createProcesoAsync(this.proceso);
+      console.log(response);
       this.mostrarMensaje = true;
-    },
-    err => console.error(err)
-    )*/
-}
-guardarProceso(){
-  console.log(this.proceso);
-  this.services.createProceso(this.proceso).subscribe(
-    res => {
-      console.log(res);
-      // Mostrar el mensaje de confirmación
-      this.mostrarMensaje = true;
-    },
-    err => console.error(err)
-  )
-}
-cerrarMensaje() {
-  this.router.navigate(['/administrador']);
-}
+      return response.id;
+    } catch (error) {
+      console.error(error);
+      return 0; 
+    }
+  }
+  private createProcesoAsync(proceso: Proceso): Promise<Proceso> {
+    return new Promise<Proceso>((resolve, reject) => {
+      this.services.createProceso(proceso).subscribe(
+        (res: Proceso|any) => {
+          resolve(res);
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
+  tipoDePropuestaSeleccionado() {
+    if (this.proceso.tipo === 'Trabajo de investigación') {
+      this.bloquearAsesor = true; // Bloquear asesor
+      this.bloquearEstudiante2 = false; // Desbloquear estudiante 2
+    } else if (this.proceso.tipo === 'Práctica profesional') {
+      this.bloquearEstudiante2 = true; // Bloquear estudiante 2
+      this.bloquearAsesor = false; // Desbloquear asesor
+    } else {
+      this.bloquearAsesor = false; // Desbloquear asesor
+      this.bloquearEstudiante2 = false; // Desbloquear estudiante 2
+    }
+  }
+  cerrarMensaje() {
+    this.router.navigate(['/directorMain']);
+  }
 }
