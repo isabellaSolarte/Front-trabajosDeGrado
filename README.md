@@ -49,18 +49,25 @@ A continuacion se muestra un gif que muestra el proceso de ejecucion junto con u
 [![Selenium IDE (Executing run all tests)](Test/img/gif_test_run_1.gif)](https://www.youtube.com/embed/OEZgHWcUAYk)
 
 ### **Tests suit Users**
-| # Test | Descripcion | Resultado |
-|--------|-------------|-----------|
-| 1 | Buscar userTest (id = 0) | Exito |
-| 2 | Crear el usuario (ID = 1060) | Exito |
-| 3 | Crear el usuario (ID = 1061) | Exito |
-| 4 | Buscar el usuario (ID = 1060) | Exito |
-| 5 | Buscar el usuario (ID = 1061) | Exito |
-| 6 | Eliminar el usuario (ID = 1060) | Exito |
-| 7 | Eliminar el usuario (ID = 1061) | Exito |
-||TO DO: Others||
+| # Test | Descripcion | Resultado | Observacion |
+|--------|-------------|-----------|-----------|
+| 1 | Buscar userTest (ID = 0) | Exito ||
+| 2 | Crear el usuario (ID = 1060) | Exito ||
+| 3 | Crear el usuario (ID = 1061) | Exito ||
+| 4 | Buscar el usuario (ID = 1060) | Exito ||
+| 5 | Buscar el usuario (ID = 1061) | Exito ||
+| 6 | Eliminar el usuario (ID = 1060) | Exito ||
+| 7 | Eliminar el usuario (ID = 1061) | Exito ||
+| 8 | Crear usuario sin ID y con rol seleccionado | Exito | La prueba es exitosa porque impide la creación de un usuario sin un ID, sin embargo, no se proporciona al usuario final información acerca de por qué la creación no se llevó a cabo. |
+| 9 | Crear usuario (ID = xyz) y con rol seleccionado | Exito | La prueba es exitosa porque impide la creación de un usuario con ID alfabetico, sin embargo, no se proporciona al usuario final información acerca de por qué la creación no se llevó a cabo. |
+| 10 | Crear usuario sin  Rol | Fallo | Al presionar el boton guardar el servidor se detiene inesperadamente. |
+| 11 | Crear usuario sin rol y con campos vacios | Fallo | Al presionar el boton guardar el servidor se detiene inesperadamente. |
+| 12 | Crear usuario con (ID = 99) sin Rol y los demas campos vacios | Fallo | Al presionar el boton guardar el servidor se detiene inesperadamente. |
+| 13 | Crear usuario con (ID = 99) con rol seleccionado y los demas campos vacios | Fallo | Al presionar el boton guardar se permite crear el usuario 99 con los campos vacios. |
+| 14 | Editar usuario (ID = 0) sin rol y con los demas campos vacios | Fallo | Al presionar el boton guardar el servidor se detiene inesperadamente. |
+| 15 | Editar usuario (ID = 0) con rol seleccionado y los demas campos vacios | Fallo | Al presionar el boton guardar se permite guardar un usuario con campos vacios. |
 
 ### **Tests suit Formatos**
-| # Test | Descripcion | Resultado |
-|--------|-------------|-----------|
-| 1 | Subir formato  |  |
+| # Test | Descripcion | Resultado | Observacion |
+|--------|-------------|-----------|-----------|
+| 1 | Subir formato  |  | |
