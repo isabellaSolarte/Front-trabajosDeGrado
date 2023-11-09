@@ -103,7 +103,10 @@ export class DirectorListarFormatosComponent {
       return 0; 
     }
   }
+  enviarFormatoJefatura(){
+    //TO-DO ruta con el id del formato this.proceso.fa
 
+  }
   irSubirFormato(){
     this.router.navigate(['/directorLlenarFormato']);
   }

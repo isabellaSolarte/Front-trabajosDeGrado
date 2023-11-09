@@ -61,7 +61,7 @@
 /*Botón tabla*/
 .button-container {
   display: flex;
-  flex-direction: column; /* Los botones se apilarán verticalmente */
+  flex-direction:row; /* Los botones se apilarán verticalmente */
 }
 
 /* Estilos adicionales para ajustar el espaciado y alineación */

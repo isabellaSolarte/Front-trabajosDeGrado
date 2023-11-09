@@ -20,7 +20,12 @@
 .titulo-pagina h1{
     color: #525663;
 }
-/**/
+@media (max-width: 768px) {
+  .titulo {
+      font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+}
+/*imagen*/
 .imagen-superpuesta {
     position: relative;
     width: 100%;
