@@ -16,15 +16,8 @@
     flex: 1;
     padding-left: 10px;
 }
-
-.navbar-top {
-    background-color: #13245E;
-    width: 100%;
-    height: 20px;
-}
-
 .titulo-pagina h1{
-    color: #525663;
+  color: #5c6a97;
 }
 @media (max-width: 768px) {
   .titulo {
@@ -34,6 +27,11 @@
 .show {
   /* Estilos para hacer visible el modal */
   display: block; /* o visibility: visible; u otros estilos */
+}
+.navbar-top {
+  background-color: #13245E;
+  width: 100%;
+  height: 20px;
 }
 
 /*Form*/
@@ -45,33 +43,27 @@
   margin-top: 60px;
   max-width: 700px; /* Ajusta el ancho máximo según tus preferencias */
 }
-
-
-.form-group {
-margin-bottom: 10px;
-}
-
-/* Estilo personalizado para la etiqueta 'Rol' en el formulario */
-label[for="rol"] {
-margin-top: 10px;
-}
+  .form-group {
+    margin-bottom: 10px;
+  }
+  label[for="rol"] {
+    margin-top: 10px;
+  }
 
 .form-control {
 font-size: 12px; /* Ajusta el tamaño de fuente según tus preferencias */
 padding: 5px 10px; /* Ajusta el espaciado interno (padding) para reducir el tamaño del campo */
 } 
-.btn-custom {
-
-background-color: #13245E;
-
-color: #F8F8F8;
-margin-top: 20px; /* Espacio superior para separar el botón del formulario */
-}
-.Botón-crear{
-align-items: center;
-justify-content: center;
-display: flex;
-}
+  .btn-custom {
+  background-color: #13245E;
+  color: #F8F8F8;
+  margin-top: 20px; /* Espacio superior para separar el botón del formulario */
+  }
+  .Botón-crear{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  }
 /* Estilo para el asterisco rojo */
 .required {
   color: red;
