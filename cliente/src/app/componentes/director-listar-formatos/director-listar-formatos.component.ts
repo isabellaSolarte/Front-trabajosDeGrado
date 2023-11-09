@@ -105,6 +105,13 @@ export class DirectorListarFormatosComponent {
   }
   enviarFormatoJefatura(){
     //TO-DO ruta con el id del formato this.proceso.fa
+    console.error(this.proceso.fa);
+    this.services.sendFormato(this.proceso.fa).subscribe(
+      (res: any) => {
+        console.error("se envió el formato");
+      },
+      err => console.error(err)
+      )
 
   }
   irSubirFormato(){
