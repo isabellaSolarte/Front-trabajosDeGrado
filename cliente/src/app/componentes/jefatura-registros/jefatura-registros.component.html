@@ -30,7 +30,7 @@
                                 <li *ngFor="let estudiante of revision.estudiantes">{{estudiante.nombre}}</li>
                             </ul>
                         </td>
-                        <td>{{revision.estado}}</td>
+                        <td>{{getEstado(revision.estado)}}</td>
                         <td>{{revision.no_revision}}</td>
                         <td>
                             <div class="button-container">

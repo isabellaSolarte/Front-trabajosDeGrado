@@ -11,6 +11,10 @@ import { JefaturaService } from 'src/app/services/jefatura.service';
 })
 export class JefaturaRegistrosComponent {
   revisiones:RevisionA[]=[];
+  estados: { [key: number]: string } = {
+    1: 'Pendiente',
+    2: 'En revisión'
+  };
   constructor(private router: Router, private services:JefaturaService){}
   ngOnInit(): void {
     this.getRevisiones();
@@ -23,6 +27,9 @@ export class JefaturaRegistrosComponent {
       },
       err => console.log(err)
     );
+  }
+  getEstado(state:number){
+    return this.estados[state];
   }
   //getRevisiones
 }
