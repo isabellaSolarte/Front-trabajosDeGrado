@@ -13,6 +13,7 @@ import { Estudiante } from '../modelo/Estudiante';
 export class DirectorListarFormatosComponent {
   constructor(private router: Router,private services:DirectorService,private route: ActivatedRoute){}
   //estudiantes:number[]=[];
+  mostrarMensaje: boolean = false;
   estudiante:Estudiante={
     _codigo:0,
    _proceso:0,
@@ -108,11 +109,15 @@ export class DirectorListarFormatosComponent {
     console.log(this.proceso.fa);
     this.services.sendFormato(this.proceso.fa).subscribe(
       (res: any) => {
+        this.mostrarMensaje = true;
         console.log("se envió el formato");
       },
       err => console.error(err)
       )
 
+  }
+  cerrarMensaje() {
+    this.mostrarMensaje=false;
   }
   irSubirFormato(){
     this.router.navigate(['/directorLlenarFormato']);
