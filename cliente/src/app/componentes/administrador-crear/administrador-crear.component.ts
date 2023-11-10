@@ -65,7 +65,9 @@ export class AdministradorCrearComponent {
      
     }
   }
-  
+  cancelar(){
+      this.router.navigate(['/administrador']);
+  }
   cerrarMensaje() {
     this.mostrarMensaje= false;
     this.router.navigate(['/administrador']);

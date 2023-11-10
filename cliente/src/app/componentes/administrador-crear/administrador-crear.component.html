@@ -51,40 +51,41 @@
       </div>
     </div>
   <!-- administrador-crear.component.html -->
+    <div class="Botón-crear">
+      <button (click)="cancelar()" class="btn btn-cancelar">Cancelar</button>
+      <button (click)="guardarUsuario()" class="btn btn-guardar" >Guardar</button>
+    </div>
+  </div>
 
-  <div class="Botón-crear">
-    <button class="btn btn-custom" (click)="guardarUsuario()" >Guardar</button>
-</div>
-<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': mostrarMensaje}">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Usuario Agregado</h5>
-        <button type="button" class="close" (click)="cerrarMensaje()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        El usuario se ha creado correctamente.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="cerrarMensaje()">OK</button>
+  <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': mostrarMensaje}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Usuario Agregado</h5>
+          <button type="button" class="close" (click)="cerrarMensaje()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          El usuario se ha creado correctamente.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="cerrarMensaje()">OK</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-  </div>
-</div>
 
-<div id="footer" class="footer-con-imagen d-none d-md-block" >
-  <div class="imagen-con-textoF">
-    <div class="texto-con-lineaF">
-      <div class="linea-verticalF">
-        <span>
-          © 2023 Universidad del Cauca, Inc.
-        </span>
+  <div id="footer" class="footer-con-imagen d-none d-md-block" >
+    <div class="imagen-con-textoF">
+      <div class="texto-con-lineaF">
+        <div class="linea-verticalF">
+          <span>
+            © 2023 Universidad del Cauca, Inc.
+          </span>
+        </div>
+        <span>Terms Privacy Security</span>
       </div>
-      <span>Terms Privacy Security</span>
     </div>
-  </div>
-</div> 
+  </div> 
+</div>

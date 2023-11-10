@@ -28,5 +28,7 @@ export class DirectorService {
   getEstudiante(id:number){
     return this.http.get(`${this.API_URI}/estudiantes/${id}`);
   }
-
+  sendFormato(id: number) {
+    return this.http.patch(`${this.API_URI}/procesos/formatosa/${id}`, {id});
+  }
 }

@@ -14,17 +14,6 @@
       </nav>
     <div class="container py-4">
         <h1 class="titulo">Procesos Delegados</h1> 
-        <div class="grid text-right" >
-          <!--<div id="ventana" class="ventana">
-            <div class="icono">
-                <i class="fas fa-user-graduate"></i> <!-- Cambia "fas fa-user" por la clase del icono que desees usar 
-            </div>
-            <div class="contenido">
-                <p class="mensaje">Se está gestionando el estudiante</p>
-                <p class="nombre-estudiante">{{estudiante._nombre}}</p>
-            </div>
-        </div>-->
-        </div>
     </div>      
    
     <div class="container py-4">
@@ -37,6 +26,7 @@
                     <th>Título</th>
                     <th>Fecha</th>
                     <th>Tiempo estimado de realización</th>
+                    <th>Enviar formato jefatura</th>
               
                 </tr>
               </thead>
@@ -47,6 +37,9 @@
                   <td>{{proceso.titulo}}</td>
                   <td>{{formato._revision}}</td>
                   <td>{{formato._realizacion}}</td>
+                  <td>
+                    <button class="btn btn-enviar" (click)="enviarFormatoJefatura()" title="Enviar">Enviar</button>
+                  </td>
                 </tr>
              
         </tbody>

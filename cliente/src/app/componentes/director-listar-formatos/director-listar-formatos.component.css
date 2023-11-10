@@ -41,6 +41,15 @@
 .titulo{
     color: #525663; 
 }
+
+/*Boton enviar*/
+.btn-enviar{
+  background-color: #13245E;
+  height: 45px;
+  width: 100px;
+  color: #fff;
+}
+
 /*Footer*/
 #footer {
     display: flex;

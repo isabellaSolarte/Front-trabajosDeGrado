@@ -14,6 +14,9 @@ import { DirectorMainComponent } from './componentes/director-main/director-main
 import { DirectorListarFormatosComponent } from './componentes/director-listar-formatos/director-listar-formatos.component';
 import { DirectorLlenarFormatoComponent } from './componentes/director-llenar-formato/director-llenar-formato.component';
 import { DirectorService } from './services/director.service';
+import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jefatura-registros.component';
+import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main.component';
+import { JefaturaService } from './services/jefatura.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { DirectorService } from './services/director.service';
     DirectorMainComponent,
     DirectorListarFormatosComponent,
     DirectorLlenarFormatoComponent,
-    DirectorLlenarFormatoComponent
+    DirectorLlenarFormatoComponent,
+    JefaturaRegistrosComponent,
+    JefaturaMainComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,7 @@ import { DirectorService } from './services/director.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService,DirectorService],
+  providers: [AdministradorService,DirectorService,JefaturaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

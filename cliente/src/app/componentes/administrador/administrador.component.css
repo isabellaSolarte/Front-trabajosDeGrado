@@ -39,11 +39,7 @@
     background-color: #13245E;
     color: #F8F8F8;
 }
-/*@media (max-width: 768px) {
-  .titulo {
-      font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas 
-  }
-}
+
 
 /*tabla*/
 .password-cell {
@@ -65,7 +61,7 @@
 /*Botón tabla*/
 .button-container {
   display: flex;
-  flex-direction: column; /* Los botones se apilarán verticalmente */
+  flex-direction:row; /* Los botones se apilarán verticalmente */
 }
 
 /* Estilos adicionales para ajustar el espaciado y alineación */
@@ -92,10 +88,6 @@
     padding: 10px;
     background: #D67E18;
     height: 50px;
-  }
-  .imagen-con-textoF{
-    display: flex;
-    align-items: center;
   }
   .texto-con-lineaF{
     display: flex;
