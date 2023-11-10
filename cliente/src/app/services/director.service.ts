@@ -31,7 +31,4 @@ export class DirectorService {
   sendFormato(id: number) {
     return this.http.patch(`${this.API_URI}/procesos/formatosa/${id}`, {id});
   }
-  
-  
-
 }

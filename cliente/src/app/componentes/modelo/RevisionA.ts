@@ -6,4 +6,5 @@ export interface RevisionA
     tipo:string;
     estudiantes:EstudianteBasico[];
     estado:number;
+    no_revision:number;
 }

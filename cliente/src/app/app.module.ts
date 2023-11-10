@@ -16,6 +16,7 @@ import { DirectorLlenarFormatoComponent } from './componentes/director-llenar-fo
 import { DirectorService } from './services/director.service';
 import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jefatura-registros.component';
 import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main.component';
+import { JefaturaService } from './services/jefatura.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService,DirectorService],
+  providers: [AdministradorService,DirectorService,JefaturaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
