@@ -28,7 +28,7 @@
               </thead>
               <tbody>
                   <ng-container *ngFor="let usuario of usuarios; let i = index">
-                     
+                      <tr>
                         <td>{{usuario._id}}</td>
                         <td>{{usuario._nombre}}</td>
                         <td>{{usuario._login}}</td>
@@ -58,7 +58,7 @@
                             </button>
                           </div>
                         </td>
-                      
+                      </tr>
                     </ng-container>
               </tbody>
           </table>
