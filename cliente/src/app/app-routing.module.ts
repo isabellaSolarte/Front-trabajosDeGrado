@@ -8,6 +8,7 @@ import { DirectorMainComponent } from './componentes/director-main/director-main
 import { DirectorListarFormatosComponent } from './componentes/director-listar-formatos/director-listar-formatos.component';
 import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main.component';
 import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jefatura-registros.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'directorMain', component: DirectorMainComponent },
   { path: 'directorListar/:id', component: DirectorListarFormatosComponent },
   { path: 'jefaturaMain', component: JefaturaMainComponent },
-  { path:'jefaturaRegistro', component:JefaturaRegistrosComponent }
+  { path:'jefaturaRegistro', component:JefaturaRegistrosComponent },
+  { path:'login', component:LoginComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
