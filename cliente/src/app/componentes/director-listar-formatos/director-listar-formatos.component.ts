@@ -107,7 +107,7 @@ export class DirectorListarFormatosComponent {
   enviarFormatoJefatura(){
     //TO-DO ruta con el id del formato this.proceso.fa
     console.log(this.proceso.fa);
-    this.services.sendFormato(this.proceso.fa).subscribe(
+    this.services.sendFormato(this.proceso.fa,this.proceso.id).subscribe(
       (res: any) => {
         this.mostrarMensaje = true;
         console.log("se envió el formato");
