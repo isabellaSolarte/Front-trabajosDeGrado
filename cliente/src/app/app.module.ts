@@ -17,6 +17,7 @@ import { DirectorService } from './services/director.service';
 import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jefatura-registros.component';
 import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main.component';
 import { JefaturaService } from './services/jefatura.service';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { JefaturaService } from './services/jefatura.service';
     DirectorLlenarFormatoComponent,
     JefaturaRegistrosComponent,
     JefaturaMainComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
