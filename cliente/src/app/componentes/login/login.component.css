@@ -9,10 +9,9 @@
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat; /* Evitar que la imagen se repita */
-    height: 95vh;
+    height: 95.91vh;
     margin: 0;
     position:relative; /* Añadido para posicionar correctamente el contenido sobre el fondo */
-
   }
 
 
