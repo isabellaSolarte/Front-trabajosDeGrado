@@ -18,6 +18,8 @@ import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jef
 import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main.component';
 import { JefaturaService } from './services/jefatura.service';
 import { LoginComponent } from './componentes/login/login.component';
+import { UsuarioService } from './services/usuarios.service';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { LoginComponent } from './componentes/login/login.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService,DirectorService,JefaturaService],
+  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

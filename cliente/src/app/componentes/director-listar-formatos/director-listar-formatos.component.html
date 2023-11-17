@@ -35,7 +35,7 @@
                 <tr>
                   <td> A </td>
                   <td>{{proceso.titulo}}</td>
-                  <td>{{formato._revision}}</td>
+                  <td>{{formato._revision | date:'shortDate'}}</td>
                   <td>{{formato._realizacion}}</td>
                   <td>
                     <button class="btn btn-enviar" (click)="enviarFormatoJefatura()" title="Enviar">Enviar</button>

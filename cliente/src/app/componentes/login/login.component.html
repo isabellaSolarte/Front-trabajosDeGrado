@@ -11,9 +11,9 @@
       <img src="../../../assets/graduacion.png" alt="Grado" class="grado">
       <h3>Iniciar Sesión</h3>
       <form class="login-form">
-        <input type="text" placeholder="Usuario" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button type="submit">Ingresar</button>
+        <input name="login" [(ngModel)]="creenciales._username" type="text" placeholder="Usuario" required>
+        <input name="password" [(ngModel)]="creenciales._clave" type="password" placeholder="Contraseña" required>
+        <button (click)='login()' type="submit" value="Log In">Ingresar</button>
       </form>
     </div>
   </div>
