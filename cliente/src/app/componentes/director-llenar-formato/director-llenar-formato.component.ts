@@ -3,6 +3,7 @@ import { Formato } from '../modelo/FormatoADirector';
 import { Router } from '@angular/router';
 import { DirectorService } from 'src/app/services/director.service';
 import { Proceso } from '../modelo/Proceso';
+import { Estudiante } from '../modelo/Estudiante';
 
 @Component({
   selector: 'app-director-llenar-formato',
@@ -40,8 +41,34 @@ export class DirectorLlenarFormatoComponent {
     tipo:'',
     estudiantes:[]
   };
+  public nombres:String[];
+  public estudiantes:Estudiante[];
 constructor(private router: Router,private services:DirectorService){
+  this.estudiantes = [];
+  this.nombres = ['No encontrado','No encontrado'];
+}
+ngOnInit(){
+  this.recuperarEstudiantes();
+}
+actualizarEstudiante(i:number)
+{
+  console.log(this.proceso.estudiantes);
+  const estudiante:Estudiante|undefined = this.estudiantes.find(obj => obj._codigo === this.proceso.estudiantes[i]);
+  if(estudiante)
+  {
+    this.nombres[i] = estudiante._nombre;
+  }else{
+    this.nombres[i] = 'No encontrado';
+  }
+}
+async recuperarEstudiantes(){
 
+  this.services.getEstudiantes().subscribe(
+    res => {
+      this.estudiantes = res as Estudiante[];
+    },
+    err => console.error(err)
+    );
 }
   async guardarFormatoProceso(){
     const id = await this.guardarProceso();
