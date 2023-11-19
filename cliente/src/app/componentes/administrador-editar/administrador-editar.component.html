@@ -16,9 +16,10 @@
                                     <label for="identificacion">Identificación<span class="required">*</span></label>
                                     <input type="text" class="form-control" id="identificacion" name="_id" [(ngModel)]="usuario._id" placeholder="Identificación"[disabled]="isDisabled">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group"[ngClass]="{'has-error': nombreError}">
                                     <label for="nombres">Nombre <span class="required">*</span></label>
-                                    <input type="text" class="form-control" id="nombres" name="_nombre" [(ngModel)]="usuario._nombre" placeholder="Nombres">
+                                    <input type="text" class="form-control" id="nombres" name="_nombre" [(ngModel)]="usuario._nombre" placeholder="Nombres"(blur)="validarNombre()">
+                                    <div *ngIf="nombreError" class="error-message">Error! El nombre debe contener solo caracteres no numéricos.</div>
                                 </div>
                                 <div class="form-group">
                                     <label for="correo">Correo<span class="required">*</span></label>
@@ -32,15 +33,17 @@
                         <!-- Columna Derecha -->
                         <div class="col-md-6 col-md-6 col-xs-12 col-sm-6 col-md-6 col-lg-6">
                             <form class="scrollable-form">
-                                <div class="form-group">
+                                <div class="form-group"[ngClass]="{'has-error': usuarioError}">
                                     <label for="usuario">Usuario<span class="required">*</span></label>
-                                    <input type="text" class="form-control" id="usuario" name="_login" [(ngModel)]="usuario._login" placeholder="Usuario">
+                                    <input type="text" class="form-control" id="usuario" name="_login" [(ngModel)]="usuario._login" placeholder="Usuario"(blur)="validarUsuario()">
+                                    <div *ngIf="usuarioError" class="error-message">Error! El usuario debe contener solo caracteres no numéricos.</div>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="contrasena">Contraseña<span class="required">*</span></label>
                                     <input type="password" class="form-control" id="contrasena" name="_password" [(ngModel)]="usuario._password" placeholder="Contraseña"[disabled]="isDisabled">
                                 </div>
-                                <div class="form-group checkbox-list">
+                                <div class="form-group checkbox-list"[ngClass]="{'has-error': rolError}">
                                     <label for="roles">Roles</label>
                                     <div *ngFor="let role of roles" class="checkbox-item">
                                         <input type="checkbox" id="role_{{role._id}}" 
@@ -48,6 +51,7 @@
                                             (change)="toggleRoleSelection(role)">
                                         <label for="role_{{role._id}}">{{role._nombre}}</label>
                                     </div>
+                                    <div *ngIf="rolError" class="error-message">Debe seleccionar al menos una opción de rol.</div>                  
                                 </div>
                                 
                             </form>

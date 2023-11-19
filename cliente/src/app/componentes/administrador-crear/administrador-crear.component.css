@@ -153,4 +153,15 @@ padding: 5px 10px; /* Ajusta el espaciado interno (padding) para reducir el tama
     display: flex;
     flex-direction: column;
   }
+  .has-error {
+    color: red;
+  }
   
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .campo-invalido {
+    border: 1px solid red;
+  }

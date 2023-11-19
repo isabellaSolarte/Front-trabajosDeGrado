@@ -25,6 +25,11 @@ export class AdministradorEditarComponent {
     
   }
   edit: boolean = false;
+  identificacionError: boolean = false;
+  nombreError: boolean = false;
+  usuarioError: boolean = false;
+  rolError: boolean = false;
+
   ngOnInit(): void {
     const params = this.activeRouter.snapshot.params;
       if (params['id']) {
@@ -43,6 +48,7 @@ export class AdministradorEditarComponent {
     }
   mostrarMensaje: boolean = false;
   updateUsuario(): void {
+    if (this.selectedRoles.length > 0) {
       console.log(this.usuario);
       // Asignar los roles
       this.usuario._rol = this.selectedRoles;
@@ -56,6 +62,10 @@ export class AdministradorEditarComponent {
         err => console.error(err)
       );
       this.mostrarMensaje=true;
+    }else {
+      this.rolError = true;
+      console.error('Debe seleccionar al menos una opción de rol.');
+    }
   }
   
   getRoles(){
@@ -79,6 +89,38 @@ export class AdministradorEditarComponent {
     }
   }
   
+  validarNombre() {
+    const elemento = document.getElementById('nombres');
+  
+    if (elemento) {
+      const regex = /^[a-zA-Z]+$/;
+  
+      if (!regex.test(this.usuario._nombre)) {
+        elemento.classList.add('campo-invalido');
+        this.nombreError = true;
+        console.error('Error: El nombre debe contener solo caracteres no numéricos.');
+      } else {
+        elemento.classList.remove('campo-invalido');
+        this.nombreError = false; // Establecer a false cuando no hay error
+      }
+    }
+  }
+  validarUsuario() {
+    const elemento = document.getElementById('usuario');
+  
+    if (elemento) {
+      const regex = /^[a-zA-Z]+$/;
+  
+      if (!regex.test(this.usuario._login)) {
+        elemento.classList.add('campo-invalido');
+        this.usuarioError = true;
+        console.error('Error: El usuario debe contener solo caracteres no numéricos.');
+      } else {
+        elemento.classList.remove('campo-invalido');
+        this.usuarioError = false; // Establecer a false cuando no hay error
+      }
+    }
+  }
   
 
   cerrarModal() {
