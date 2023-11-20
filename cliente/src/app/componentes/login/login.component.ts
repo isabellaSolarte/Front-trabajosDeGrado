@@ -49,8 +49,10 @@ export class LoginComponent {
     }
     if (rol[0]._id == 2) {
       this.router.navigate(['/directorMain']);
-    }  
+    } else{
+      this.router.navigate(['/jefaturaRegistro']);
+    }
   }
-  
+
 }
 

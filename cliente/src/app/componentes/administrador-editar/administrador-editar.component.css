@@ -133,3 +133,15 @@ margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
     /* Estilos para hacer visible el modal */
     display: block; /* o visibility: visible; u otros estilos */
   }
+  .has-error {
+    color: red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .campo-invalido {
+    border: 1px solid red;
+  }

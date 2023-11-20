@@ -12,5 +12,8 @@ export class JefaturaService {
   getRevisiones(codigoJefatura:number){
     return this.http.get(`${this.API_URI}/revisiones/${codigoJefatura}`);
   }
+  getRuta(codUser:number){
+    return this.http.get(`${this.API_URI}/formatoA/download/${codUser}`);
+  }
 
 }
