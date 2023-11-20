@@ -9,6 +9,6 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent {
   constructor(private router:Router){
-    this.router.navigate(['administrador'])
+    this.router.navigate(['/administrador'])
   }
 }

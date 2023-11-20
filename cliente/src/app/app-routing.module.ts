@@ -9,6 +9,7 @@ import { DirectorListarFormatosComponent } from './componentes/director-listar-f
 import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main.component';
 import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jefatura-registros.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { ModalComponent } from './componentes/modal/modal.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'directorListar/:id', component: DirectorListarFormatosComponent },
   { path: 'jefaturaMain', component: JefaturaMainComponent },
   { path:'jefaturaRegistro', component:JefaturaRegistrosComponent },
-  { path:'login', component:LoginComponent }
+  { path:'login', component:LoginComponent },
+  { path:'modal', component:ModalComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
