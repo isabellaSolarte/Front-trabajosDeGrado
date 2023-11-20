@@ -30,8 +30,14 @@ getRuta(codUser: number): void {
   this.http.get(`${this.API_URI}/formatoA/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
       (response: any) => {
           const blob = new Blob([response], { type: 'application/pdf' });
-          const url = window.URL.createObjectURL(blob);
-          window.open(url, '_blank');
+         // const url = window.URL.createObjectURL(blob);
+          //window.open(url, '_blank');
+          const link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+
+          link.download = 'TI_A_ESTUDIANTE_'+codUser+'.pdf';
+
+          link.click();
       },
       (error) => {
           console.error('Error al obtener la ruta del archivo:', error);
