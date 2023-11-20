@@ -4,6 +4,7 @@ import { Usuario } from '../modelo/usuario';
 import { rol } from '../modelo/rol';
 import { AdministradorService } from 'src/app/services/administrador.service';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -15,6 +16,10 @@ export class AdministradorCrearComponent {
   roles:rol[] = [];
   selectedRoles: rol[] = [];
   usuario_id:string = '';
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = ''
   usuario:Usuario ={
     _id:0,
     _nombre: '',
@@ -25,7 +30,7 @@ export class AdministradorCrearComponent {
   };
   
   constructor(private router:Router,private services:AdministradorService){}
-  mostrarMensaje: boolean = false;
+  
   ngOnInit(): void {
     this.getRoles();
   }
@@ -62,9 +67,12 @@ export class AdministradorCrearComponent {
           res => {
             console.log(res);
             // Mostrar el mensaje de confirmación
-            this.mostrarMensaje = true;
+            this.mensajeExito();
           },
-          err => console.error(err)
+          err => {
+            console.error(err);
+            this.mensajeError();
+          }
         );
       }
     } else {
@@ -123,11 +131,27 @@ export class AdministradorCrearComponent {
     }
   }
   cancelar(){
-      this.router.navigate(['/administrador']);
-  }
-  cerrarMensaje() {
-    this.mostrarMensaje= false;
     this.router.navigate(['/administrador']);
   }
+  mostrarModal(){
+    this.showModal = true;
+  }
+  closeModal() {
+    this.showModal = false;
+    this.router.navigate(['/administrador']);
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No es posible crear el usuario'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha creado el usuario exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
+  }
+
  
 }

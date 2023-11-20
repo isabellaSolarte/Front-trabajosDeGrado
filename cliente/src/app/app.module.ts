@@ -19,6 +19,7 @@ import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main
 import { JefaturaService } from './services/jefatura.service';
 import { LoginComponent } from './componentes/login/login.component';
 import { UsuarioService } from './services/usuarios.service';
+import { ModalComponent } from './componentes/modal/modal.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { UsuarioService } from './services/usuarios.service';
     JefaturaRegistrosComponent,
     JefaturaMainComponent,
     LoginComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

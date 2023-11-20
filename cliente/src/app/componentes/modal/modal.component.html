@@ -1,0 +1,8 @@
+<div class="modal-container" *ngIf="showModal">
+    <div class="modal-content">
+      <h2>{{ modalTitle }}</h2>
+      <img [src]="modalImagen" alt="Comprobado">
+      <p>{{ modalMessage }}</p>
+      <button (click)="closeModal()">Aceptar</button>
+    </div>
+  </div>

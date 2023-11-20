@@ -122,4 +122,7 @@ export class DirectorListarFormatosComponent {
   irSubirFormato(){
     this.router.navigate(['/directorLlenarFormato']);
   }
+  iratras(){
+    this.router.navigate(['/directorMain'])
+  }
 }
