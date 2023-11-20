@@ -33,21 +33,9 @@ export class JefaturaRegistrosComponent {
   getEstado(state:number){
     return this.estados[state];
   }
-  descargarFormatoA(id:number){
+  descargarFormatoA(id:number):void {
     //
-    this.services.getRuta(id).subscribe(
-      (res: any) => {
-        console.log(res);
-        const ruta = res;
-      //  this.descargarArchivo(ruta);
-       const link = document.createElement('a');
-        link.href = ruta;
-        link.download = '2023.001_1.pdf'; // Puedes ajustar el nombre del archivo según tus necesidades
-        link.click();
-      },
-      err => console.log(err)
-    );
-    return 1;
+    this.services.getRuta(id);
   }
   /*descargarArchivo(r:string){
     const url = `http://localhost:3000/api/formatoA/download/2023.001`;
