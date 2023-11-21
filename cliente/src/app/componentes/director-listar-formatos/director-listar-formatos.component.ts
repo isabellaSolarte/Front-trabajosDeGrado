@@ -114,11 +114,13 @@ export class DirectorListarFormatosComponent {
     console.log(this.proceso.fa);
     this.services.sendFormato(this.proceso.fa,this.proceso.id).subscribe(
       (res: any) => {
-        this.mostrarMensaje = true;
-        console.log("se envió el formato");
+        this.mensajeExito();
       },
-      err => console.error(err)
-      )
+      err => {
+        console.error(err);
+        this.mensajeError();
+      }
+    );
 
   }
   cerrarMensaje() {
