@@ -19,7 +19,7 @@
                       <th>ID</th>
                       <th>Nombre</th>
                       <th>Login</th>
-                      <th>Contraseña</th>
+                      <!--<th>Contraseña</th>-->
                       <th>Rol</th>
                       <th>Correo</th>
                       <th>Acciones</th>
@@ -32,7 +32,7 @@
                         <td>{{usuario._id}}</td>
                         <td>{{usuario._nombre}}</td>
                         <td>{{usuario._login}}</td>
-                        <td>
+                        <!--<td>
                           <div class="password-cell">
                             <i class="fas" [ngClass]="{'fa-eye-slash': !passwordVisibility[i], 'fa-eye': passwordVisibility[i]}" (click)="togglePassword(i)"></i>
                             <div class="password-text">
@@ -40,7 +40,7 @@
                               <span *ngIf="!passwordVisibility[i]">********</span>
                             </div>
                           </div>
-                        </td>
+                        </td>-->
                         <td>
                           <ul>
                             <li *ngFor="let rol of usuario._rol">{{rol._nombre}}</li>

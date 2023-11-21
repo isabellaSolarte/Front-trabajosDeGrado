@@ -10,4 +10,5 @@ export interface Formato{
     _recibido:string;
     _observaciones:string;
     _no_revision:number;
+    _interes:string;
 }
