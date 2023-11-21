@@ -95,7 +95,7 @@ async recuperarEstudiantes(){
       res => {
         console.log(res);
         // Mostrar el mensaje de confirmación
-        this.mostrarMensaje = true;
+       this.mensajeExito();
       },
       err => console.error(err)
       )
