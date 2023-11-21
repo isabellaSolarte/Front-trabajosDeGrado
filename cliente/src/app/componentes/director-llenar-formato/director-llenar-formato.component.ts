@@ -18,7 +18,7 @@ export class DirectorLlenarFormatoComponent {
   modalTitle: string = '';
   modalMessage: string = '';
   modalImage:string = '';
-  navegacion:string = 'jefaturaMain';
+  navegacion:string = 'directorMain';
   formato:Formato={
     _id:0,
     _objetivos:'',
@@ -138,51 +138,6 @@ async recuperarEstudiantes(){
   cerrarMensaje() {
     this.router.navigate(['/directorMain']);
   }
-
-validarYGuardar() {
-  // Valida que los campos obligatorios no estén vacíos
-  let camposInvalidos = false;
-
-  if (this.proceso.tipo === '') {
-      camposInvalidos = true;
-      document.getElementById('propuesta')?.classList.add('campo-invalido');
-  } else {
-      document.getElementById('propuesta')?.classList.remove('campo-invalido');
-  }
-
-  if (this.nombres[0] === '' || this.nombres[0] === 'No encontrado') {
-      camposInvalidos = true;
-      document.getElementById('estudiante1')?.classList.add('campo-invalido');
-  } else {
-      document.getElementById('estudiante1')?.classList.remove('campo-invalido');
-  }
-
-  // Repite el mismo patrón para otros campos si es necesario
-
-  if (this.proceso.ase === '') {
-      camposInvalidos = true;
-      document.getElementById('asesor')?.classList.add('campo-invalido');
-  } else {
-      document.getElementById('asesor')?.classList.remove('campo-invalido');
-  }
-
-  if (this.formato._objetivos === '') {
-      camposInvalidos = true;
-      document.getElementById('objetivos')?.classList.add('campo-invalido');
-  } else {
-      document.getElementById('objetivos')?.classList.remove('campo-invalido');
-  }
-
-  // Repite el mismo patrón para otros campos si es necesario
-
-  if (camposInvalidos) {
-      // Muestra un mensaje de error y evita proceder al guardado
-      alert('Por favor, llene todos los campos obligatorios.');
-  } else {
-      // Si todos los campos están llenos, procede a guardar
-      this.guardarFormatoProceso();
-  }
-}
 
   mostrarModal(){
     this.showModal = true;
