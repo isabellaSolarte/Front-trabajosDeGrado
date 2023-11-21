@@ -11,6 +11,11 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 })
 export class AdministradorEditarComponent {
   roles:rol[] = [];
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'administrador';
   selectedRoles: rol[] = [];
     usuario:Usuario ={
     _id:0,
@@ -46,7 +51,6 @@ export class AdministradorEditarComponent {
       }
       this.selectedRoles = this.usuario._rol;
     }
-  mostrarMensaje: boolean = false;
   updateUsuario(): void {
     if (this.selectedRoles.length > 0) {
       console.log(this.usuario);
@@ -56,12 +60,13 @@ export class AdministradorEditarComponent {
       this.services.updateUser(this.usuario._id, this.usuario).subscribe(
         res => {
           console.log(res);
-          // Mostrar un mensaje de confirmación
-          this.mostrarMensaje = true;
+          this.mensajeExito();
         },
-        err => console.error(err)
+        err => {
+          console.error(err);
+          this.mensajeError();
+        }
       );
-      this.mostrarMensaje=true;
     }else {
       this.rolError = true;
       console.error('Debe seleccionar al menos una opción de rol.');
@@ -79,7 +84,6 @@ export class AdministradorEditarComponent {
   }
   toggleRoleSelection(role: rol) {
     const index = this.selectedRoles.findIndex(selectedRole => selectedRole._id === role._id);
-  
     if (index === -1) {
       // Si el rol no está seleccionado, agrégalo
       this.selectedRoles.push(role);
@@ -93,7 +97,7 @@ export class AdministradorEditarComponent {
     const elemento = document.getElementById('nombres');
   
     if (elemento) {
-      const regex = /^[a-zA-Z]+$/;
+      const regex = /^[a-zA-Z\sñÑ]+$/;
   
       if (!regex.test(this.usuario._nombre)) {
         elemento.classList.add('campo-invalido');
@@ -109,7 +113,7 @@ export class AdministradorEditarComponent {
     const elemento = document.getElementById('usuario');
   
     if (elemento) {
-      const regex = /^[a-zA-Z]+$/;
+      const regex = /^[a-zA-Z\sñÑ]+$/;
   
       if (!regex.test(this.usuario._login)) {
         elemento.classList.add('campo-invalido');
@@ -121,12 +125,24 @@ export class AdministradorEditarComponent {
       }
     }
   }
-  
-
-  cerrarModal() {
-    this.mostrarMensaje=false;
+  cancelar(){
     this.router.navigate(['/administrador']);
-
   }
+  mostrarModal(){
+    this.showModal = true;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No es posible editar el usuario'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha editado el usuario exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
+  }
+
   isDisabled: boolean = true;
 }

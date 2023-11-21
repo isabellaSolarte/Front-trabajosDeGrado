@@ -63,13 +63,14 @@
               </tbody>
           </table>
       </div>
-      <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
-          El usuario se ha eliminado correctamente.
-          <button type="button" class="close" (click)="cerrarMensaje()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
   </div>
+  <app-modal
+      [showModal]="showModal"
+      [modalTitle]="modalTitle"
+      [modalMessage]="modalMessage"
+      [modalImagen] = "modalImage"
+      [navegacion] = "navegacion"
+  ></app-modal>
 
   <div id="footer" class="footer-con-imagen">
       <div class="imagen-con-textoF">

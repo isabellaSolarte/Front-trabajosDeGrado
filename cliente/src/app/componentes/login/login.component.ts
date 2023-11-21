@@ -43,7 +43,7 @@ export class LoginComponent {
   }
   verificarVista(rol:rol[]){
     currentUser.setCurrentRol(rol);
-
+    console.log(rol[0]._id)
     if(rol[0]._id == 1){
       this.router.navigate(['/administrador']);
     }

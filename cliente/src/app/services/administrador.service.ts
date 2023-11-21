@@ -20,6 +20,7 @@ export class AdministradorService {
 
   saveUser(usuario: Usuario) {
     console.log(usuario._nombre);
+    console.log(this.http.post(`${this.API_URI}/usuarios/`, usuario));
     return this.http.post(`${this.API_URI}/usuarios/`, usuario);
   }
   updateUser(id: number, updatedUsuario: Usuario) {

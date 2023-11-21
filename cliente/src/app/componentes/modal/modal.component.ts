@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -10,7 +11,10 @@ export class ModalComponent {
   @Input() modalTitle: string = '';
   @Input() modalMessage: string = '';
   @Input() modalImagen: string = '';
-  closeModal() {
+  @Input() navegacion: string = '';
+  constructor(private router:Router){}
+  closeModal(navegacion:string) {
     this.showModal = false;
+    this.router.navigate([navegacion]);
   }
 }

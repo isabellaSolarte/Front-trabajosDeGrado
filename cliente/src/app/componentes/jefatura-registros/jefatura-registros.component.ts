@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { JefaturaService } from 'src/app/services/jefatura.service';
 import { currentUser } from '../control-vista/currentUser';
 import { HttpClient } from '@angular/common/http';
+import { CurrentUser } from '../control-vista/currentUser';
 
 @Component({
   selector: 'app-jefatura-registros',
@@ -22,7 +23,7 @@ export class JefaturaRegistrosComponent {
     this.getRevisiones();
   }
   getRevisiones(){
-    this.services.getRevisiones(1).subscribe(
+    this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
