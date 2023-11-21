@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { DirectorService } from 'src/app/services/director.service';
 import { Proceso } from '../modelo/Proceso';
 import { Estudiante } from '../modelo/Estudiante';
+import { currentUser } from '../control-vista/currentUser';
 
 @Component({
   selector: 'app-director-llenar-formato',
@@ -35,7 +36,7 @@ export class DirectorLlenarFormatoComponent {
   };
   proceso:Proceso={
     id:0,
-    usuario:1002777704,
+    usuario:currentUser.getCurrentId(),
     fa:0,
     fb:0,
     fc:0,
