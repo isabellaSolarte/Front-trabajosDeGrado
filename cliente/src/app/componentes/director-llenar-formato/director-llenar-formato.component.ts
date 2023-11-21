@@ -25,7 +25,8 @@ export class DirectorLlenarFormatoComponent {
     _revision:'',
     _recibido:'',
     _observaciones:'',
-    _no_revision:0
+    _no_revision:0,
+    _interes:''
   };
   proceso:Proceso={
     id:0,

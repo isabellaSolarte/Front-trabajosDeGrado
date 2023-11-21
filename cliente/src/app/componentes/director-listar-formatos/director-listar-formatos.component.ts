@@ -31,7 +31,8 @@ export class DirectorListarFormatosComponent {
     _revision:'',
     _recibido:'',
     _observaciones:'',
-    _no_revision:0
+    _no_revision:0,
+    _interes:''
   };
   id:number=0;
   proceso:Proceso={

@@ -102,7 +102,7 @@ export class AdministradorCrearComponent {
     const elemento = document.getElementById('nombres');
   
     if (elemento) {
-      const regex = /^[a-zA-Z]+$/;
+      const regex = /^[a-zA-Z\s]+$/;
   
       if (!regex.test(this.usuario._nombre)) {
         elemento.classList.add('campo-invalido');

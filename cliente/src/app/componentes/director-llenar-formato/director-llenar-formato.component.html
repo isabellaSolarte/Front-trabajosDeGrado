@@ -27,11 +27,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="estudiante1">Estudiante 1<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="estudiante1" name="_estudiante1" placeholder="Nombre estudiante" [(ngModel)]="nombres[0]">
+                                <input type="text" class="form-control" id="estudiante1" name="_estudiante1" placeholder="Nombre estudiante" [(ngModel)]="nombres[0]" [disabled]="true">
                             </div>
                             <div class="form-group">
                                 <label for="estudiante2">Estudiante 2</label>
-                                <input type="text" class="form-control" id="estudiante2" name="_estudiante2" placeholder="Nombre estudiante" [disabled]="bloquearEstudiante2">
+                                <input type="text" class="form-control" id="estudiante2" name="_estudiante2" placeholder="Nombre estudiante" [disabled]="true">
                             </div>
                             <div class="form-group">
                                 <label for="asesor">Asesor<span class="required">*</span></label>
@@ -87,6 +87,12 @@
                                 <label for="financiacion">Definición de fuentes de financiación<span class="required">*</span></label>
                                 <div class="scrollable-textarea">
                                     <textarea type="financiacion" class="form-control" id="financiacion" name="_financiacion" [(ngModel)]="formato._financiacion" placeholder="Financiación"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="_interes">Aportes o contribución a las líneas de investigación <span class="required">*</span></label>
+                                <div class="scrollable-textarea">
+                                    <textarea type="text" class="form-control" id="_interes" name="_interes" [(ngModel)]="formato._interes" placeholder="Temas de interes"></textarea>
                                 </div>
                             </div>
                         </form>
