@@ -16,7 +16,7 @@ export class DirectorListarFormatosComponent {
   modalTitle: string = '';
   modalMessage: string = '';
   modalImage:string = '';
-  navegacion:string = '';
+  navegacion:string = 'directorMain';
   mostrarMensaje: boolean = false;
   estudiante:Estudiante={
     _codigo:0,
