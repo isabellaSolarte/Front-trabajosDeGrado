@@ -24,6 +24,7 @@
                                     <option value="Trabajo de investigación">Trabajo de investigación</option>
                                     <option value="Práctica profesional">Práctica profesional</option>
                                 </select>
+                                
                             </div>
                             <div class="form-group">
                                 <label for="estudiante1">Estudiante 1<span class="required">*</span></label>
@@ -42,6 +43,7 @@
                                 <div class="scrollable-textarea">
                                     <textarea class="form-control" id="objetivos" name="_objetivos" [(ngModel)]="formato._objetivos" placeholder="Objetivos"></textarea>
                                 </div>
+                                
                             </div>
                             <div class="form-group">
                                 <label for="con_entrega">Condiciones de entrega <span class="required">*</span></label>
@@ -101,7 +103,7 @@
                 </div>
         </div>
         <div class="Botón-crear">
-            <button class="btn btn-custom" (click)="guardarFormatoProceso()" >Guardar</button>
+            <button class="btn btn-custom" (click)="validarYGuardar()" >Guardar</button>
         </div>
         <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
             El formato se ha creado correctamente.
