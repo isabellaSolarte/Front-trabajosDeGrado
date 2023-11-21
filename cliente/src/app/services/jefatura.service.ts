@@ -25,7 +25,7 @@ export class JefaturaService {
         }
     );
 }*/
-getRuta(codUser: number): void {
+getRuta(codUser: number,nombre:string): void {
 
   this.http.get(`${this.API_URI}/formatoA/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
       (response: any) => {
@@ -35,7 +35,7 @@ getRuta(codUser: number): void {
           const link = document.createElement('a');
           link.href = window.URL.createObjectURL(blob);
 
-          link.download = 'TI_A_ESTUDIANTE_'+codUser+'.pdf';
+          link.download = 'TI_A_'+nombre+'_'+codUser+'.pdf';
 
           link.click();
       },

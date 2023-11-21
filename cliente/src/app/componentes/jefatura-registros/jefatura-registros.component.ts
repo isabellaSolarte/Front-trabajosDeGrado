@@ -33,9 +33,9 @@ export class JefaturaRegistrosComponent {
   getEstado(state:number){
     return this.estados[state];
   }
-  descargarFormatoA(id:number):void {
+  descargarFormatoA(id:number, nombre:string):void {
     //
-    this.services.getRuta(id);
+    this.services.getRuta(id,nombre);
   }
   /*descargarArchivo(r:string){
     const url = `http://localhost:3000/api/formatoA/download/2023.001`;
