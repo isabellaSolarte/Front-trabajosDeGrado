@@ -111,6 +111,15 @@ label[for="rol"] {
   color: red;
   margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
 }
+.has-error {
+  color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
 /* Estilo para el textarea*/
 .scrollable-form {
   overflow-y: auto; /* Agrega desplazamiento vertical */
