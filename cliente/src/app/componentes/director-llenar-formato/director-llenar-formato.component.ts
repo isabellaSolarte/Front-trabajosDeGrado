@@ -81,13 +81,20 @@ async recuperarEstudiantes(){
     err => console.error(err)
     );
 }
-  async guardarFormatoProceso(){
-    const id = await this.guardarProceso();
-    console.log(id);
-    if(id != 0)
-      this.guardarFormato(id);
-    else  console.log('error')
+async guardarFormatoProceso() {
+  if (!this.camposObligatoriosLlenos()) {
+    alert('Debe llenar todos los campos obligatorios.');
+    return;
   }
+
+  const id = await this.guardarProceso();
+  console.log(id);
+  if (id !== 0) {
+    this.guardarFormato(id);
+  } else {
+    console.log('error');
+  }
+}
   guardarFormato(id:number){
     console.log(this.formato);
     this.services.saveFormatoA(this.formato,id).subscribe(
@@ -136,6 +143,31 @@ async recuperarEstudiantes(){
       this.bloquearAsesor = false; // Desbloquear asesor
       this.bloquearEstudiante2 = false; // Desbloquear estudiante 2
     }
+  }
+  camposObligatoriosLlenos(): boolean {
+    // Validar campos obligatorios según el tipo de propuesta
+    if (
+      !this.proceso.tipo ||
+      !this.proceso.titulo ||
+      !this.formato._objetivos ||
+      !this.formato._con_entrega ||
+      !this.formato._realizacion ||
+      !this.formato._recursos ||
+      !this.formato._financiacion ||
+      !this.formato._interes
+    ) {
+      return false;
+    }
+  
+    if (this.proceso.tipo === 'Práctica profesional') {
+      // Validar que al menos un estudiante esté presente para Práctica profesional
+      return this.proceso.estudiantes[0] !== 0;
+    } else if (this.proceso.tipo === 'Trabajo de investigación') {
+      // Validar que al menos un estudiante esté presente para Trabajo de investigación
+      return this.proceso.estudiantes[0] !== 0;
+    }
+  
+    return true;
   }
   irMain() {
     this.router.navigate(['/directorMain']);
