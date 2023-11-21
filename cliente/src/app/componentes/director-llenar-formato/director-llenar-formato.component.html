@@ -74,9 +74,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="codEstudiante2">Código estudiante 2</label>
-                                <input type="text" class="form-control" id="codEstudiante2" name="_objetivos" placeholder="Código estudiante" [(ngModel)]="proceso.estudiantes[1]" [disabled]="bloquearEstudiante2" (input)="actualizarEstudiante(1)">
+                                <input type="text" class="form-control" id="codEstudiante2" name="_objetivos" placeholder="Código estudiante" [(ngModel)]="proceso.estudiantes[1]" [disabled]="bloquearEstudiante2" list="estudiante_2" (input)="actualizarEstudiante(1)">
                                 <datalist id="estudiante_2">
-                                    <datalist id="estudiante_1">
+                                    <datalist id="estudiante_2">
                                         <option *ngFor="let estudiante of estudiantes2; let i = index" value = {{estudiantes2[i]._codigo}}  ></option>
                                     </datalist>
 
