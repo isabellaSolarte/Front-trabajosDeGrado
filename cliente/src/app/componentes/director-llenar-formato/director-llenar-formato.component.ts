@@ -14,6 +14,11 @@ export class DirectorLlenarFormatoComponent {
   mostrarMensaje: boolean = false;
   bloquearAsesor = false; 
   bloquearEstudiante2 = false;
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'jefaturaMain';
   formato:Formato={
     _id:0,
     _objetivos:'',
@@ -44,9 +49,13 @@ export class DirectorLlenarFormatoComponent {
   };
   public nombres:String[];
   public estudiantes:Estudiante[];
+  public nombres2:String[];
+  public estudiantes2:Estudiante[];
 constructor(private router: Router,private services:DirectorService){
   this.estudiantes = [];
   this.nombres = ['No encontrado','No encontrado'];
+  this.nombres2 = ['No encontrado','No encontrado'];
+  this.estudiantes2 = [];
 }
 ngOnInit(){
   this.recuperarEstudiantes();
@@ -57,7 +66,7 @@ actualizarEstudiante(i:number)
   const estudiante:Estudiante|undefined = this.estudiantes.find(obj => obj._codigo === this.proceso.estudiantes[i]);
   if(estudiante)
   {
-    this.nombres[i] = estudiante._nombre;
+    this.nombres[i] = estudiante._nombre; 
   }else{
     this.nombres[i] = 'No encontrado';
   }
@@ -67,6 +76,7 @@ async recuperarEstudiantes(){
   this.services.getEstudiantes().subscribe(
     res => {
       this.estudiantes = res as Estudiante[];
+      this.estudiantes2 = res as Estudiante[];
     },
     err => console.error(err)
     );
@@ -128,7 +138,6 @@ async recuperarEstudiantes(){
   cerrarMensaje() {
     this.router.navigate(['/directorMain']);
   }
-  // ...
 
 validarYGuardar() {
   // Valida que los campos obligatorios no estén vacíos
@@ -175,8 +184,23 @@ validarYGuardar() {
   }
 }
 
-// ...
-
-
-  
+  mostrarModal(){
+    this.showModal = true;
+  }
+  closeModal() {
+    this.showModal = false;
+    this.router.navigate(['/administrador']);
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo guardar el formato'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha guardado el formato exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
+  }
 }

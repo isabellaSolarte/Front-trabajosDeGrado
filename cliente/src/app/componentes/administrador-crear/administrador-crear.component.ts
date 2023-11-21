@@ -137,10 +137,6 @@ export class AdministradorCrearComponent {
   mostrarModal(){
     this.showModal = true;
   }
-  closeModal() {
-    this.showModal = false;
-    this.router.navigate(['/administrador']);
-  }
   mensajeError(){
     this.modalImage = 'assets/cancelar.png';
     this.modalMessage = 'No es posible crear el usuario'
