@@ -12,7 +12,6 @@ import { currentUser } from '../control-vista/currentUser';
   styleUrls: ['./director-llenar-formato.component.css']
 })
 export class DirectorLlenarFormatoComponent {
-  mostrarMensaje: boolean = false;
   bloquearAsesor = false; 
   bloquearEstudiante2 = false;
   showModal: boolean = false;
@@ -92,20 +91,22 @@ async recuperarEstudiantes(){
   guardarFormato(id:number){
     console.log(this.formato);
     this.services.saveFormatoA(this.formato,id).subscribe(
-      res => {
-        console.log(res);
-        // Mostrar el mensaje de confirmación
-       this.mensajeExito();
-      },
-      err => console.error(err)
-      )
+        res => {
+          console.log(res);
+          // Mostrar el mensaje de confirmación
+          this.mensajeExito();
+        },
+        err => {
+          console.error(err);
+          this.mensajeError();
+        }
+    );
   }
   async guardarProceso(): Promise<number> {
     console.log(this.proceso);
     try {
       const response = await this.createProcesoAsync(this.proceso);
       console.log(response);
-      this.mostrarMensaje = true;
       return response.id;
     } catch (error) {
       console.error(error);
@@ -136,16 +137,12 @@ async recuperarEstudiantes(){
       this.bloquearEstudiante2 = false; // Desbloquear estudiante 2
     }
   }
-  cerrarMensaje() {
+  irMain() {
     this.router.navigate(['/directorMain']);
   }
 
   mostrarModal(){
     this.showModal = true;
-  }
-  closeModal() {
-    this.showModal = false;
-    this.router.navigate(['/administrador']);
   }
   mensajeError(){
     this.modalImage = 'assets/cancelar.png';
