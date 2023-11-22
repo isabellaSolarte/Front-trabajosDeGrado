@@ -12,7 +12,7 @@ export class DirectorAnteproyectoComponent {
   constructor(private router: Router,private services:DirectorService,private route: ActivatedRoute){}
 
   fileName:string = "";
-  guardarArchivo(event: any, idEva:number) {
+  guardarArchivo(event: any) {
     const file = event.target.files[0];
     if (file) {
 

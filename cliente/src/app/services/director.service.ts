@@ -39,6 +39,6 @@ export class DirectorService {
   enviarArchivo(formData: FormData, idUser:number) {
 
     console.log("antes de entrar al servidor"+ formData)
-    return this.http.post(`${this.API_URI}/upload/${idUser}`, formData);
+    return this.http.post(`${this.API_URI}/anteproyecto/upload/${idUser}`,formData);
   }
 }
