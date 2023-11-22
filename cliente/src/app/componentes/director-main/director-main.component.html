@@ -6,33 +6,22 @@
         </div>
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
-        <div class="navbar-collapse justify-content-end">
-          <button class="btn btn-custom-color" (click)="irSubirFormato()" type="button">
-            Subir formato <i class="fas fa-upload"></i>
-          </button>
-        </div>
-      </nav>
-      <div id="sidemenu" class="menu-collapsed">
-        <div id = "header">
-            <div id="title"><span>Menú director</span></div>
-            <div id="menu-btn">
-                <div class="btn-hamburguer"></div>
-                <div class="btn-hamburguer"></div>
-                <div class="btn-hamburguer"></div>
-            </div>
-        </div>
-        <div id="photo"><img src="assets/perfil.png" alt=""></div>
-        <div id="name"><span>Isabella Solarte</span></div>
-        <div id="menu-items">
-            <div class="item">
-                <a href="#">
-                    <div class="icon"><img src="assets/subir.png" alt=""></div>
-                    <div class="title">Subir formato</div>
-                </a>
-            </div>
-        </div>
-
-      </div>
+  <div class="navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="irSubirFormato()" data-toggle="tooltip" title="Subir formato">
+          <i class="fas fa-upload"></i> Subir formato
+        </a>
+      </li>
+      <div class="divider"></div>
+      <li class="nav-item">
+        <a class="nav-link" (click)="irSubirAnteproyecto()" data-toggle="tooltip" title="Subir anteproyecto">
+          <i class="fas fa-file-alt"></i> Subir anteproyecto
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
     
       <div class="container py-4">
         <h1 class="titulo">Procesos delegados</h1>

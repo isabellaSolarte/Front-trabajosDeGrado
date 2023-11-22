@@ -37,6 +37,43 @@
 .titulo{
     color: #525663; 
 }
+/**/
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: #FFA500; /* Cambia el color al pasar el ratón, si lo deseas */
+}
+
+.nav-link i {
+  margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+.divider {
+  height: 30px; 
+  width: 2px;
+  background-color: #F8F8F8; 
+  margin: 0 10px;
+}
+@media (max-width: 768px) {
+  .divider {
+    display: none;
+  }
+}
+
 /*carta*/
 .card {
     margin-top: 5%;
