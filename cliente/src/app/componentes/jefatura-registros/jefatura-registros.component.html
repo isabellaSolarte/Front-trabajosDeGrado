@@ -35,7 +35,7 @@
                             <td>{{revision.no_revision}}</td>
                             <td>
                                 <div class="button-container">
-                                <button (click)="descargarFormatoA(revision.id)" class="btn btn-primary" name = "Descargar" title="Descargar">
+                                <button (click)="descargarFormatoA(revision.estudiantes[0].codigo, revision.estudiantes[0].nombre)" class="btn btn-primary" name = "Descargar" title="Descargar">
                                     <i class='fas fa-download'></i>
                                 </button>
                                 <button class="btn btn-danger"  title="Visualizar" style="margin-left: 5px;">
