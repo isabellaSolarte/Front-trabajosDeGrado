@@ -5,20 +5,20 @@
             <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
         </div>
     </div>
-    <div class="navbar-top">
-        <div class="file-upload-container">
-            <div class="file-upload-icon">
-              <i class="fas fa-cloud-upload-alt"></i>
-            </div>
-            <div class="file-upload-text">
-              <p>Arrastra o elige un archivo</p>
-              <input class="upload" type="file"  (change)="guardarArchivo($event ) ">
-            </div>
-          </div>
-    </div>
+    <div class="navbar-top"></div>
+        
     <div class="container py-4">
-
-    </div>
+        <div class="file-upload-container" (click)="fileInput.click()">
+          <div class="file-upload-icon">
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          <div class="file-upload-text">
+            <p>Arrastra o elige un archivo</p>
+            <input class="upload" type="file" #fileInput (change)="guardarArchivo($event)" style="display: none;">
+            <span>{{ fileName }}</span>
+          </div>
+        </div>
+      </div>
 
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">
