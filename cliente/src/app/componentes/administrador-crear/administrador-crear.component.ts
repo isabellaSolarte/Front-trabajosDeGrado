@@ -19,7 +19,8 @@ export class AdministradorCrearComponent {
   showModal: boolean = false;
   modalTitle: string = '';
   modalMessage: string = '';
-  modalImage:string = ''
+  modalImage:string = '';
+  navegacion:string = 'administrador';
   usuario:Usuario ={
     _id:0,
     _nombre: '',
@@ -102,7 +103,7 @@ export class AdministradorCrearComponent {
     const elemento = document.getElementById('nombres');
   
     if (elemento) {
-      const regex = /^[a-zA-Z\s]+$/;
+      const regex = /^[a-zA-Z\sñÑ]+$/;
   
       if (!regex.test(this.usuario._nombre)) {
         elemento.classList.add('campo-invalido');
@@ -118,7 +119,7 @@ export class AdministradorCrearComponent {
     const elemento = document.getElementById('usuario');
   
     if (elemento) {
-      const regex = /^[a-zA-Z]+$/;
+      const regex = /^[a-zA-Z\sñÑ]+$/;
   
       if (!regex.test(this.usuario._login)) {
         elemento.classList.add('campo-invalido');
@@ -135,10 +136,6 @@ export class AdministradorCrearComponent {
   }
   mostrarModal(){
     this.showModal = true;
-  }
-  closeModal() {
-    this.showModal = false;
-    this.router.navigate(['/administrador']);
   }
   mensajeError(){
     this.modalImage = 'assets/cancelar.png';

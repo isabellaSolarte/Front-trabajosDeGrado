@@ -43,16 +43,17 @@ export class LoginComponent {
   }
   verificarVista(rol:rol[]){
     currentUser.setCurrentRol(rol);
-
+    console.log(rol[0]._id)
     if(rol[0]._id == 1){
       this.router.navigate(['/administrador']);
     }
-    if (rol[0]._id == 2) {
-      this.router.navigate(['/directorMain']);
-    } else{
-      this.router.navigate(['/jefaturaRegistro']);
+    else{
+      if (rol[0]._id == 2) {
+        this.router.navigate(['/directorMain']);
+      } else{
+        this.router.navigate(['/jefaturaRegistro']);
+      }
     }
   }
-
 }
 

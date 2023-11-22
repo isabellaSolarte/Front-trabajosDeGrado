@@ -12,7 +12,11 @@ import { Estudiante } from '../modelo/Estudiante';
 })
 export class DirectorListarFormatosComponent {
   constructor(private router: Router,private services:DirectorService,private route: ActivatedRoute){}
-  //estudiantes:number[]=[];
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'directorMain';
   mostrarMensaje: boolean = false;
   estudiante:Estudiante={
     _codigo:0,
@@ -110,11 +114,13 @@ export class DirectorListarFormatosComponent {
     console.log(this.proceso.fa);
     this.services.sendFormato(this.proceso.fa,this.proceso.id).subscribe(
       (res: any) => {
-        this.mostrarMensaje = true;
-        console.log("se envió el formato");
+        this.mensajeExito();
       },
-      err => console.error(err)
-      )
+      err => {
+        console.error(err);
+        this.mensajeError();
+      }
+    );
 
   }
   cerrarMensaje() {
@@ -125,5 +131,21 @@ export class DirectorListarFormatosComponent {
   }
   iratras(){
     this.router.navigate(['/directorMain'])
+  }
+
+  mostrarModal(){
+    this.showModal = true;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo enviar el formato a jefatura'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha enviado el formato a jefatura exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
   }
 }

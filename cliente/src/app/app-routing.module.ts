@@ -10,6 +10,7 @@ import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main
 import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jefatura-registros.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ModalComponent } from './componentes/modal/modal.component';
+import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'jefaturaMain', component: JefaturaMainComponent },
   { path:'jefaturaRegistro', component:JefaturaRegistrosComponent },
   { path:'login', component:LoginComponent },
-  { path:'modal', component:ModalComponent }
+  { path:'modal', component:ModalComponent },
+  { path:'directortAnteproyecto', component:DirectorAnteproyectoComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -38,7 +38,7 @@
                 <tr>
                   <td> A </td>
                   <td>{{proceso.titulo}}</td>
-                  <td>{{formato._revision | date:'shortDate'}}</td>
+                  <td>{{formato._recibido | date:'shortDate'}}</td>
                   <td>{{formato._realizacion}}</td>
                   <td>
                     <button class="btn btn-enviar" (click)="enviarFormatoJefatura()" title="Enviar">Enviar</button>
@@ -48,16 +48,15 @@
         </tbody>
                   
         </table>
-        <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
-          El formato se ha enviado a jefatura.
-          <button type="button" class="close" (click)="cerrarMensaje()" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div> 
     </div>
-
     </div>
-
+    <app-modal
+            [showModal]="showModal"
+            [modalTitle]="modalTitle"
+            [modalMessage]="modalMessage"
+            [modalImagen] = "modalImage"
+            [navegacion] = "navegacion"
+        ></app-modal>
   
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">

@@ -7,7 +7,7 @@
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
         <div class="navbar-collapse justify-content-end">
-            <button class="btn btn-custom-color" (click)="cerrarMensaje()">
+            <button class="btn btn-custom-color" (click)="irMain()">
                 <i class="fas fa-arrow-left"></i> Atrás
               </button>
           </div> 
@@ -24,6 +24,7 @@
                                     <option value="Trabajo de investigación">Trabajo de investigación</option>
                                     <option value="Práctica profesional">Práctica profesional</option>
                                 </select>
+                                
                             </div>
                             <div class="form-group">
                                 <label for="estudiante1">Estudiante 1<span class="required">*</span></label>
@@ -31,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="estudiante2">Estudiante 2</label>
-                                <input type="text" class="form-control" id="estudiante2" name="_estudiante2" placeholder="Nombre estudiante" [disabled]="true">
+                                <input type="text" class="form-control" id="estudiante2" name="_estudiante2" placeholder="Nombre estudiante" [(ngModel)]="nombres[1]" [disabled]="true">
                             </div>
                             <div class="form-group">
                                 <label for="asesor">Asesor<span class="required">*</span></label>
@@ -42,6 +43,7 @@
                                 <div class="scrollable-textarea">
                                     <textarea class="form-control" id="objetivos" name="_objetivos" [(ngModel)]="formato._objetivos" placeholder="Objetivos"></textarea>
                                 </div>
+                                
                             </div>
                             <div class="form-group">
                                 <label for="con_entrega">Condiciones de entrega <span class="required">*</span></label>
@@ -72,8 +74,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="codEstudiante2">Código estudiante 2</label>
-                                <input type="text" class="form-control" id="codEstudiante2" name="_objetivos" placeholder="Código estudiante" [(ngModel)]="proceso.estudiantes[1]" [disabled]="bloquearEstudiante2">
+                                <input type="text" class="form-control" id="codEstudiante2" name="_objetivos" placeholder="Código estudiante" [(ngModel)]="proceso.estudiantes[1]" [disabled]="bloquearEstudiante2" list="estudiante_2" (input)="actualizarEstudiante(1)">
                                 <datalist id="estudiante_2">
+                                    <datalist id="estudiante_2">
+                                        <option *ngFor="let estudiante of estudiantes2; let i = index" value = {{estudiantes2[i]._codigo}}  ></option>
+                                    </datalist>
 
                                 </datalist>
                             </div>
@@ -103,12 +108,13 @@
         <div class="Botón-crear">
             <button class="btn btn-custom" (click)="guardarFormatoProceso()" >Guardar</button>
         </div>
-        <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
-            El formato se ha creado correctamente.
-            <button type="button" class="close" (click)="cerrarMensaje()" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>      
+        <app-modal
+            [showModal]="showModal"
+            [modalTitle]="modalTitle"
+            [modalMessage]="modalMessage"
+            [modalImagen] = "modalImage"
+            [navegacion] = "navegacion"
+        ></app-modal>    
 
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { JefaturaService } from 'src/app/services/jefatura.service';
 import { currentUser } from '../control-vista/currentUser';
 import { HttpClient } from '@angular/common/http';
+import { CurrentUser } from '../control-vista/currentUser';
 
 @Component({
   selector: 'app-jefatura-registros',
@@ -22,7 +23,7 @@ export class JefaturaRegistrosComponent {
     this.getRevisiones();
   }
   getRevisiones(){
-    this.services.getRevisiones(1).subscribe(
+    this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
@@ -37,17 +38,6 @@ export class JefaturaRegistrosComponent {
     //
     this.services.getRuta(id,nombre);
   }
-  /*descargarArchivo(r:string){
-    const url = `http://localhost:3000/api/formatoA/download/2023.001`;
 
-    const link = document.createElement('a');
-    link.href = url;
-
-    link.download = '2023.001_1.pdf';
-    document.body.appendChild(link);
-    link.click();
-
-    document.body.removeChild(link);
-  }*/
 
 }

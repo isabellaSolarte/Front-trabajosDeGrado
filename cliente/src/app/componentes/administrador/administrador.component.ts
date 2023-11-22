@@ -11,6 +11,11 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 export class AdministradorComponent {
   usuarios:Usuario[] = [];
   passwordVisibility: boolean[] = [];
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'administrador';
 
   constructor(private services:AdministradorService,private router: Router){
     this.usuarios.forEach(() => this.passwordVisibility.push(false));
@@ -42,16 +47,17 @@ export class AdministradorComponent {
   
 
   //eliminar
-  mostrarMensaje: boolean = false;
   deleteUsuario(id: number) {
     this.services.deleteUser(id).subscribe(
       () => {
-        this.mostrarMensaje = true;
-        console.log("Usuario eliminado exitosamente");
+        this.mensajeExito();
         this.getUsuarios(); // Vuelve a cargar los usuarios después de eliminar uno
 
       },
-      err => console.error(err)
+      err => {
+        console.error(err);
+        this.mensajeError();
+      }
     );
   }
   confirmarEliminarUsuario(id: number) {
@@ -60,8 +66,19 @@ export class AdministradorComponent {
       this.deleteUsuario(id);
     }
   }
-  
-  cerrarMensaje() {
-    this.mostrarMensaje = false;
+  mostrarModal(){
+    this.showModal = true;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No es posible eliminar el usuario'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha eliminado el usuario exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
   }
 }
