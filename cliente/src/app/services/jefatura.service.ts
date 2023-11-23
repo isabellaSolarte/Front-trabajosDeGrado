@@ -34,10 +34,9 @@ getRuta(codUser: number,nombre:string): void {
           //window.open(url, '_blank');
           const link = document.createElement('a');
           link.href = window.URL.createObjectURL(blob);
-
           link.download = 'TI_A_'+nombre+'_'+codUser+'.pdf';
-
           link.click();
+          this.getCambiarEstado(codUser);
       },
       (error) => {
           console.error('Error al obtener la ruta del archivo:', error);
@@ -46,5 +45,8 @@ getRuta(codUser: number,nombre:string): void {
   );
 }
 
+getCambiarEstado(cod:number){
+  return this.http.get(`${this.API_URI}/revisiones/state/${cod}`);
+}
 
 }
