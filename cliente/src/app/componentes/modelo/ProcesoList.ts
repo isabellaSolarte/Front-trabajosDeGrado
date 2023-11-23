@@ -3,4 +3,5 @@ export interface ProcesoList{
     titulo:string;
     tipo:string;
     estudiantes:string[];
+    estado:number;
 }

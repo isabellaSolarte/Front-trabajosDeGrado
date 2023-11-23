@@ -34,7 +34,7 @@
                     <a class="btn custom-button" (click)="irVerFormatos(proceso.id)">Ver formatos</a>
                 </div>
                 <div class="text-center" style="margin-top: 10px;">
-                  <a class="btn custom-green-button" (click)="irSubirAnteproyecto()">Subir anteproyecto</a>
+                  <a *ngIf="proceso.estado === 3" class="btn custom-green-button" (click)="irSubirAnteproyecto()">Subir anteproyecto</a>
               </div>
             </div>
         </div>
