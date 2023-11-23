@@ -37,7 +37,13 @@ export class JefaturaRegistrosComponent {
   }
   descargarFormatoA(id:number, nombre:string):void {
     this.services.getRuta(id,nombre);
-    this.services.getCambiarEstado(id).subscribe(
+    this.cambiarEstado(id);
+  }
+  aprobarFormato(){
+   
+  }
+  cambiarEstado(idEstudiante:number){
+    this.services.getCambiarEstado(idEstudiante).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
@@ -45,9 +51,5 @@ export class JefaturaRegistrosComponent {
       err => console.log(err)
     );
   }
-  aprobarFormato(){
-
-  }
-
 
 }
