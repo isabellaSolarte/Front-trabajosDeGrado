@@ -39,7 +39,7 @@
                                 <button (click)="descargarFormatoA(revision.estudiantes[0].codigo, revision.estudiantes[0].nombre)" class="btn btn-primary" name = "Descargar_formato" title="Descargar">
                                     <i class='fas fa-download'></i>
                                 </button>
-                                <button (click)="aprobarFormato()" class="btn btn-success" title="Aprobar formato" name = "aprobar_formato" style="margin-left: 5px;">
+                                <button *ngIf="revision.estado === 2" (click)="aprobarFormato(revision.estudiantes[0].codigo)" class="btn btn-success" title="Aprobar formato" name="aprobar_formato" style="margin-left: 5px;">
                                     <i class="fas fa-check"></i>
                                 </button>
                                 </div>
@@ -50,27 +50,13 @@
             </table>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <app-modal
+      [showModal]="showModal"
+      [modalTitle]="modalTitle"
+      [modalMessage]="modalMessage"
+      [modalImagen] = "modalImage"
+      [navegacion] = "navegacion"
+  ></app-modal>
 
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">

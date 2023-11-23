@@ -13,6 +13,11 @@ import { CurrentUser } from '../control-vista/currentUser';
 })
 export class JefaturaRegistrosComponent {
   revisiones:RevisionA[]=[];
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'jefaturaRegistro';
   estados: { [key: number]: string } = {
     1: 'Pendiente',
     2: 'En revisión',
@@ -40,8 +45,17 @@ export class JefaturaRegistrosComponent {
     this.services.getRuta(id,nombre);
     this.cambiarEstado(id);
   }
-  aprobarFormato(){
-
+  aprobarFormato(idEstudiante:number){
+    this.services.getCambiarEstado(idEstudiante).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.mensajeExito();
+      },
+      err =>{
+        console.log(err);
+        this.mensajeError();
+      } 
+    );
   }
   cambiarEstado(idEstudiante:number){
     this.services.getCambiarEstado(idEstudiante).subscribe(
@@ -50,6 +64,21 @@ export class JefaturaRegistrosComponent {
       },
       err => console.log(err)
     );
+  }
+  mostrarModal(){
+    this.showModal = true;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No es posible aprobar el formato'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha aprobado el formato exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
   }
 
 }
