@@ -15,7 +15,8 @@ export class JefaturaRegistrosComponent {
   revisiones:RevisionA[]=[];
   estados: { [key: number]: string } = {
     1: 'Pendiente',
-    2: 'En revisión'
+    2: 'En revisión',
+    3: 'Aprobado'
   };
   ruta:string="";
   constructor(private router: Router, private services:JefaturaService,private http: HttpClient){}
@@ -35,8 +36,10 @@ export class JefaturaRegistrosComponent {
     return this.estados[state];
   }
   descargarFormatoA(id:number, nombre:string):void {
-    //
     this.services.getRuta(id,nombre);
+  }
+  aprobarFormato(){
+
   }
 
 
