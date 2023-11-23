@@ -21,8 +21,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+
                         <ng-container *ngFor="let revision of revisiones; let i = index">
+                            <tr>
                             <td>{{revision.id}}</td>
                             <td>{{revision.tipo}}</td>
                             <td>{{revision.titulo}}</td>
@@ -43,9 +44,8 @@
                                 </button>
                                 </div>
                             </td>
-
+                          </tr>
                         </ng-container>
-                    </tr>
                 </tbody>
             </table>
         </div>

@@ -47,7 +47,6 @@ export class JefaturaRegistrosComponent {
     this.services.getCambiarEstado(idEstudiante).subscribe(
       (res: any) => {
         console.log(res);
-        this.revisiones = res;
       },
       err => console.log(err)
     );
