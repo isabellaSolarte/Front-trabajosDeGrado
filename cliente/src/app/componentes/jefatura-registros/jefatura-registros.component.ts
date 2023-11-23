@@ -37,6 +37,13 @@ export class JefaturaRegistrosComponent {
   descargarFormatoA(id:number, nombre:string):void {
     //
     this.services.getRuta(id,nombre);
+    this.services.getCambiarEstado(id).subscribe(
+      (res: any) => {
+        console.log(res);
+        this.revisiones = res;
+      },
+      err => console.log(err)
+    );
   }
 
 

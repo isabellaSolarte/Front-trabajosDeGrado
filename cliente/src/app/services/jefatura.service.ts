@@ -36,7 +36,7 @@ getRuta(codUser: number,nombre:string): void {
           link.href = window.URL.createObjectURL(blob);
           link.download = 'TI_A_'+nombre+'_'+codUser+'.pdf';
           link.click();
-          this.getCambiarEstado(codUser);
+
       },
       (error) => {
           console.error('Error al obtener la ruta del archivo:', error);
