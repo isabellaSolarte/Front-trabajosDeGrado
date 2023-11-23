@@ -24,7 +24,8 @@ export class JefaturaRegistrosComponent {
     this.getRevisiones();
   }
   getRevisiones(){
-    this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
+    //this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
+    this.services.getRevisiones(104).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
@@ -40,7 +41,7 @@ export class JefaturaRegistrosComponent {
     this.cambiarEstado(id);
   }
   aprobarFormato(){
-   
+
   }
   cambiarEstado(idEstudiante:number){
     this.services.getCambiarEstado(idEstudiante).subscribe(
