@@ -18,7 +18,7 @@ export class DirectorAnteproyectoComponent {
 
       const formData = new FormData();
       const idUser=104619021330;
-      // const idUser = currentUser.getCurrentId();
+      //const idUser = currentUser.getCurrentId();
       formData.append('archivo', file, file.name);
       console.log('entro',formData.get('archivo'))
       this.fileName = file.name;
