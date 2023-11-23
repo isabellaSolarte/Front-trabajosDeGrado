@@ -66,6 +66,9 @@ export class AdministradorComponent {
       this.deleteUsuario(id);
     }
   }
+  cerrarsesion(){
+    this.router.navigate(['/login']);
+  }
   mostrarModal(){
     this.showModal = true;
   }
