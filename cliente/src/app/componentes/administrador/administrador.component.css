@@ -16,11 +16,19 @@
     flex: 1;
     padding-left: 10px;
 }
-
+@media (max-width: 768px) {
+  .titulo {
+      font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+  }
+  /*Botón*/
+  .btn-custom{
+    margin-bottom: 5%;
+  }
+}
 .navbar-top {
     background-color: #13245E;
     width: 100%;
-    height: 20px;
+    height: 50px;
 }
 
 .titulo-pagina h1{
@@ -39,7 +47,11 @@
     background-color: #13245E;
     color: #F8F8F8;
 }
-
+.btn-custom-color {
+  background-color: #D67E18;
+  margin-right: 3%;
+  color: #fff; /* Color del texto, si es necesario */
+}
 
 /*tabla*/
 .password-cell {

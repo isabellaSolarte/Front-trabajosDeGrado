@@ -23,9 +23,10 @@
                   <input type="text" class="form-control" id="nombres" name="_nombre" [(ngModel)]="usuario._nombre" placeholder="Nombres" (blur)="validarNombre()">
                   <div *ngIf="nombreError" class="error-message">Error! El nombre debe contener solo caracteres no numéricos.</div>
               </div>
-              <div class="form-group">
+              <div class="form-group" [ngClass]="{'has-error': correoError}">
                   <label for="correo">Correo<span class="required">*</span></label>
-                  <input type="email" class="form-control" id="correo" name="_correo" [(ngModel)]="usuario._correo" placeholder="Correo">
+                  <input type="email" class="form-control" id="correo" name="_correo" [(ngModel)]="usuario._correo" placeholder="Correo"(blur)="validarCorreo()">
+                  <div *ngIf="correoError" class="error-message">Error! Ingresa un correo válido.</div>
               </div>
           </form>
         </div>

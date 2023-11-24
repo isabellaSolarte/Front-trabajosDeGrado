@@ -39,6 +39,8 @@ export class AdministradorCrearComponent {
   nombreError: boolean = false;
   usuarioError: boolean = false;
   rolError: boolean = false;
+  correoError: boolean = false;
+
 
   getRoles(){
     this.services.getRoles().subscribe(
@@ -103,7 +105,7 @@ export class AdministradorCrearComponent {
     const elemento = document.getElementById('nombres');
   
     if (elemento) {
-      const regex = /^[a-zA-Z\sñÑ]+$/;
+      const regex = /^[a-zA-Z\sñÑáéíóúÁÉÍÓÚ]+$/;
   
       if (!regex.test(this.usuario._nombre)) {
         elemento.classList.add('campo-invalido');
@@ -119,7 +121,7 @@ export class AdministradorCrearComponent {
     const elemento = document.getElementById('usuario');
   
     if (elemento) {
-      const regex = /^[a-zA-Z\sñÑ]+$/;
+      const regex = /^[a-zA-Z\sñÑáéíóúÁÉÍÓÚ]+$/;
   
       if (!regex.test(this.usuario._login)) {
         elemento.classList.add('campo-invalido');
@@ -128,6 +130,22 @@ export class AdministradorCrearComponent {
       } else {
         elemento.classList.remove('campo-invalido');
         this.usuarioError = false; // Establecer a false cuando no hay error
+      }
+    }
+  }
+  validarCorreo() {
+    const elemento = document.getElementById('correo');
+  
+    if (elemento) {
+      const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  
+      if (!regex.test(this.usuario._correo)) {
+        elemento.classList.add('campo-invalido');
+        this.correoError = true;
+        console.error('Error: Ingresa un correo válido.');
+      } else {
+        elemento.classList.remove('campo-invalido');
+        this.correoError = false; // Establecer a false cuando no hay error
       }
     }
   }

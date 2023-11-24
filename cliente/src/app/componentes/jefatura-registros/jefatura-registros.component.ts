@@ -44,17 +44,22 @@ export class JefaturaRegistrosComponent {
   descargarFormatoA(id:number, nombre:string):void {
     this.services.getRuta(id,nombre);
     this.cambiarEstado(id);
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
+      this.router.navigate(['jefaturaRegistro']);
+    });
   }
   aprobarFormato(idEstudiante:number){
     this.services.getCambiarEstado(idEstudiante).subscribe(
       (res: any) => {
         console.log(res);
+
         this.mensajeExito();
+
       },
       err =>{
         console.log(err);
         this.mensajeError();
-      } 
+      }
     );
   }
   cambiarEstado(idEstudiante:number){

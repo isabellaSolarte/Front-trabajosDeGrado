@@ -10,49 +10,57 @@ import { AdministradorService } from 'src/app/services/administrador.service';
   styleUrls: ['./administrador-editar.component.css']
 })
 export class AdministradorEditarComponent {
-  roles:rol[] = [];
+  roles: rol[] = [];
   showModal: boolean = false;
   modalTitle: string = '';
   modalMessage: string = '';
-  modalImage:string = '';
-  navegacion:string = 'administrador';
+  modalImage: string = '';
+  navegacion: string = 'administrador';
   selectedRoles: rol[] = [];
-    usuario:Usuario ={
-    _id:0,
+  usuario: Usuario = {
+    _id: 0,
     _nombre: '',
     _login: '',
     _password: '',
-    _rol:[],
+    _rol: [],
     _correo: ''
   };
-  constructor(private router:Router,private activeRouter: ActivatedRoute,private services:AdministradorService){
+  constructor(private router: Router, private activeRouter: ActivatedRoute, private services: AdministradorService) {
     this.getRoles();
-    
+
   }
   edit: boolean = false;
   identificacionError: boolean = false;
   nombreError: boolean = false;
   usuarioError: boolean = false;
   rolError: boolean = false;
+  correoError: boolean = false;
+
 
   ngOnInit(): void {
     const params = this.activeRouter.snapshot.params;
-      if (params['id']) {
-        this.services.getUser(params['id']).subscribe(
-          (res) => {
-            console.log(res);
-             Object.assign(this.usuario,res) ;
+    if (params['id']) {
+      this.services.getUser(params['id']).subscribe(
+        (res) => {
+          console.log(res);
+          Object.assign(this.usuario, res);
+          // Marcar los roles seleccionados
+          this.roles.forEach(role => {
+            if (this.usuario._rol.find(selectedRole => selectedRole._id === role._id)) {
+              this.selectedRoles.push(role);
+            }
+          });  
           },
-          (err) => {
-            console.error(err);
-           
-          }
-        );
-      }
+            (err) => {
+              console.error(err);
+
+            }
+          );
+        }
       this.selectedRoles = this.usuario._rol;
     }
-  updateUsuario(): void {
-    if (this.selectedRoles.length > 0) {
+    updateUsuario(): void {
+      if(this.selectedRoles.length > 0) {
       console.log(this.usuario);
       // Asignar los roles
       this.usuario._rol = this.selectedRoles;
@@ -72,8 +80,8 @@ export class AdministradorEditarComponent {
       console.error('Debe seleccionar al menos una opción de rol.');
     }
   }
-  
-  getRoles(){
+
+  getRoles() {
     this.services.getRoles().subscribe(
       (res: any) => {
         console.log(res);
@@ -92,13 +100,13 @@ export class AdministradorEditarComponent {
       this.selectedRoles.splice(index, 1);
     }
   }
-  
+
   validarNombre() {
     const elemento = document.getElementById('nombres');
-  
+
     if (elemento) {
-      const regex = /^[a-zA-Z\sñÑ]+$/;
-  
+      const regex = /^[a-zA-Z\sñÑáéíóúÁÉÍÓÚ]+$/;
+
       if (!regex.test(this.usuario._nombre)) {
         elemento.classList.add('campo-invalido');
         this.nombreError = true;
@@ -111,10 +119,10 @@ export class AdministradorEditarComponent {
   }
   validarUsuario() {
     const elemento = document.getElementById('usuario');
-  
+
     if (elemento) {
       const regex = /^[a-zA-Z\sñÑ]+$/;
-  
+
       if (!regex.test(this.usuario._login)) {
         elemento.classList.add('campo-invalido');
         this.usuarioError = true;
@@ -125,19 +133,35 @@ export class AdministradorEditarComponent {
       }
     }
   }
-  cancelar(){
+  validarCorreo() {
+    const elemento = document.getElementById('correo');
+  
+    if (elemento) {
+      const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  
+      if (!regex.test(this.usuario._correo)) {
+        elemento.classList.add('campo-invalido');
+        this.correoError = true;
+        console.error('Error: Ingresa un correo válido.');
+      } else {
+        elemento.classList.remove('campo-invalido');
+        this.correoError = false; // Establecer a false cuando no hay error
+      }
+    }
+  }
+  cancelar() {
     this.router.navigate(['/administrador']);
   }
-  mostrarModal(){
+  mostrarModal() {
     this.showModal = true;
   }
-  mensajeError(){
+  mensajeError() {
     this.modalImage = 'assets/cancelar.png';
     this.modalMessage = 'No es posible editar el usuario'
     this.modalTitle = '!Algo ha salido mal!'
     this.showModal = true;
   }
-  mensajeExito(){
+  mensajeExito() {
     this.modalImage = 'assets/comprobado.png';
     this.modalMessage = 'Se ha editado el usuario exitosamente'
     this.modalTitle = 'Todo salió bien'
