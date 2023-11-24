@@ -29,8 +29,8 @@ export class JefaturaRegistrosComponent {
     this.getRevisiones();
   }
   getRevisiones(){
-    //this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
-    this.services.getRevisiones(104).subscribe(
+    this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
+    //this.services.getRevisiones(104).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;

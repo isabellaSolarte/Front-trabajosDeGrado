@@ -3,6 +3,7 @@ import{HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Formato } from '../componentes/modelo/FormatoADirector';
 import { Proceso } from '../componentes/modelo/Proceso';
+import { currentUser } from '../componentes/control-vista/currentUser';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,7 @@ export class DirectorService {
     return this.http.post(`${this.API_URI}/formatoA/?id=${id}`, form);
   }
   getProcesses(){
-    return this.http.get(`${this.API_URI}/procesos/`);
+    return this.http.get(`${this.API_URI}/procesos/?usr=${currentUser.getCurrentId()}`);
   }
   getFormato(id: number){
     return this.http.get(`${this.API_URI}/formatoA/${id}`);
