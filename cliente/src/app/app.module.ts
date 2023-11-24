@@ -21,6 +21,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { UsuarioService } from './services/usuarios.service';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
+import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { DirectorAnteproyectoComponent } from './componentes/director-anteproyec
     LoginComponent,
     ModalComponent,
     DirectorAnteproyectoComponent,
+    EvaluadoresComponent,
   ],
   imports: [
     BrowserModule,
