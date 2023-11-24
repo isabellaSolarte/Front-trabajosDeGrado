@@ -5,13 +5,18 @@
           <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
       </div>
   </div>
-  <div class="navbar-top">
+  <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+    <div class="navbar-collapse justify-content-end">
+        <button class="btn btn-custom-color" (click)="cerrarsesion()">
+            <i class="fas  fa-sign-out-alt"></i> Cerrar Sesión
+          </button>
+      </div> 
+</nav>
 
-  </div>
   <div class="container py-4">
       <div class="contenedor-crear">
           <button (click)= "crearUsuario()" class="btn btn-custom">Crear  <i class="fas fa-plus"></i></button>
-    
+      </div>
       <div class="table-responsive ">
           <table class="table table-striped rounded">
               <thead>
@@ -19,7 +24,7 @@
                       <th>ID</th>
                       <th>Nombre</th>
                       <th>Login</th>
-                      <th>Contraseña</th>
+                      <!--<th>Contraseña</th>-->
                       <th>Rol</th>
                       <th>Correo</th>
                       <th>Acciones</th>
@@ -28,11 +33,11 @@
               </thead>
               <tbody>
                   <ng-container *ngFor="let usuario of usuarios; let i = index">
-                     
+                      <tr>
                         <td>{{usuario._id}}</td>
                         <td>{{usuario._nombre}}</td>
                         <td>{{usuario._login}}</td>
-                        <td>
+                        <!--<td>
                           <div class="password-cell">
                             <i class="fas" [ngClass]="{'fa-eye-slash': !passwordVisibility[i], 'fa-eye': passwordVisibility[i]}" (click)="togglePassword(i)"></i>
                             <div class="password-text">
@@ -40,7 +45,7 @@
                               <span *ngIf="!passwordVisibility[i]">********</span>
                             </div>
                           </div>
-                        </td>
+                        </td>-->
                         <td>
                           <ul>
                             <li *ngFor="let rol of usuario._rol">{{rol._nombre}}</li>
@@ -58,18 +63,19 @@
                             </button>
                           </div>
                         </td>
-                      
+                      </tr>
                     </ng-container>
               </tbody>
           </table>
       </div>
-      <div class="alert alert-success alert-dismissible" *ngIf="mostrarMensaje">
-          El usuario se ha eliminado correctamente.
-          <button type="button" class="close" (click)="cerrarMensaje()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
   </div>
+  <app-modal
+      [showModal]="showModal"
+      [modalTitle]="modalTitle"
+      [modalMessage]="modalMessage"
+      [modalImagen] = "modalImage"
+      [navegacion] = "navegacion"
+  ></app-modal>
 
   <div id="footer" class="footer-con-imagen">
       <div class="imagen-con-textoF">

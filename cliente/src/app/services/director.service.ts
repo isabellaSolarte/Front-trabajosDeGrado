@@ -28,7 +28,17 @@ export class DirectorService {
   getEstudiante(id:number){
     return this.http.get(`${this.API_URI}/estudiantes/${id}`);
   }
-  sendFormato(id: number) {
-    return this.http.patch(`${this.API_URI}/procesos/formatosa/${id}`, {id});
+  getEstudiantes(){
+    return this.http.get(`${this.API_URI}/estudiantes`);
+  }
+  sendFormato(id: number,idPrc:number) {
+    return this.http.patch(`${this.API_URI}/procesos/formatosa/${id}/${idPrc}`, {id,idPrc});
+  }
+
+
+  enviarArchivo(formData: FormData, idUser:number) {
+
+    console.log("antes de entrar al servidor"+ formData)
+    return this.http.post(`${this.API_URI}/anteproyecto/upload/${idUser}`,formData);
   }
 }

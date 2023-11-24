@@ -17,6 +17,11 @@ import { DirectorService } from './services/director.service';
 import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jefatura-registros.component';
 import { JefaturaMainComponent } from './componentes/jefatura-main/jefatura-main.component';
 import { JefaturaService } from './services/jefatura.service';
+import { LoginComponent } from './componentes/login/login.component';
+import { UsuarioService } from './services/usuarios.service';
+import { ModalComponent } from './componentes/modal/modal.component';
+import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +36,9 @@ import { JefaturaService } from './services/jefatura.service';
     DirectorLlenarFormatoComponent,
     JefaturaRegistrosComponent,
     JefaturaMainComponent,
+    LoginComponent,
+    ModalComponent,
+    DirectorAnteproyectoComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,7 @@ import { JefaturaService } from './services/jefatura.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService,DirectorService,JefaturaService],
+  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

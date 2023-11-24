@@ -28,7 +28,7 @@
 .navbar-top {
     background-color: #13245E;
     width: 100%;
-    height: 20px;
+    height: 50px;
 }
 
 .titulo-pagina h1{
@@ -49,6 +49,15 @@
   margin-top: 20px; /* Espacio superior para separar el botón del formulario */
   margin-bottom: 5px;
 }
+.btn-custom-color {
+  background-color: #D67E18;
+  color: #fff; /* Color del texto, si es necesario */
+}
+
+.btn-custom-color:hover {
+  background-color: #FFA500; /* Cambiar el color al pasar el ratón, si lo deseas */
+}
+
 
 .Botón-crear{
   align-items: center;
@@ -86,6 +95,12 @@ label[for="rol"] {
   color: #F8F8F8;
   margin-top: 20px; /* Espacio superior para separar el botón del formulario */
 }
+
+
+/* Añade un poco de espacio a la derecha del ícono para separarlo del texto */
+.btn-custom i {
+  margin-right: 5px;
+}
 .Botón-crear{
   align-items: center;
   justify-content: center;
@@ -95,6 +110,15 @@ label[for="rol"] {
 .required {
   color: red;
   margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
+}
+.has-error {
+  color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 /* Estilo para el textarea*/
 .scrollable-form {

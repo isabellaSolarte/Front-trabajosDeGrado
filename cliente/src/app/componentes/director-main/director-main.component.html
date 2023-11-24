@@ -1,38 +1,46 @@
 <div class="wrapper">
     <div class="cabecera">
-        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <img src="../../../assets/escudo.jpg" alt="Icono" class="icono-izquierda">
         <div class="titulo-pagina">
             <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
         </div>
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
-        <div class="navbar-collapse justify-content-end">
-          <button class="btn btn-custom-color" (click)="irSubirFormato()" type="button">
-            Subir formato <i class="fas fa-upload"></i>
-          </button>
-        </div>
-      </nav>
+  <div class="navbar-collapse justify-content-end">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" (click)="irSubirFormato()" data-toggle="tooltip" title="Subir formato">
+          <i class="fas fa-upload"></i> Subir formato
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
     
-      <div class="container py-4">
-        <h1 class="titulo">Procesos delegados</h1>
-        <div class="d-flex flex-wrap justify-content-center">
-            <div class="card rounded m-3 fixed-card" style="max-width: 300px;" *ngFor="let proceso of procesos">
-                <div class="d-flex justify-content-center align-items-center">
-                    <img src="assets/investigar.png" class="book-icon" alt="Libro Abierto">
+  <div class="container py-4">
+    <h1 class="titulo">Procesos delegados</h1>
+    <div class="d-flex flex-wrap justify-content-center">
+        <div class="card rounded m-3 fixed-card" style="max-width: 300px;" *ngFor="let proceso of procesos">
+            <div class="d-flex justify-content-center align-items-center">
+                <img [src]="proceso.tipo === 'Trabajo de investigación' ? 'assets/investigar.png' : 'assets/practica.png'" class="book-icon" alt="Libro Abierto">
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">{{proceso.tipo}}</h5>
+                <p class="card-text text-wrap">{{proceso.titulo}}</p>
+                <hr class="my-4" style="background-color: #ccc;">
+                <h5 class="card-title">Estudiantes</h5>
+                <p class="card-text" *ngFor="let nombre of proceso.estudiantes">{{nombre}}</p>
+                <div class="text-center">
+                    <a class="btn custom-button" (click)="irVerFormatos(proceso.id)">Ver formatos</a>
                 </div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{proceso.tipo}}</h5>
-                    <p class="card-text text-wrap">{{proceso.titulo}}</p>
-                    <hr class="my-4" style="background-color: #ccc;">
-                    <h5 class="card-title">Estudiantes</h5>
-                    <p class="card-text" *ngFor="let nombre of proceso.estudiantes">{{nombre}}</p>
-                    <div class="text-center">
-                        <a class="btn btn-primary custom-button" (click)="irVerFormatos(proceso.id)">Ver formatos</a>
-                    </div>
-                </div>
+                <div class="text-center" style="margin-top: 10px;">
+                  <a *ngIf="proceso.estado === 3" class="btn custom-green-button" (click)="irSubirAnteproyecto()">Subir anteproyecto</a>
+              </div>
             </div>
         </div>
     </div>
+  </div>
+  
   
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">

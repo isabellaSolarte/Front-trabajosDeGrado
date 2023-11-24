@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { RevisionA } from '../modelo/RevisionA';
 import { Router } from '@angular/router';
 import { JefaturaService } from 'src/app/services/jefatura.service';
-
+import { currentUser } from '../control-vista/currentUser';
+import { HttpClient } from '@angular/common/http';
+import { CurrentUser } from '../control-vista/currentUser';
 
 @Component({
   selector: 'app-jefatura-registros',
@@ -11,16 +13,24 @@ import { JefaturaService } from 'src/app/services/jefatura.service';
 })
 export class JefaturaRegistrosComponent {
   revisiones:RevisionA[]=[];
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'jefaturaRegistro';
   estados: { [key: number]: string } = {
     1: 'Pendiente',
-    2: 'En revisión'
+    2: 'En revisión',
+    3: 'Aprobado'
   };
-  constructor(private router: Router, private services:JefaturaService){}
+  ruta:string="";
+  constructor(private router: Router, private services:JefaturaService,private http: HttpClient){}
   ngOnInit(): void {
     this.getRevisiones();
   }
   getRevisiones(){
-    this.services.getRevisiones(1).subscribe(
+    //this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
+    this.services.getRevisiones(104).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
@@ -31,5 +41,49 @@ export class JefaturaRegistrosComponent {
   getEstado(state:number){
     return this.estados[state];
   }
-  //getRevisiones
+  descargarFormatoA(id:number, nombre:string):void {
+    this.services.getRuta(id,nombre);
+    this.cambiarEstado(id);
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
+      this.router.navigate(['jefaturaRegistro']);
+    });
+  }
+  aprobarFormato(idEstudiante:number){
+    this.services.getCambiarEstado(idEstudiante).subscribe(
+      (res: any) => {
+        console.log(res);
+
+        this.mensajeExito();
+
+      },
+      err =>{
+        console.log(err);
+        this.mensajeError();
+      }
+    );
+  }
+  cambiarEstado(idEstudiante:number){
+    this.services.getCambiarEstado(idEstudiante).subscribe(
+      (res: any) => {
+        console.log(res);
+      },
+      err => console.log(err)
+    );
+  }
+  mostrarModal(){
+    this.showModal = true;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No es posible aprobar el formato'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha aprobado el formato exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
+  }
+
 }

@@ -6,6 +6,9 @@
         </div>
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+      <button class="btn btn-custom-color" (click)="iratras()">
+        <i class="fas fa-arrow-left"></i> Atrás
+      </button>
         <div class="navbar-collapse justify-content-end">
           <button class="btn btn-custom-color" (click)="irSubirFormato()" type="button">
             Subir formato <i class="fas fa-upload"></i>
@@ -35,7 +38,7 @@
                 <tr>
                   <td> A </td>
                   <td>{{proceso.titulo}}</td>
-                  <td>{{formato._revision}}</td>
+                  <td>{{formato._recibido | date:'shortDate'}}</td>
                   <td>{{formato._realizacion}}</td>
                   <td>
                     <button class="btn btn-enviar" (click)="enviarFormatoJefatura()" title="Enviar">Enviar</button>
@@ -47,7 +50,13 @@
         </table>
     </div>
     </div>
-
+    <app-modal
+            [showModal]="showModal"
+            [modalTitle]="modalTitle"
+            [modalMessage]="modalMessage"
+            [modalImagen] = "modalImage"
+            [navegacion] = "navegacion"
+        ></app-modal>
   
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">

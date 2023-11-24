@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent {
   constructor(private router:Router){
-    //this.router.navigate(['jefaturaRegistro'])
+    this.router.navigate(['login'])
   }
 }
+ 

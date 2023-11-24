@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="login-container">
+    <div class="left-container">
+      <div class="overlay">
+        <img src="../../../assets/unicauca-logo-87F35B8ABC-seeklogo.com.png" alt="Logo" class="logo">
+      </div> 
+      
+    </div>
+
+    <div class="right-container">
+      <img src="../../../assets/graduacion.png" alt="Grado" class="grado">
+      <h3>Iniciar Sesión</h3>
+      <form class="login-form">
+        <input name="login" [(ngModel)]="creenciales._username" type="text" placeholder="Usuario" required>
+        <input name="password" [(ngModel)]="creenciales._clave" type="password" placeholder="Contraseña" required>
+        <button (click)='login()' type="submit" value="Log In">Ingresar</button>
+      </form>
+    </div>
+  </div>
+  <div id="footer" class="footer-con-imagen">
+    <div class="imagen-con-textoF">
+    <div class="texto-con-lineaF">
+        <div class="linea-verticalF">
+        <span>
+            © 2023 Universidad del Cauca, Inc.
+        </span>
+        </div>
+        <span>Terms Privacy Security</span>
+    </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

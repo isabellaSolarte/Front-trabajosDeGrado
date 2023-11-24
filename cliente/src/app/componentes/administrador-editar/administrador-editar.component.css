@@ -75,10 +75,31 @@ background-color: #13245E;
 color: #F8F8F8;
 margin-top: 20px; /* Espacio superior para separar el botón del formulario */
 }
+/*botones*/
+.btn-guardar {
+  background-color: #13245E;
+  color: #F8F8F8; 
+  margin: 10px; /* Espacio superior para separar el botón del formulario */
+  margin-top: 20px;
+}
+.btn-guardar:hover{
+  transform: scale(0.9);
+  transition: all .3s;
+}
+.btn-cancelar:hover{
+  transform: scale(0.9);
+  transition: all .3s;
+}
+.btn-cancelar {
+  background-color: #4D4D4D;
+  color: #F8F8F8; 
+  margin: 10px; /* Espacio superior para separar el botón del formulario */
+  margin-top: 20px;
+}
 .Botón-crear{
-align-items: center;
-justify-content: center;
-display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 /* Estilo para el asterisco rojo */
 .required {
@@ -132,4 +153,16 @@ margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
   .show {
     /* Estilos para hacer visible el modal */
     display: block; /* o visibility: visible; u otros estilos */
+  }
+  .has-error {
+    color: red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  .campo-invalido {
+    border: 1px solid red;
   }
