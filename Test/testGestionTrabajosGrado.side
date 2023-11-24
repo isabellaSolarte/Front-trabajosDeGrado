@@ -2,7 +2,7 @@
   "id": "bab2742e-9f57-4a18-a929-f3e19f92dfd1",
   "version": "2.0",
   "name": "testGestionTrabajosGrado",
-  "url": "http://192.168.1.6:4200",
+  "url": "http://192.168.1.11:4200",
   "tests": [{
     "id": "4958a1d1-f959-492b-bb25-2a47996caf65",
     "name": "Crear usuario ID = 1061",
@@ -664,7 +664,7 @@
     }]
   }, {
     "id": "de290609-49c4-4d84-8324-78a543b30736",
-    "name": "Subir formato",
+    "name": "Subir formato trabajo de investigacion",
     "commands": [{
       "id": "32039c13-9974-4b4d-a9f6-0b6dc6ba3956",
       "comment": "",
@@ -725,19 +725,6 @@
       ],
       "value": ""
     }, {
-      "id": "edc7439c-5e1c-47bc-8337-0d0e034339e7",
-      "comment": "",
-      "command": "click",
-      "target": "id=estudiante1",
-      "targets": [
-        ["id=estudiante1", "id"],
-        ["name=_objetivos", "name"],
-        ["css=#estudiante1", "css:finder"],
-        ["xpath=//input[@id='estudiante1']", "xpath:attributes"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "ae6d80ea-1c3a-43d2-8dce-de9addcc0f65",
       "comment": "",
       "command": "click",
@@ -763,19 +750,6 @@
         ["xpath=//input", "xpath:position"]
       ],
       "value": "1"
-    }, {
-      "id": "b76a8761-adcb-4b07-9616-056c86f7a2fe",
-      "comment": "",
-      "command": "click",
-      "target": "id=recursos",
-      "targets": [
-        ["id=recursos", "id"],
-        ["name=_recursos", "name"],
-        ["css=.form-group > #recursos", "css:finder"],
-        ["xpath=//input[@id='recursos']", "xpath:attributes"],
-        ["xpath=//div[2]/form/div/input", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "df51837b-cc72-42cb-98c3-860b1b9d2c42",
       "comment": "",
@@ -855,18 +829,6 @@
       ],
       "value": "1"
     }, {
-      "id": "b3ffacad-4357-45ba-85e5-d276a3cbba53",
-      "comment": "",
-      "command": "click",
-      "target": "id=estudiante2",
-      "targets": [
-        ["id=estudiante2", "id"],
-        ["css=#estudiante2", "css:finder"],
-        ["xpath=//input[@id='estudiante2']", "xpath:attributes"],
-        ["xpath=//div[3]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "5d05f019-9554-4313-9ed1-356febdbb805",
       "comment": "",
       "command": "click",
@@ -890,32 +852,6 @@
         ["xpath=//textarea", "xpath:position"]
       ],
       "value": "Investigar"
-    }, {
-      "id": "605c441e-ba05-491e-bece-db728bb99584",
-      "comment": "",
-      "command": "click",
-      "target": "id=con_entrega",
-      "targets": [
-        ["id=con_entrega", "id"],
-        ["name=_con_entrega", "name"],
-        ["css=#con_entrega", "css:finder"],
-        ["xpath=//textarea[@id='con_entrega']", "xpath:attributes"],
-        ["xpath=//div[6]/div/textarea", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "e019a1a6-dded-460c-b858-da29f7e5d9f4",
-      "comment": "",
-      "command": "click",
-      "target": "id=con_entrega",
-      "targets": [
-        ["id=con_entrega", "id"],
-        ["name=_con_entrega", "name"],
-        ["css=#con_entrega", "css:finder"],
-        ["xpath=//textarea[@id='con_entrega']", "xpath:attributes"],
-        ["xpath=//div[6]/div/textarea", "xpath:position"]
-      ],
-      "value": ""
     }, {
       "id": "3911795d-c0d3-433b-8fa9-38ff11d85bbf",
       "comment": "",
@@ -1054,28 +990,6 @@
       ],
       "value": ""
     }, {
-      "id": "25c930af-2fa6-4612-9239-dd030998dfb0",
-      "comment": "",
-      "command": "mouseOver",
-      "target": "css=.btn",
-      "targets": [
-        ["css=.btn", "css:finder"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Guardar')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "b23c8ef5-8914-4ebe-88c4-a19120948732",
-      "comment": "",
-      "command": "mouseOut",
-      "target": "css=.btn",
-      "targets": [
-        ["css=.btn", "css:finder"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Guardar')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
       "id": "f38fa982-afcc-4317-9eb4-5c3c358fde01",
       "comment": "",
       "command": "click",
@@ -1094,7 +1008,32 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f38bbc96-87c5-4028-b381-7284c3c6fd8b",
+      "id": "6c649e67-bbb4-4c57-99ed-a0bf79c73a78",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "61ac93e0-f21d-4cca-9e2f-244d09ea92db",
+    "name": "Subir formato practica profesional",
+    "commands": [{
+      "id": "e4715e04-6263-4523-8d2d-4a21bad3a6fd",
+      "comment": "",
+      "command": "open",
+      "target": "/directorMain",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb4d28ba-6cb7-4e60-9ce0-09815bbc1aaa",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x720",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58334e58-facd-457d-bec5-3cf60aa70e0a",
       "comment": "",
       "command": "click",
       "target": "css=.btn-custom-color",
@@ -1106,7 +1045,7 @@
       ],
       "value": ""
     }, {
-      "id": "c36b8290-7a30-4d55-8674-b5a9a7012d9a",
+      "id": "99b68f05-75b9-4f6b-b863-91171cc3c7b4",
       "comment": "",
       "command": "click",
       "target": "id=propuesta",
@@ -1119,27 +1058,14 @@
       ],
       "value": ""
     }, {
-      "id": "73714c9e-6ca9-4b9b-9c45-3401207a51ec",
+      "id": "23cce0c2-572f-48cb-a82e-708ba944d13a",
       "comment": "",
       "command": "select",
       "target": "id=propuesta",
       "targets": [],
       "value": "label=Práctica profesional"
     }, {
-      "id": "5627d07b-c66f-4b36-96fc-c4fb27aa4833",
-      "comment": "",
-      "command": "click",
-      "target": "css=option:nth-child(2)",
-      "targets": [
-        ["css=option:nth-child(2)", "css:finder"],
-        ["xpath=//option[@value='Práctica profesional']", "xpath:attributes"],
-        ["xpath=//select[@id='propuesta']/option[2]", "xpath:idRelative"],
-        ["xpath=//option[2]", "xpath:position"],
-        ["xpath=//option[contains(.,'Práctica profesional')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "1c24667b-0991-4194-a36e-c7402302879e",
+      "id": "cf76ffd2-fde7-40e9-963b-d458a4862ffc",
       "comment": "",
       "command": "click",
       "target": "id=recursos",
@@ -1152,7 +1078,7 @@
       ],
       "value": ""
     }, {
-      "id": "9d25557b-ee08-4550-a295-f8b4914aad83",
+      "id": "53ac585d-c62b-456d-a744-61eb3547be2e",
       "comment": "",
       "command": "type",
       "target": "id=recursos",
@@ -1165,7 +1091,7 @@
       ],
       "value": "TIC"
     }, {
-      "id": "a3c27a50-b25f-404b-95c1-911ceb162069",
+      "id": "65a5c474-cfd7-4e64-9caa-ff8a85f4ec59",
       "comment": "",
       "command": "click",
       "target": "id=estudiante1",
@@ -1178,7 +1104,7 @@
       ],
       "value": ""
     }, {
-      "id": "d24ba9f7-06fa-4089-a8ce-e8ceaf85e8e4",
+      "id": "b8c59846-6677-4cfd-b8ff-ab2c01bc8dc5",
       "comment": "",
       "command": "type",
       "target": "id=estudiante1",
@@ -1191,7 +1117,7 @@
       ],
       "value": "Isabella"
     }, {
-      "id": "e6821e86-c01c-4b1c-a2da-2276b9163171",
+      "id": "d93b6a99-ce6c-4958-8e90-d1d893e1ea51",
       "comment": "",
       "command": "click",
       "target": "id=codEstudiante1",
@@ -1204,7 +1130,7 @@
       ],
       "value": ""
     }, {
-      "id": "28a227bd-873f-469f-a478-81a360a32505",
+      "id": "db91fa6a-3bcf-4aa8-8ce0-d2f76ddd2e0d",
       "comment": "",
       "command": "type",
       "target": "id=codEstudiante1",
@@ -1217,7 +1143,7 @@
       ],
       "value": "2"
     }, {
-      "id": "0a9bc9ab-d0f8-4a92-b0a4-9d0e45247f1b",
+      "id": "234c0d71-aba0-4382-ba70-1715183b8f7d",
       "comment": "",
       "command": "click",
       "target": "id=asesor",
@@ -1230,7 +1156,7 @@
       ],
       "value": ""
     }, {
-      "id": "036cf2ce-6c1e-4785-b53f-8cd23b9f6be7",
+      "id": "9cf12024-9c64-4bcb-ad05-2670918d777b",
       "comment": "",
       "command": "type",
       "target": "id=asesor",
@@ -1243,7 +1169,7 @@
       ],
       "value": "Teresa"
     }, {
-      "id": "6133fd98-31ac-4c1f-940c-1bcf08949100",
+      "id": "d7c4bbff-73cd-4b4f-9b90-851c484084b5",
       "comment": "",
       "command": "click",
       "target": "id=objetivos",
@@ -1255,7 +1181,7 @@
       ],
       "value": ""
     }, {
-      "id": "fa43c51a-56f5-4e7e-89cd-036da6116051",
+      "id": "5ee8ee2e-b321-45b3-bd38-94a81fd44f80",
       "comment": "",
       "command": "type",
       "target": "id=objetivos",
@@ -1267,7 +1193,7 @@
       ],
       "value": "Desarrollar"
     }, {
-      "id": "5bb19d81-5d7f-46c5-bd16-4803740e2c21",
+      "id": "9de64a10-d30d-43cb-97c5-fc91d463abfb",
       "comment": "",
       "command": "click",
       "target": "id=con_entrega",
@@ -1280,7 +1206,7 @@
       ],
       "value": ""
     }, {
-      "id": "3f18eb3d-1fc5-47bc-a671-e96353720f31",
+      "id": "d1ed73dd-bd06-4e3b-87a4-39ffcdbf3f76",
       "comment": "",
       "command": "type",
       "target": "id=con_entrega",
@@ -1293,7 +1219,7 @@
       ],
       "value": "Practico"
     }, {
-      "id": "925a52b3-1f8a-45a4-828b-2a36fe95455f",
+      "id": "c743e162-a762-47f1-8056-7479e491e2df",
       "comment": "",
       "command": "click",
       "target": "id=realizacion",
@@ -1306,7 +1232,7 @@
       ],
       "value": ""
     }, {
-      "id": "4bf04772-22cd-4c92-bd27-febeebeb89a1",
+      "id": "ad5a84ad-5c56-4eed-90c9-dc8bb734a038",
       "comment": "",
       "command": "type",
       "target": "id=realizacion",
@@ -1319,7 +1245,7 @@
       ],
       "value": "4 meses"
     }, {
-      "id": "381be1cc-e7b9-44f5-af86-a8456944706b",
+      "id": "f8da109d-4d45-441e-a8e7-ac4d76eb5e32",
       "comment": "",
       "command": "click",
       "target": "css=.scrollable-textarea > #recursos",
@@ -1330,7 +1256,7 @@
       ],
       "value": ""
     }, {
-      "id": "b30361fc-68b8-4e61-b3d1-db6f5f311eca",
+      "id": "8f134205-3068-4903-beb0-daf9b76eb6ec",
       "comment": "",
       "command": "type",
       "target": "css=.scrollable-textarea > #recursos",
@@ -1341,7 +1267,7 @@
       ],
       "value": "Computador"
     }, {
-      "id": "62e316a2-39ba-4969-a7fb-3161bb925575",
+      "id": "54422dad-73c2-44cd-8f2b-d29b1df8eac1",
       "comment": "",
       "command": "click",
       "target": "id=financiacion",
@@ -1354,7 +1280,7 @@
       ],
       "value": ""
     }, {
-      "id": "667c81f0-2d68-4e03-825f-219a8a3c15a3",
+      "id": "0b3bb3db-ae3a-4259-a66d-d6c239ac8d10",
       "comment": "",
       "command": "type",
       "target": "id=financiacion",
@@ -1367,7 +1293,7 @@
       ],
       "value": "Universidad"
     }, {
-      "id": "664bdac8-fd68-4c06-b409-3e1e40472ab5",
+      "id": "0cc7e35d-76b0-455a-95bd-64a8c5f2eb14",
       "comment": "",
       "command": "click",
       "target": "css=.btn",
@@ -1378,7 +1304,7 @@
       ],
       "value": ""
     }, {
-      "id": "6815b4e4-ca8f-41a4-8c48-5aaaa01191d0",
+      "id": "e0171bdf-c921-46d9-a943-827026a3a7d0",
       "comment": "",
       "command": "click",
       "target": "css=.close > span",
@@ -1389,23 +1315,16 @@
       ],
       "value": ""
     }, {
-      "id": "dc39ea8c-76ae-4fe4-8dc3-dbc1e553d27a",
+      "id": "22d51146-852c-4a1d-a73b-06149cc4c14d",
       "comment": "",
       "command": "runScript",
       "target": "window.scrollTo(0,0)",
       "targets": [],
       "value": ""
     }, {
-      "id": "e90e12f0-e054-4c5e-8f18-300ac370b4d8",
+      "id": "d2f272ee-be07-4e5b-894d-a7b4d474cf7d",
       "comment": "",
-      "command": "",
-      "target": "",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "6c649e67-bbb4-4c57-99ed-a0bf79c73a78",
-      "comment": "",
-      "command": "//close",
+      "command": "close",
       "target": "",
       "targets": [],
       "value": ""
@@ -1424,8 +1343,8 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": []
+    "tests": ["de290609-49c4-4d84-8324-78a543b30736", "61ac93e0-f21d-4cca-9e2f-244d09ea92db"]
   }],
-  "urls": ["http://192.168.1.7:4200/", "http://192.168.1.6:4200/"],
+  "urls": ["http://192.168.1.7:4200/", "http://192.168.1.6:4200/", "http://192.168.1.11:4200/"],
   "plugins": []
 }
