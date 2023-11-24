@@ -20,11 +20,22 @@
     .titulo-pagina h1{
         color: #525663;
     }
-    /*navbar*/
-    .navbar-top {
-        background-color: #13245E;
-        width: 100%;
-        height: 20px;
+    /*Navbar*/
+    .btn-custom-color {
+        background-color: #D67E18;
+        color: #fff; /* Color del texto, si es necesario */
+        margin-right: 20px;
+    }
+    
+    .btn-custom-color:hover {
+        background-color: #FFA500; /* Cambiar el color al pasar el ratón, si lo deseas */
+    }
+
+    .titulo-pagina h1{
+        color: #525663;
+    }
+    .titulo{
+        color: #525663; 
     }
 
 /*Footer*/
