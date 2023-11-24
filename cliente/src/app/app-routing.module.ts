@@ -11,6 +11,7 @@ import { JefaturaRegistrosComponent } from './componentes/jefatura-registros/jef
 import { LoginComponent } from './componentes/login/login.component';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
+import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path:'jefaturaRegistro', component:JefaturaRegistrosComponent },
   { path:'login', component:LoginComponent },
   { path:'modal', component:ModalComponent },
-  { path:'directortAnteproyecto', component:DirectorAnteproyectoComponent }
+  { path:'directortAnteproyecto', component:DirectorAnteproyectoComponent },
+  { path:'evaluadores', component:EvaluadoresComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

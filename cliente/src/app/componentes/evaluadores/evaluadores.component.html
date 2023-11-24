@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+        <button class="btn btn-custom-color" (click)="iratras()">
+            <i class="fas fa-arrow-left"></i> Atrás
+          </button>
+      </nav>
+  
+    <div class="container py-4">
+        <div class="table-responsive ">
+            <table class="table table-striped rounded">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+  
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let evaluador of evaluadores; let i = index">
+                        <tr>
+                          <td>{{evaluador.codigo}}</td>
+                          <td>{{evaluador.nombre}}</td>
+                          <td>{{evaluador.correo}}</td>
+
+                        </tr>
+                      </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+      
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

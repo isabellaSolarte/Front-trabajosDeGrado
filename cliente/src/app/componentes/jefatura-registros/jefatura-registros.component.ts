@@ -6,6 +6,7 @@ import { currentUser } from '../control-vista/currentUser';
 import { HttpClient } from '@angular/common/http';
 import { CurrentUser } from '../control-vista/currentUser';
 
+
 @Component({
   selector: 'app-jefatura-registros',
   templateUrl: './jefatura-registros.component.html',
@@ -84,6 +85,9 @@ export class JefaturaRegistrosComponent {
     this.modalMessage = 'Se ha aprobado el formato exitosamente'
     this.modalTitle = 'Todo salió bien'
     this.showModal = true;
+  }
+  evaluadores(){
+    this.router.navigate(['evaluadores']);
   }
 
 }

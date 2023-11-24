@@ -12,6 +12,11 @@ export class DirectorAnteproyectoComponent {
   constructor(private router: Router,private services:DirectorService,private route: ActivatedRoute){}
 
   fileName:string = "";
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'directorMain';
   guardarArchivo(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -33,6 +38,27 @@ export class DirectorAnteproyectoComponent {
         }
       );
     }
+  }
+  cancelar(){
+    this.router.navigate(['directorMain']);
+  }
+  subirArchivo(){
+    this.mensajeExito();
+  }
+  mostrarModal(){
+    this.showModal = true;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo subir el archivo'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha subido el archivo exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
   }
 
 
