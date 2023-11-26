@@ -35,6 +35,7 @@ export class LoginComponent {
           console.log(res);
           this.usuario = res;
           currentUser.setCurrentId(this.usuario._id);
+          currentUser.setCurrentNombre(this.usuario._nombre);
           this.verificarVista(this.usuario._rol);
         },
         err => console.log(err)
@@ -51,7 +52,7 @@ export class LoginComponent {
       if (rol[0]._id == 2) {
         this.router.navigate(['/directorMain']);
       } else{
-        this.router.navigate(['/jefaturaRegistro']);
+        this.router.navigate(['/jefaturaMain']);
       }
     }
   }

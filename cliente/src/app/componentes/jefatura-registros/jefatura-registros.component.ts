@@ -89,5 +89,8 @@ export class JefaturaRegistrosComponent {
   evaluadores(){
     this.router.navigate(['evaluadores']);
   }
+  iratras(){
+    this.router.navigate(['jefaturaMain']);
+  }
 
 }

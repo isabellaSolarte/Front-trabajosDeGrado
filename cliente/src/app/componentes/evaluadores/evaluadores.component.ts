@@ -24,6 +24,6 @@ export class EvaluadoresComponent {
     );
   }
   iratras(){
-    this.route.navigate(['jefaturaRegistro']);
+    this.route.navigate(['jefaturaMain']);
   }
 }
