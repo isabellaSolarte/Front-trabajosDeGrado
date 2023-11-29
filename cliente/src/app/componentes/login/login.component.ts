@@ -23,10 +23,12 @@ export class LoginComponent {
     _rol:[],
     _correo: ''
   };
+  credencialesVacias: boolean = false;
+  
   constructor(private router:Router,private services:UsuarioService){}
   login(){
     if(!this.creenciales._username  || !this.creenciales._clave ) {
-      console.error('Las credenciales están vacías');
+      this.credencialesVacias = true;
     }
     else{
       //llamar al service
@@ -38,7 +40,11 @@ export class LoginComponent {
           currentUser.setCurrentNombre(this.usuario._nombre);
           this.verificarVista(this.usuario._rol);
         },
-        err => console.log(err)
+        err =>{
+          this.credencialesVacias = true;
+          console.log(err);
+        }
+         
       );
     }
   }

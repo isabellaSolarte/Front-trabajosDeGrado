@@ -80,7 +80,7 @@ padding: 5px 10px; /* Ajusta el espaciado interno (padding) para reducir el tama
   justify-content: center;
   display: flex;
 }
-/* Estilo para el asterisco rojo */
+/*Checklist*/
 .required {
   color: red;
   margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
@@ -89,10 +89,22 @@ padding: 5px 10px; /* Ajusta el espaciado interno (padding) para reducir el tama
   max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
   overflow-y: auto;
 }
-/* En tu archivo CSS global o en el archivo de estilos del componente */
 .checkbox-list {
   display: flex;
   flex-direction: column;
+  border: 1px solid #ccc; /* Puedes ajustar el grosor y color del borde según tus preferencias */
+  border-radius: 8px; /* Ajusta el radio para obtener bordes redondos */
+  padding: 10px; /* Ajusta el relleno según sea necesario */
+}
+/* Agrega estilos para los elementos del checklist */
+.checkbox-item {
+  margin-bottom: 8px; /* Espaciado entre elementos del checklist */
+}
+
+/* Estilos para el checkbox y la etiqueta */
+.checkbox-item input[type="checkbox"] {
+  border-radius: 4px; /* Ajusta el radio para obtener los checkbox con bordes redondos */
+  margin-right: 8px; /* Espaciado entre el checkbox y la etiqueta */
 }
 
 .checkbox-list .checkbox-item {
@@ -108,8 +120,18 @@ padding: 5px 10px; /* Ajusta el espaciado interno (padding) para reducir el tama
   width: 50%; /* Establece el ancho deseado para el contenedor (por ejemplo, 50% del ancho de la pantalla) */
   margin: 0 auto;
 }
+.has-error {
+  color: red;
+}
 
-
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.campo-invalido {
+  border: 1px solid red;
+}
 /*Footer*/
 #footer {
     display: flex;
@@ -153,15 +175,4 @@ padding: 5px 10px; /* Ajusta el espaciado interno (padding) para reducir el tama
     display: flex;
     flex-direction: column;
   }
-  .has-error {
-    color: red;
-  }
   
-  .error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  .campo-invalido {
-    border: 1px solid red;
-  }
