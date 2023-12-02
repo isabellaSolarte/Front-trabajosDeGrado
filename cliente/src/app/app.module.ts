@@ -22,6 +22,8 @@ import { UsuarioService } from './services/usuarios.service';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
 import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
+import { DirectorComentariosComponent } from './componentes/director-comentarios/director-comentarios.component';
+import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.comp
     ModalComponent,
     DirectorAnteproyectoComponent,
     EvaluadoresComponent,
+    DirectorComentariosComponent,
+    CoordinadorRegistrosComponent,
   ],
   imports: [
     BrowserModule,

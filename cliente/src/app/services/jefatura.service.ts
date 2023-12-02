@@ -3,6 +3,7 @@ import{HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Formato } from '../componentes/modelo/FormatoADirector';
 import { Proceso } from '../componentes/modelo/Proceso';
+import { Evaluador } from '../componentes/modelo/Evaluador';
 @Injectable({
   providedIn: 'root'
 })
@@ -33,6 +34,9 @@ export class JefaturaService {
   }
   getEvaluadores(){
     return this.http.get(`${this.API_URI}/evaluadores`);
+  }
+  asignarEvaluadores(id: number,evaluador:Evaluador[]) {
+    return this.http.post(`${this.API_URI}/evaluadores/?id=${id}`,evaluador);
   }
 
 }
