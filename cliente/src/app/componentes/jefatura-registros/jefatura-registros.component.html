@@ -22,6 +22,7 @@
                         <th>Estado</th>
                         <th>N° Revisión</th>
                         <th>Acciones</th>
+                        <th>Asignar evaluadores</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +48,11 @@
                                     <i class="fas fa-check"></i>
                                 </button>
                                 </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" (click)="irEvaluadores(revision.id)" title="Agregar" name="agregar" style="margin-left: 5px;">
+                                    <i class="fas fa-plus"></i> 
+                                  </button>
                             </td>
                           </tr>
                         </ng-container>
