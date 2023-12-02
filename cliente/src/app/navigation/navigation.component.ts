@@ -12,4 +12,3 @@ export class NavigationComponent {
     this.router.navigate(['login'])
   }
 }
- 
