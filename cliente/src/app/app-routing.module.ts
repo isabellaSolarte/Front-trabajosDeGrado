@@ -12,8 +12,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
 import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
-
-
+import { DirectorComentariosComponent } from './componentes/director-comentarios/director-comentarios.component';
+import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 const routes: Routes = [
   { path: 'administrador', component: AdministradorComponent },
   { path: 'crearUsuario', component: AdministradorCrearComponent },
@@ -26,7 +26,9 @@ const routes: Routes = [
   { path:'login', component:LoginComponent },
   { path:'modal', component:ModalComponent },
   { path:'directortAnteproyecto', component:DirectorAnteproyectoComponent },
-  { path:'evaluadores', component:EvaluadoresComponent }
+  { path:'evaluadores/:id', component:EvaluadoresComponent },
+  { path:'directorComentario', component:DirectorComentariosComponent },
+  { path:'coordinadorRegistro', component:CoordinadorRegistrosComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

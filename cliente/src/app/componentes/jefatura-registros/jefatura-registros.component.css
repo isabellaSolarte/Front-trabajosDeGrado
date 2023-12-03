@@ -25,6 +25,7 @@
         background-color: #D67E18;
         color: #fff; /* Color del texto, si es necesario */
         margin-right: 20px;
+        margin-left: 20px;
     }
     
     .btn-custom-color:hover {

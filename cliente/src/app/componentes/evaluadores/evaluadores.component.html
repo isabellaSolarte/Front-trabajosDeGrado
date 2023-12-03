@@ -12,6 +12,9 @@
       </nav>
   
     <div class="container py-4">
+        <div class="contenedor-asignar">
+            <button (click)= "asignarEvaluadores()" class="btn btn-custom">Asignar  <i class="fas fa-plus"></i></button>
+        </div>
         <div class="table-responsive ">
             <table class="table table-striped rounded">
                 <thead>
@@ -19,22 +22,34 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Correo</th>
+                        <th>Seleccionar</th>
                     </tr>
   
                 </thead>
                 <tbody>
-                    <ng-container *ngFor="let evaluador of evaluadores; let i = index">
+                    <ng-container *ngFor="let evaluador of evaluadores" class="checkbox-item">
                         <tr>
                           <td>{{evaluador.codigo}}</td>
                           <td>{{evaluador.nombre}}</td>
                           <td>{{evaluador.correo}}</td>
-
+                          <td>
+                            <input type="checkbox"
+                                id="evaluador_{{evaluador.codigo}}"
+                                (change)="toggleEvaluadorSelection(evaluador)" style="width: 20px; height: 20px; border-radius: 20px;border-width: 2px;">
+                          </td>
                         </tr>
                       </ng-container>
-                </tbody>
+                  </tbody>
             </table>
         </div>
     </div>
+    <app-modal
+      [showModal]="showModal"
+      [modalTitle]="modalTitle"
+      [modalMessage]="modalMessage"
+      [modalImagen] = "modalImage"
+      [navegacion] = "navegacion"
+  ></app-modal>
       
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">

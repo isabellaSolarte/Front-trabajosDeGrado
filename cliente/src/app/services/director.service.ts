@@ -42,4 +42,19 @@ export class DirectorService {
     console.log("antes de entrar al servidor"+ formData)
     return this.http.post(`${this.API_URI}/anteproyecto/upload/${idUser}`,formData);
   }
+  getRuta(codUser: number,nombre:string): void {
+    this.http.get(`${this.API_URI}/comentario/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
+        (response: any) => {
+            const blob = new Blob([response], { type: 'application/pdf' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'AJUSTES_TI_A_'+nombre+'_'+codUser+'.pdf';
+            link.click();
+        },
+        (error) => {
+            console.error('Error al obtener la ruta del archivo:', error);
+            // Puedes manejar el error según tus necesidades, como mostrar un mensaje al usuario
+        }
+    );
+  }
 }

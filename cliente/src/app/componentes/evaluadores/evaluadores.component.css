@@ -45,6 +45,20 @@
   .titulo-pagina h1{
       color: #525663;
   }
+  /*boton asignar*/
+  .contenedor-asignar{
+    margin-bottom: 2dvh;
+   }
+   .btn-custom{ 
+       background-color: #13245E;
+       color: #F8F8F8;
+   }
+  /*Checbox*/
+  .checkbox-item input[type="checkbox"] {
+    width: 20px; /* Ajusta el ancho según sea necesario */
+    height: 20px; /* Ajusta la altura según sea necesario */
+    border-radius: 5px; /* Bordes redondeados */
+  }
 /*Footer*/
 #footer {
     display: flex;

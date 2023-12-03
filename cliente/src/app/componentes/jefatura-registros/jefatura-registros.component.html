@@ -6,12 +6,10 @@
         </div>
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
-          <div class="navbar-collapse justify-content-end">
-            <button class="btn btn-custom-color" (click)="evaluadores()" type="button">
-              Ver evaluadores 
-            </button>
-          </div>
-        </nav>
+        <button class="btn btn-custom-color" (click)="iratras()">
+            <i class="fas fa-arrow-left"></i> Atrás
+          </button>
+      </nav>
     <div class="container py-4">
         <div class="table-responsive ">
             <table class="table table-striped rounded">
@@ -24,6 +22,7 @@
                         <th>Estado</th>
                         <th>N° Revisión</th>
                         <th>Acciones</th>
+                        <th>Asignar evaluadores</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +48,11 @@
                                     <i class="fas fa-check"></i>
                                 </button>
                                 </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" (click)="irEvaluadores(revision.id)" title="Agregar" name="agregar" style="margin-left: 5px;">
+                                    <i class="fas fa-plus"></i> 
+                                  </button>
                             </td>
                           </tr>
                         </ng-container>

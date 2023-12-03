@@ -29,16 +29,14 @@
 .imagen-superpuesta {
     position: relative;
     width: 100%;
-    height: 40vh; /* Ajusta la altura como desees */
+    height: 30vh; /* Ajusta la altura como desees */
     overflow: hidden;
+    margin-bottom: 50px;
 }
-
 .imagen-superpuesta img {
     width: 100%;
     height: 100%;
-    opacity: 0.7; /* Ajusta la opacidad como desees */
 }
-
 .contenido-superpuesto {
     position: absolute;
     top: 50%;
@@ -49,14 +47,44 @@
 }
 
 .contenido-superpuesto img {
-    width: 50px; /* Ajusta el ancho del icono como desees */
-    height: 50px; /* Ajusta el alto del icono como desees */
+    width: 100px; /* Ajusta el ancho del icono como desees */
+    height: 100px; /* Ajusta el alto del icono como desees */
     /* Estilos adicionales para el icono si es necesario */
 }
 
 .contenido-superpuesto p {
     font-size: 24px; /* Ajusta el tamaño del mensaje como desees */
     /* Otros estilos para el mensaje */
+}
+/*tarjetas*/
+.bloque {
+  margin-top: 50px;
+  display: flex; /* Cambiado a flex para usar justify-content y align-items */
+  justify-content: center;
+  align-items: center;
+  margin: 20px; /* Ajusta el margen según sea necesario */
+  text-align: center;
+  border: 2px solid #ccc; /* Agrega un borde de 2 píxeles sólido con color gris claro */
+  padding: 10px; /* Agrega un relleno interno de 10 píxeles */
+  border-radius: 20%;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajusta los valores según sea necesario */
+}
+
+.icono-bloque {
+  width: 100px; /* Ajusta el tamaño del icono según sea necesario */
+  margin-top: 20px;
+}
+
+.bloque p {
+  margin-top: 10px; /* Ajusta el margen superior del párrafo según sea necesario */
+  font-size: 20px;
+}
+.bloque:hover {
+  transform: scale(0.9);
+  transition: all .3s;
+  cursor: pointer;
 }
 /*Footer*/
 #footer {

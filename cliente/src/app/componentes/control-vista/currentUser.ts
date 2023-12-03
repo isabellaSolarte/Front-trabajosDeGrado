@@ -1,6 +1,6 @@
 import { rol } from "../modelo/rol";
 export class CurrentUser{
-    constructor(private id:number,private rol:rol[]){}
+    constructor(private id:number,private rol:rol[], private nombre:string){}
 
     public setCurrentRol(rol:rol[])
     {
@@ -18,6 +18,14 @@ export class CurrentUser{
     {
         return this.id;
     }
+    public setCurrentNombre(nombre:string)
+    {
+        this.nombre = nombre;
+    }
+    public getCurrentNombre()
+    {
+        return this.nombre;
+    }
 
 }
-export const currentUser = new CurrentUser(0,[]);
+export const currentUser = new CurrentUser(0,[],'');

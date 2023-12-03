@@ -71,6 +71,9 @@ export class JefaturaRegistrosComponent {
       err => console.log(err)
     );
   }
+  irEvaluadores(idProceso:number){
+    this.router.navigate(['/evaluadores',idProceso]); ///directorListar
+  }
   mostrarModal(){
     this.showModal = true;
   }
@@ -88,6 +91,9 @@ export class JefaturaRegistrosComponent {
   }
   evaluadores(){
     this.router.navigate(['evaluadores']);
+  }
+  iratras(){
+    this.router.navigate(['jefaturaMain']);
   }
 
 }
