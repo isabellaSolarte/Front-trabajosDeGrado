@@ -12,6 +12,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
 import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
+import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path:'login', component:LoginComponent },
   { path:'modal', component:ModalComponent },
   { path:'directortAnteproyecto', component:DirectorAnteproyectoComponent },
-  { path:'evaluadores/:id', component:EvaluadoresComponent }
+  { path:'evaluadores/:id', component:EvaluadoresComponent },
+  { path:'coordinadorRegistro', component:CoordinadorRegistrosComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
