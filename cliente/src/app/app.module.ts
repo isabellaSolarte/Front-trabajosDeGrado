@@ -25,6 +25,7 @@ import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.comp
 import { DirectorComentariosComponent } from './componentes/director-comentarios/director-comentarios.component';
 import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 import { CoordinadorService } from './services/coordinador.service';
+import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyecto/jefatura-anteproyecto.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CoordinadorService } from './services/coordinador.service';
     EvaluadoresComponent,
     DirectorComentariosComponent,
     CoordinadorRegistrosComponent,
+    JefaturaAnteproyectoComponent,
   ],
   imports: [
     BrowserModule,

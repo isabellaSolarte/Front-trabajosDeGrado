@@ -58,7 +58,7 @@ export class EvaluadoresComponent {
   }
   }
   iratras(){
-    this.route.navigate(['jefaturaRegistro']);
+    this.route.navigate(['jefaturaAnteproyecto']);
   }
   mostrarModal(){
     this.showModal = true;
