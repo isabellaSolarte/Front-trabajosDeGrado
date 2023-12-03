@@ -19,16 +19,14 @@ export class CoordinadorService {
         },
         (error) => {
             console.error('Error al obtener la ruta del archivo:', error);
-            // Puedes manejar el error según tus necesidades, como mostrar un mensaje al usuario
         }
     );
   }
   enviarArchivo(formData: FormData, idUser:number) {
-
-    console.log("antes de entrar al servidor"+ formData)
     return this.http.post(`${this.API_URI}/comentario/upload/${idUser}`,formData);
   }
-
-
+  getRevisiones(codigoCoordinador:number){
+    return this.http.get(`${this.API_URI}consejo/formato/a/${codigoCoordinador}`);
+}
 
 }

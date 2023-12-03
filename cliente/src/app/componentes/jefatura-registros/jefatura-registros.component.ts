@@ -30,8 +30,8 @@ export class JefaturaRegistrosComponent {
     this.getRevisiones();
   }
   getRevisiones(){
+    //this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
     this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
-    //this.services.getRevisiones(104).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
@@ -44,18 +44,15 @@ export class JefaturaRegistrosComponent {
   }
   descargarFormatoA(id:number, nombre:string):void {
     this.services.getRuta(id,nombre);
-    this.cambiarEstado(id);
     this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
       this.router.navigate(['jefaturaRegistro']);
     });
   }
-  aprobarFormato(idEstudiante:number){
+  enviarCoordinacion(idEstudiante:number){
     this.services.getCambiarEstado(idEstudiante).subscribe(
       (res: any) => {
         console.log(res);
-
         this.mensajeExito();
-
       },
       err =>{
         console.log(err);
@@ -79,13 +76,13 @@ export class JefaturaRegistrosComponent {
   }
   mensajeError(){
     this.modalImage = 'assets/cancelar.png';
-    this.modalMessage = 'No es posible aprobar el formato'
+    this.modalMessage = 'No es posible enviar el formato'
     this.modalTitle = '!Algo ha salido mal!'
     this.showModal = true;
   }
   mensajeExito(){
     this.modalImage = 'assets/comprobado.png';
-    this.modalMessage = 'Se ha aprobado el formato exitosamente'
+    this.modalMessage = 'Se ha enviado el formato exitosamente'
     this.modalTitle = 'Todo salió bien'
     this.showModal = true;
   }
