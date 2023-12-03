@@ -1,1 +1,64 @@
-<p>coordinador-registros works!</p>
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+      <div class="navbar-collapse justify-content-end">
+          <button class="btn btn-custom-color">
+              <i class="fas  fa-sign-out-alt"></i> Cerrar Sesión
+            </button>
+        </div> 
+  </nav>
+  
+    <div class="container py-4">
+        <div class="table-responsive ">
+            <table class="table table-striped rounded">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Título</th>
+                        <th>Estudiantes</th>
+                        <th>Estado</th>
+                        <th>N° Revisión</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                        <ng-container *ngFor="let revision of revisiones; let i = index">
+                            <tr>
+                            <td>{{revision.id}}</td>
+                            <td>{{revision.tipo}}</td>
+                            <td>{{revision.titulo}}</td>
+                            <td>
+                                <ul>
+                                    <li *ngFor="let estudiante of revision.estudiantes">{{estudiante.nombre}}</li>
+                                </ul>
+                            </td>
+                            <td>{{getEstado(revision.estado)}}</td>
+                            <td>{{revision.no_revision}}</td>
+                          </tr>
+                        </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

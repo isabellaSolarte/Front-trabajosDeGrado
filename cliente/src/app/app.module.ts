@@ -24,7 +24,7 @@ import { DirectorAnteproyectoComponent } from './componentes/director-anteproyec
 import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
 import { DirectorComentariosComponent } from './componentes/director-comentarios/director-comentarios.component';
 import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
-
+import { CoordinadorService } from './services/coordinador.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,7 @@ import { CoordinadorRegistrosComponent } from './componentes/coordinador-registr
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService],
+  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService,CoordinadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
