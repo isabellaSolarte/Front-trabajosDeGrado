@@ -26,7 +26,7 @@ export class CoordinadorService {
     return this.http.post(`${this.API_URI}/comentario/upload/${idUser}`,formData);
   }
   getRevisiones(codigoCoordinador:number){
-    return this.http.get(`${this.API_URI}consejo/formato/a/${codigoCoordinador}`);
+    return this.http.get(`${this.API_URI}/consejo/formato/a/${codigoCoordinador}`);
 }
 
 }
