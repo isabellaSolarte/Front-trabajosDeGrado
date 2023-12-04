@@ -57,6 +57,7 @@
 
 .nav-link:hover {
   color: #FFA500; /* Cambia el color al pasar el ratón, si lo deseas */
+  cursor: pointer;
 }
 
 .nav-link i {
