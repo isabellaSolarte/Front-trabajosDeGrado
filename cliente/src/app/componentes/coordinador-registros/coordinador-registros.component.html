@@ -39,8 +39,10 @@
                                 </ul>
                             </td>
                             <td>
-                                <div class="circle-small" [style.background-color]="getColorByEstado(revision.estado)"></div><i>{{getEstado(revision.estado)}}</i>
-                                
+                                <div class="status-container">
+                                    <div class="circle-small" [style.background-color]="getColorByEstado(revision.estado)"></div>
+                                    <span>{{getEstado(revision.estado)}}</span>
+                                  </div>
                             </td>
                             <td>
                                 <div class="button-container">
