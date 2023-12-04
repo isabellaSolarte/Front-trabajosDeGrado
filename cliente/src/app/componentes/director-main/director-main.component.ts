@@ -34,8 +34,8 @@ export class DirectorMainComponent {
   irVerFormatos(id:number){
     this.router.navigate(['/directorListar',id]); ///directorListar
   }
-  irSubirAnteproyecto() {
-    this.router.navigate(['/directortAnteproyecto']);
+  irSubirAnteproyecto(id:number) {
+    this.router.navigate(['/directortAnteproyecto',id]);
   }
 
 }

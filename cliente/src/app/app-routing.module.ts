@@ -28,7 +28,7 @@ const routes: Routes = [
   { path:'jefaturaRegistro', component:JefaturaRegistrosComponent },
   { path:'login', component:LoginComponent },
   { path:'modal', component:ModalComponent },
-  { path:'directortAnteproyecto', component:DirectorAnteproyectoComponent },
+  { path:'directortAnteproyecto/:id', component:DirectorAnteproyectoComponent },
   { path:'evaluadores/:id', component:EvaluadoresComponent },
   { path:'coordinadorRegistro', component:CoordinadorRegistrosComponent },
   { path:'jefaturaAnteproyecto', component:JefaturaAnteproyectoComponent },

@@ -20,14 +20,13 @@ export class DirectorAnteproyectoComponent {
   guardarArchivo(event: any) {
     const file = event.target.files[0];
     if (file) {
-
+      const params = this.route.snapshot.params;
+      console.log(params['id']);
       const formData = new FormData();
-      //const idUser=104619021330;
-      const idUser = currentUser.getCurrentId();
       formData.append('archivo', file, file.name);
       console.log('entro',formData.get('archivo'))
       this.fileName = file.name;
-      this.services.enviarArchivo(formData,idUser).subscribe(
+      this.services.enviarArchivo(formData,params['id']).subscribe(//en lugar de usuario, el proceso
         (res) => {
           console.log('Archivo enviado correctamente');
           // Realizar las acciones necesarias después de enviar el archivo
