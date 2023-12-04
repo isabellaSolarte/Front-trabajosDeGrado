@@ -84,6 +84,6 @@
 }
 
 .table.rounded {
-border-radius: 30px; /* Ajusta el valor según el nivel de redondeo deseado */
-overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondos */
+    border-radius: 30px; /* Ajusta el valor según el nivel de redondeo deseado */
+    overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondos */
 }

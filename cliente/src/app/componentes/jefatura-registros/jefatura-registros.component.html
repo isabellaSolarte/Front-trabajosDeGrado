@@ -2,16 +2,29 @@
     <div class="cabecera">
         <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
         <div class="titulo-pagina">
-            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Jefatura </h1>
         </div>
     </div>
+
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
-        <button class="btn btn-custom-color" (click)="iratras()">
-            <i class="fas fa-arrow-left"></i> Atrás
-          </button>
-      </nav>
+        <div class="container-fluid d-flex justify-content-between">
+            <button class="btn btn-custom-color" (click)="iratras()">
+                <i class="fas fa-arrow-left"></i> Atrás
+            </button>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="irAnteproyecto()" data-toggle="tooltip" title="Subir formato">
+                        <i class="fas fa-book"></i> Ver anteproyectos
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container py-4">
-        <div class="table-responsive ">
+        <h1 class="titulo">Registros de formato A</h1>
+        <br>
+        <div class="table-responsive">
             <table class="table table-striped rounded">
                 <thead>
                     <tr>
@@ -49,11 +62,6 @@
                             <td>
                                 <button (click)="enviarCoordinacion(revision.estudiantes[0].codigo)" class="btn btn-success" title="Aprobar formato" name="aprobar_formato" style="margin-left: 5px;">
                                     <i class="fas fa-check"></i>
-                                </button>
-                            </td>
-                            <td>
-                                <button class="btn btn-success" (click)="irEvaluadores(revision.id)" title="Agregar" name="agregar" style="margin-left: 5px;">
-                                    <i class="fas fa-plus"></i> 
                                 </button>
                             </td>
                           </tr>
