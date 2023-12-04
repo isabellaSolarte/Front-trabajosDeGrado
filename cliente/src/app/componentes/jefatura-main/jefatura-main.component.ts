@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { currentUser } from '../control-vista/currentUser';
+import { JefaturaAnteproyectoComponent } from '../jefatura-anteproyecto/jefatura-anteproyecto.component';
 
 @Component({
   selector: 'app-jefatura-main',
@@ -16,8 +17,8 @@ export class JefaturaMainComponent {
   ngOnInit(){
     this.usuario = currentUser.getCurrentNombre();
   }
-  irEvaluadores(){
-    this.router.navigate(['evaluadores']);
+  irAnteproyecto(){
+    this.router.navigate(['jefaturaAnteproyecto']);
   }
   irRegistros(){
     this.router.navigate(['jefaturaRegistro']);

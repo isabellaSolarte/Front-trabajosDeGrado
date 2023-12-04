@@ -5,7 +5,6 @@
             <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Jefatura </h1>
         </div>
     </div>
-
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
         <div class="container-fluid d-flex justify-content-between">
             <button class="btn btn-custom-color" (click)="iratras()">
@@ -13,8 +12,8 @@
             </button>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" (click)="irAnteproyecto()" data-toggle="tooltip" title="Subir formato">
-                        <i class="fas fa-book"></i> Ver anteproyectos
+                    <a class="nav-link" (click)="irRegistros()" data-toggle="tooltip" title="Subir formato">
+                        <i class="fas fa-book"></i> Ver registros
                     </a>
                 </li>
             </ul>
@@ -22,9 +21,9 @@
     </nav>
 
     <div class="container py-4">
-        <h1 class="titulo">Registros de formato A</h1>
+        <h1 class="titulo">Registros de anteproyectos</h1>
         <br>
-        <div class="table-responsive">
+        <div class="table-responsive ">
             <table class="table table-striped rounded">
                 <thead>
                     <tr>
@@ -35,7 +34,7 @@
                         <th>Estado</th>
                         <th>N° Revisión</th>
                         <th>Acciones</th>
-                        <th>Enviar coordinación</th>
+                        <th>Asignar evaluadores</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,14 +53,14 @@
                             <td>{{revision.no_revision}}</td>
                             <td>
                                 <div class="button-container">
-                                <button (click)="descargarFormatoA(revision.estudiantes[0].codigo, revision.estudiantes[0].nombre)" class="btn btn-primary" name = "Descargar_formato" title="Descargar">
+                                <button (click)="descargarAnteproyecto(revision.estudiantes[0].codigo, revision.estudiantes[0].nombre)" class="btn btn-primary" name = "Descargar_formato" title="Descargar">
                                     <i class='fas fa-download'></i>
                                 </button>                               
                                 </div>
                             </td>
                             <td>
-                                <button (click)="enviarCoordinacion(revision.estudiantes[0].codigo)" class="btn btn-success" title="Aprobar formato" name="aprobar_formato" style="margin-left: 5px;">
-                                    <i class="fas fa-check"></i>
+                                <button class="btn btn-success" (click)="irEvaluadores(revision.id)" title="Agregar" name="agregar" style="margin-left: 5px;">
+                                    <i class="fas fa-plus"></i> 
                                 </button>
                             </td>
                           </tr>
@@ -92,4 +91,5 @@
     </div>
   </div>
   <router-outlet></router-outlet>
+
 

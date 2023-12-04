@@ -44,21 +44,23 @@ export class EvaluadoresComponent {
     const params = this.router.snapshot.params;
     console.log(params['id']);
     console.log(this.selectedevaluadores);
-    if (params) {
-      this.services.asignarEvaluadores(params['id'],this.selectedevaluadores).subscribe(
-        (res: any) => {
-          console.log(res);
-          this.mensajeExito();
-        },
-        err => {
-          console.log(err);
-          this.mensajeError();
-        }
-    );
-  }
+      if (params && this.selectedevaluadores.length>=2) {
+        this.services.asignarEvaluadores(params['id'],this.selectedevaluadores).subscribe(
+          (res: any) => {
+            console.log(res);
+            this.mensajeExito();
+          },
+          err => {
+            console.log(err);
+            this.mensajeError();
+          }
+        );
+      }else{
+        this.mensajeError();
+      }
   }
   iratras(){
-    this.route.navigate(['jefaturaRegistro']);
+    this.route.navigate(['jefaturaAnteproyecto']);
   }
   mostrarModal(){
     this.showModal = true;

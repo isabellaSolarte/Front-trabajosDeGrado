@@ -54,6 +54,7 @@
 
 .contenido-superpuesto p {
     font-size: 24px; /* Ajusta el tamaño del mensaje como desees */
+    margin-top: 5px;
     /* Otros estilos para el mensaje */
 }
 /*tarjetas*/
@@ -67,8 +68,8 @@
   border: 2px solid #ccc; /* Agrega un borde de 2 píxeles sólido con color gris claro */
   padding: 10px; /* Agrega un relleno interno de 10 píxeles */
   border-radius: 20%;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajusta los valores según sea necesario */
 }
 

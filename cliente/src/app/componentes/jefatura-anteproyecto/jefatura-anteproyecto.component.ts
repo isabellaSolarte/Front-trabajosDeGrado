@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
 import { RevisionA } from '../modelo/RevisionA';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { JefaturaService } from 'src/app/services/jefatura.service';
 import { currentUser } from '../control-vista/currentUser';
-import { HttpClient } from '@angular/common/http';
-import { CurrentUser } from '../control-vista/currentUser';
-
-
 @Component({
-  selector: 'app-jefatura-registros',
-  templateUrl: './jefatura-registros.component.html',
-  styleUrls: ['./jefatura-registros.component.css']
+  selector: 'app-jefatura-anteproyecto',
+  templateUrl: './jefatura-anteproyecto.component.html',
+  styleUrls: ['./jefatura-anteproyecto.component.css']
 })
-export class JefaturaRegistrosComponent {
+export class JefaturaAnteproyectoComponent {
   revisiones:RevisionA[]=[];
   showModal: boolean = false;
   modalTitle: string = '';
@@ -24,7 +21,6 @@ export class JefaturaRegistrosComponent {
     2: 'En revisión',
     3: 'Aprobado'
   };
-  ruta:string="";
   constructor(private router: Router, private services:JefaturaService,private http: HttpClient){}
   ngOnInit(): void {
     this.getRevisiones();
@@ -42,37 +38,21 @@ export class JefaturaRegistrosComponent {
   getEstado(state:number){
     return this.estados[state];
   }
-  descargarFormatoA(id:number, nombre:string):void {
-    this.services.getRuta(id,nombre);
-    this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
-      this.router.navigate(['jefaturaRegistro']);
-    });
-  }
-  enviarCoordinacion(idEstudiante:number){
-    this.services.getCambiarEstado(idEstudiante).subscribe(
-      (res: any) => {
-        console.log(res);
-        this.mensajeExito();
-      },
-      err =>{
-        console.log(err);
-        this.mensajeError();
-      }
-    );
-  }
-  cambiarEstado(idEstudiante:number){
-    this.services.getCambiarEstado(idEstudiante).subscribe(
-      (res: any) => {
-        console.log(res);
-      },
-      err => console.log(err)
-    );
-  }
   irEvaluadores(idProceso:number){
     this.router.navigate(['/evaluadores',idProceso]); ///directorListar
   }
-  irAnteproyecto(){
-    this.router.navigate(['/jefaturaAnteproyecto']); ///directorListar
+  descargarAnteproyecto(id:number, nombre:string){
+    this.services.getRuta(id,nombre);
+      this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
+        this.router.navigate(['jefaturaRegistro']);
+      });
+
+  }
+  irRegistros(){
+    this.router.navigate(['jefaturaRegistro']);
+  }
+  iratras(){
+    this.router.navigate(['jefaturaMain']);
   }
   mostrarModal(){
     this.showModal = true;
@@ -89,11 +69,4 @@ export class JefaturaRegistrosComponent {
     this.modalTitle = 'Todo salió bien'
     this.showModal = true;
   }
-  evaluadores(){
-    this.router.navigate(['evaluadores']);
-  }
-  iratras(){
-    this.router.navigate(['jefaturaMain']);
-  }
-
 }
