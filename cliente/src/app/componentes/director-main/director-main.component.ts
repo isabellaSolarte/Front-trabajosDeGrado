@@ -37,4 +37,5 @@ export class DirectorMainComponent {
   irSubirAnteproyecto() {
     this.router.navigate(['/directortAnteproyecto']);
   }
+
 }

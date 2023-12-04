@@ -42,6 +42,9 @@ export class CoordinadorRegistrosComponent {
       this.router.navigate(['coordinadorRegistro']);
     });
   }
+  irComentarios(idRevision:number){
+    this.router.navigate(['/coordinadorComentarios',idRevision]);
+  }
 
   //TODO: recibe id de la revision
   //cambiar linea 53

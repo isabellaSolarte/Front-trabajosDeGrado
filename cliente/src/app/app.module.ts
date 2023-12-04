@@ -22,11 +22,13 @@ import { UsuarioService } from './services/usuarios.service';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
 import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
-import { DirectorComentariosComponent } from './componentes/director-comentarios/director-comentarios.component';
 import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 import { CoordinadorService } from './services/coordinador.service';
 import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyecto/jefatura-anteproyecto.component';
-import { CoordinadorLlenarFormatoBComponent } from './componentes/coordinador-llenar-formato-b/coordinador-llenar-formato-b.component';
+import { EvaluadorRegistrosComponent } from './componentes/evaluador-registros/evaluador-registros.component';
+import { CoordinadorComentariosComponent } from './componentes/coordinador-comentarios/coordinador-comentarios.component';
+import { EvaluadorService } from './services/evaluador.service';
+import { EvaluadorLlenarFormatoBComponent } from './componentes/evaluador-llenar-formato-b/evaluador-llenar-formato-b.component';
 
 @NgModule({
   declarations: [
@@ -45,10 +47,11 @@ import { CoordinadorLlenarFormatoBComponent } from './componentes/coordinador-ll
     ModalComponent,
     DirectorAnteproyectoComponent,
     EvaluadoresComponent,
-    DirectorComentariosComponent,
     CoordinadorRegistrosComponent,
     JefaturaAnteproyectoComponent,
-    CoordinadorLlenarFormatoBComponent,
+    EvaluadorRegistrosComponent,
+    CoordinadorComentariosComponent,
+    EvaluadorLlenarFormatoBComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { CoordinadorLlenarFormatoBComponent } from './componentes/coordinador-ll
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService,CoordinadorService],
+  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService,CoordinadorService,EvaluadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
