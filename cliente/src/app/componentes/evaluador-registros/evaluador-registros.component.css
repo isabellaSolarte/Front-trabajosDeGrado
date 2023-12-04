@@ -25,6 +25,7 @@
 .btn-custom-color {
     background-color: #D67E18;
     color: #fff; /* Color del texto, si es necesario */
+    margin-right: 10px;
 }
   
 .btn-custom-color:hover {

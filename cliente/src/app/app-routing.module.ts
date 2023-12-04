@@ -32,12 +32,9 @@ const routes: Routes = [
   { path:'evaluadores/:id', component:EvaluadoresComponent },
   { path:'coordinadorRegistro', component:CoordinadorRegistrosComponent },
   { path:'jefaturaAnteproyecto', component:JefaturaAnteproyectoComponent },
-  { path:'evaluadorLlenarFormatoB', component:EvaluadorLlenarFormatoBComponent },
+  { path:'evaluadorLlenarFormatoB/:id', component:EvaluadorLlenarFormatoBComponent },
   { path:'coordinadorComentarios/:id', component:CoordinadorComentariosComponent },
   { path:'evaluadorRegistros', component:EvaluadorRegistrosComponent }
-
-
-
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

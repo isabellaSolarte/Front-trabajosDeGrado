@@ -76,6 +76,12 @@ label {
   color: #F8F8F8;
   margin-top: 20px; /* Espacio superior para separar el botón del formulario */
 }
+.btn-custom-color {
+  background-color: #D67E18;
+  color: #fff; /* Color del texto, si es necesario */
+  margin-left: 10px;
+}
+
 
 
 /* Añade un poco de espacio a la derecha del ícono para separarlo del texto */
@@ -95,6 +101,18 @@ label {
   color: red;
   font-size: 12px;
   margin-top: 5px;
+}
+/*Navbar*/
+.btn-custom-color {
+  background-color: #D67E18;
+  color: #fff; /* Color del texto, si es necesario */
+}
+
+.btn-custom-color:hover {
+  background-color: #FFA500; /* Cambiar el color al pasar el ratón, si lo deseas */
+}
+.titulo{
+  color: #525663; 
 }
 /*Footer*/
 #footer {
