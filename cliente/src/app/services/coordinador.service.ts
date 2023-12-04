@@ -28,5 +28,8 @@ export class CoordinadorService {
   getRevisiones(codigoCoordinador:number){
     return this.http.get(`${this.API_URI}/consejo/formato/a/${codigoCoordinador}`);
   }
+  getCambiarEstado(cod:number){
+    return this.http.get(`${this.API_URI}/revisiones/state/${cod}`);
+  }
 
 }

@@ -33,6 +33,17 @@ export class CoordinadorRegistrosComponent {
   getEstado(state:number){
     return this.estados[state];
   }
+  aprobar(idEstudiante:number){
+    this.cambiarEstado(idEstudiante);
+  }
+  cambiarEstado(idEstudiante:number){
+    this.services.getCambiarEstado(idEstudiante).subscribe(
+      (res: any) => {
+        console.log(res);
+      },
+      err => console.log(err)
+    );
+  }
 
   fileName:string = "";
   //RECIBE ID DEL ESTUDIANTE Y NOMBRE DEL ESTUDIANTE

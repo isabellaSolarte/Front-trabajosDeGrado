@@ -23,6 +23,7 @@
                         <th>Estudiantes</th>
                         <th>Estado</th>
                         <th>Descargar</th>
+                        <th>Aporbar formato A</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -50,6 +51,11 @@
                                         <i class='fas fa-download'></i>
                                     </button>                               
                                 </div>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" (click)="aprobar(revision.estudiantes[0].codigo)" title="Agregar" name="agregar" style="margin-left: 5px;">
+                                    <i class="fas fa-check"></i> 
+                                </button>
                             </td>
                             <td>
                                 <button class="btn btn-success"  title="Agregar" name="agregar" (click)="irComentarios(revision.id)" style="margin-left: 5px;">
