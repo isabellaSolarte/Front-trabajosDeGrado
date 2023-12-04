@@ -71,6 +71,9 @@ export class JefaturaRegistrosComponent {
   irEvaluadores(idProceso:number){
     this.router.navigate(['/evaluadores',idProceso]); ///directorListar
   }
+  irAnteproyecto(){
+    this.router.navigate(['/jefaturaAnteproyecto']); ///directorListar
+  }
   mostrarModal(){
     this.showModal = true;
   }

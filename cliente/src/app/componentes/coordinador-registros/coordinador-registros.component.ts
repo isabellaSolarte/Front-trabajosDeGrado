@@ -44,7 +44,7 @@ export class CoordinadorRegistrosComponent {
   }
 
   //TODO: recibe id de la revision
-  //cambiar linea 32
+  //cambiar linea 53
   guardarComentarios(event: any) {
     const file = event.target.files[0];
     if (file) {
@@ -65,5 +65,17 @@ export class CoordinadorRegistrosComponent {
         }
       );
     }
+  }
+  getColorByEstado(estado: number): string {
+    switch (estado) {
+      case 1:
+        return 'orange';
+      case 2:
+        return 'blue';
+      case 3:
+        return 'green';
+      default:
+        return '';
+    }
   }
 }

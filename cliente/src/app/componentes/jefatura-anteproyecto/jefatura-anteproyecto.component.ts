@@ -47,7 +47,10 @@ export class JefaturaAnteproyectoComponent {
         this.router.navigate(['jefaturaRegistro']);
       });
 
-}
+  }
+  irRegistros(){
+    this.router.navigate(['jefaturaRegistro']);
+  }
   iratras(){
     this.router.navigate(['jefaturaMain']);
   }

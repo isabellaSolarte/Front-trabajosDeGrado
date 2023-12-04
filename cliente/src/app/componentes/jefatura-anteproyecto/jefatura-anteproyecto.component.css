@@ -20,25 +20,58 @@
 .titulo-pagina h1{
     color: #525663;
 }
-/*Navbar*/
-.btn-custom-color {
-    background-color: #D67E18;
-    color: #fff; /* Color del texto, si es necesario */
-    margin-right: 20px;
-    margin-left: 20px;
-}
 
-.btn-custom-color:hover {
-    background-color: #FFA500; /* Cambiar el color al pasar el ratón, si lo deseas */
-}
+    /*Navbar*/
+    .btn-custom-color {
+        background-color: #D67E18;
+        color: #fff; /* Color del texto, si es necesario */
+        margin-right: 20px;
+        margin-left: 20px;
+    }
 
-.titulo-pagina h1{
-    color: #525663;
-}
-.titulo{
-    color: #525663; 
-}
+    .btn-custom-color:hover {
+        background-color: #FFA500; /* Cambiar el color al pasar el ratón, si lo deseas */
+    }
 
+    .titulo-pagina h1{
+        color: #525663;
+    }
+    .btn-custom-color:hover {
+        background-color: #FFA500; /* Cambiar el color al pasar el ratón, si lo deseas */
+    }
+    .navbar-nav {
+    display: flex;
+    align-items: center;
+    }
+
+    .nav-item {
+    margin-right: 15px;
+    margin-left: 15px;
+    }
+
+    .nav-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    }
+
+    .nav-link:hover {
+    color: #FFA500; /* Cambia el color al pasar el ratón, si lo deseas */
+    cursor: pointer;
+    }
+    .nav-link i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+    }
+
+    @media (max-width: 768px) {
+        .divider {
+            display: none;
+        }
+    }
+    .titulo{
+        color: #525663; 
+    }
 /*Footer*/
 #footer {
     display: flex;
@@ -84,6 +117,6 @@
 }
 
 .table.rounded {
-border-radius: 30px; /* Ajusta el valor según el nivel de redondeo deseado */
-overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondos */
+    border-radius: 30px; /* Ajusta el valor según el nivel de redondeo deseado */
+    overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondos */
 }
