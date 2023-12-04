@@ -26,6 +26,7 @@ import { DirectorComentariosComponent } from './componentes/director-comentarios
 import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 import { CoordinadorService } from './services/coordinador.service';
 import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyecto/jefatura-anteproyecto.component';
+import { CoordinadorLlenarFormatoBComponent } from './componentes/coordinador-llenar-formato-b/coordinador-llenar-formato-b.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyec
     DirectorComentariosComponent,
     CoordinadorRegistrosComponent,
     JefaturaAnteproyectoComponent,
+    CoordinadorLlenarFormatoBComponent,
   ],
   imports: [
     BrowserModule,

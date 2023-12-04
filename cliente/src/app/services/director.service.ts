@@ -13,8 +13,8 @@ export class DirectorService {
   saveFormatoA(form: Formato, id: number) {
     return this.http.post(`${this.API_URI}/formatoA/?id=${id}`, form);
   }
-  getProcesses(){
-    return this.http.get(`${this.API_URI}/procesos/`);
+  getProcesses(idUser:number){
+    return this.http.get(`${this.API_URI}/procesos/?id=${idUser}`);
   }
   getFormato(id: number){
     return this.http.get(`${this.API_URI}/formatoA/${id}`);

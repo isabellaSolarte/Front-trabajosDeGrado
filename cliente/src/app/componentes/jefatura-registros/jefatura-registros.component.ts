@@ -68,6 +68,18 @@ export class JefaturaRegistrosComponent {
       err => console.log(err)
     );
   }
+  getColorByEstado(estado: number): string {
+    switch (estado) {
+      case 1:
+        return 'orange';
+      case 2:
+        return 'blue';
+      case 3:
+        return 'green';
+      default:
+        return '';
+    }
+  }
   irEvaluadores(idProceso:number){
     this.router.navigate(['/evaluadores',idProceso]); ///directorListar
   }

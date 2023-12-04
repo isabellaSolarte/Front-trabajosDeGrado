@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProcesoList } from '../modelo/ProcesoList';
 import { DirectorService } from 'src/app/services/director.service';
+import { currentUser } from '../control-vista/currentUser';
+
 
 @Component({
   selector: 'app-director-main',
@@ -18,7 +20,7 @@ export class DirectorMainComponent {
   }
 
   getProcesos(){ //listar procesos
-    this.services.getProcesses().subscribe(
+    this.services.getProcesses(currentUser.getCurrentId()).subscribe(
       (res: any) => {
         console.log(res);
         this.procesos = res;
