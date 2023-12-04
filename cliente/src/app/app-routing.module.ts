@@ -15,6 +15,7 @@ import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.comp
 import { DirectorComentariosComponent } from './componentes/director-comentarios/director-comentarios.component';
 import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyecto/jefatura-anteproyecto.component';
+import { CoordinadorLlenarFormatoBComponent } from './componentes/coordinador-llenar-formato-b/coordinador-llenar-formato-b.component';
 const routes: Routes = [
   { path: 'administrador', component: AdministradorComponent },
   { path: 'crearUsuario', component: AdministradorCrearComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path:'evaluadores/:id', component:EvaluadoresComponent },
   { path:'directorComentario', component:DirectorComentariosComponent },
   { path:'coordinadorRegistro', component:CoordinadorRegistrosComponent },
-  { path:'jefaturaAnteproyecto', component:JefaturaAnteproyectoComponent }
+  { path:'jefaturaAnteproyecto', component:JefaturaAnteproyectoComponent },
+  { path:'coordinadorLlenarFormatoB', component:CoordinadorLlenarFormatoBComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

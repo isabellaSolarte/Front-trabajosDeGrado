@@ -34,17 +34,67 @@
 .titulo-pagina h1{
     color: #525663;
 }
-/*estado*/
-.status-container {
-  display: inline-flex;
-  align-items: center;
+/*Tabla*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.scrollable-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
 }
 
-.circle-small {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin-right: 5px; /* Ajusta el margen según sea necesario */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+label {
+  margin-bottom: 0;
+}
+.scrollable-form {
+    max-width: 50%; /* Ajusta el ancho máximo según tus necesidades */
+    margin: auto; /* Centra el formulario en el contenedor */
+    background-color: #f7f7f7; /* Agrega un color de fondo si lo deseas */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+  background-color: #13245E;
+  color: #F8F8F8;
+  margin-top: 20px; /* Espacio superior para separar el botón del formulario */
+}
+
+
+/* Añade un poco de espacio a la derecha del ícono para separarlo del texto */
+.btn-custom i {
+  margin-right: 5px;
+}
+/* Estilo para el asterisco rojo */
+.required {
+  color: red;
+  margin-left: 5px; /* Agrega espacio entre la etiqueta y el asterisco */
+}
+.has-error {
+  color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 /*Footer*/
 #footer {

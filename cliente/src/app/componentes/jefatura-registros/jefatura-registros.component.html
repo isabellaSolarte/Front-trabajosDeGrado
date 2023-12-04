@@ -50,7 +50,12 @@
                                     <li *ngFor="let estudiante of revision.estudiantes">{{estudiante.nombre}}</li>
                                 </ul>
                             </td>
-                            <td>{{getEstado(revision.estado)}}</td>
+                            <td>
+                                <div class="status-container">
+                                <div class="circle-small" [style.background-color]="getColorByEstado(revision.estado)"></div>
+                                <span>{{getEstado(revision.estado)}}</span>
+                              </div>
+                            </td>
                             <td>{{revision.no_revision}}</td>
                             <td>
                                 <div class="button-container">
