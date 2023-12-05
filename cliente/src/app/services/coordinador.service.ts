@@ -22,14 +22,14 @@ export class CoordinadorService {
         }
     );
   }
-  enviarArchivo(formData: FormData, idUser:number) {
-    return this.http.post(`${this.API_URI}/comentario/upload/${idUser}`,formData);
+  enviarArchivo(formData: FormData, idProceso:number) {
+    return this.http.post(`${this.API_URI}/comentario/upload/${idProceso}`,formData);
   }
   getRevisiones(codigoCoordinador:number){
     return this.http.get(`${this.API_URI}/consejo/formato/a/${codigoCoordinador}`);
   }
   getCambiarEstado(cod:number){
-    return this.http.get(`${this.API_URI}/revisiones/state/${cod}`);
+    return this.http.patch(`${this.API_URI}/revisiones/state/${cod}`,cod);
   }
 
 }
