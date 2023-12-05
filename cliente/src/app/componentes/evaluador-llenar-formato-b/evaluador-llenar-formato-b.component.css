@@ -88,6 +88,31 @@ label {
   display: flex;
   margin-bottom: 30px;
 }
+.btn-guardar {
+  background-color: #13245E;
+  color: #F8F8F8; 
+  margin: 10px; /* Espacio superior para separar el botón del formulario */
+  margin-top: 20px;
+}
+.btn-guardar:hover{
+  transform: scale(0.9);
+  transition: all .3s;
+}
+.btn-cancelar:hover{
+  transform: scale(0.9);
+  transition: all .3s;
+}
+.btn-cancelar {
+  background-color: #4D4D4D;
+  color: #F8F8F8; 
+  margin: 10px; /* Espacio superior para separar el botón del formulario */
+  margin-top: 20px;
+}
+.Botón-crear{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 
 
 

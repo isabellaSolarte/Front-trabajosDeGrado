@@ -46,10 +46,10 @@
             <textarea class="form-control" id="observaciones" name="observaciones" placeholder="Escribe observaciones" [(ngModel)]="formato.observaciones"></textarea>
             
         </form>
-        
     </div>
     <div class="Botón-crear">
-        <button class="btn btn-custom" (click)="crearFormatoB()">Guardar</button>
+        <button class="btn btn-cancelar" (click)="crearFormatoB()">Guardar</button>
+        <button *ngIf="controlEnviar === true" (click)="enviarDirector()" class="btn btn-guardar" >Enviar director</button>
     </div>
     <app-modal
             [showModal]="showModal"

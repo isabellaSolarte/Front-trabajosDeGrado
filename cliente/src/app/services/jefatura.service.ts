@@ -46,7 +46,7 @@ export class JefaturaService {
   }
 
   getCambiarEstado(cod:number){
-    return this.http.get(`${this.API_URI}/revisiones/state/${cod}`);
+    return this.http.patch(`${this.API_URI}/revisiones/state/${cod}`,{});
   }
   getEvaluadores(){
     return this.http.get(`${this.API_URI}/evaluadores`);

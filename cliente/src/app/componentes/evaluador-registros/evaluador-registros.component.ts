@@ -22,7 +22,7 @@ export class EvaluadorRegistrosComponent {
   }
   getRegistrosEvaluador(){
     //this.services.getRegistroEvaluador(currentUser.getCurrentId()).subscribe(
-    this.services.getRegistroEvaluador(104619021313).subscribe(
+    this.services.getRegistroEvaluador(currentUser.getCurrentId()).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
@@ -34,7 +34,7 @@ export class EvaluadorRegistrosComponent {
     return this.estados[state];
   }
   descargarAnteproyecto(id:number, nombre:string){
-    this.services.getRuta(id,nombre);
+    this.services.getRutaAnteproyecto(id,nombre);
       this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
         this.router.navigate(['evaluadorRegistros']);
       });
