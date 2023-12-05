@@ -2,11 +2,11 @@
     <div class="cabecera">
         <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
         <div class="titulo-pagina">
-            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Director</h1>
         </div>
     </div>
     <div class="navbar-top"></div>
-        
+    <app-header></app-header>
     <div class="container py-4">
         <div class="file-upload-container" (click)="fileInput.click()">
           <div class="file-upload-icon">
@@ -18,7 +18,18 @@
             <span>{{ fileName }}</span>
           </div>
         </div>
+        <div class="Botón-subir">
+          <button (click)="cancelar()" class="btn btn-cancelar">Cancelar</button>
+          <button (click)="subirArchivo()" class="btn btn-subir" >Subir archivo</button>
+        </div>
       </div>
+        <app-modal
+        [showModal]="showModal"
+        [modalTitle]="modalTitle"
+        [modalMessage]="modalMessage"
+        [modalImagen] = "modalImage"
+        [navegacion] = "navegacion"
+    ></app-modal>
 
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">

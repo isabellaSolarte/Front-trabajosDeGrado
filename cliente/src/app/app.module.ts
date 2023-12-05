@@ -21,7 +21,15 @@ import { LoginComponent } from './componentes/login/login.component';
 import { UsuarioService } from './services/usuarios.service';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
-
+import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
+import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
+import { CoordinadorService } from './services/coordinador.service';
+import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyecto/jefatura-anteproyecto.component';
+import { EvaluadorRegistrosComponent } from './componentes/evaluador-registros/evaluador-registros.component';
+import { CoordinadorComentariosComponent } from './componentes/coordinador-comentarios/coordinador-comentarios.component';
+import { EvaluadorService } from './services/evaluador.service';
+import { EvaluadorLlenarFormatoBComponent } from './componentes/evaluador-llenar-formato-b/evaluador-llenar-formato-b.component';
+import { HeaderComponent } from './componentes/header/header.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +47,13 @@ import { DirectorAnteproyectoComponent } from './componentes/director-anteproyec
     LoginComponent,
     ModalComponent,
     DirectorAnteproyectoComponent,
+    EvaluadoresComponent,
+    CoordinadorRegistrosComponent,
+    JefaturaAnteproyectoComponent,
+    EvaluadorRegistrosComponent,
+    CoordinadorComentariosComponent,
+    EvaluadorLlenarFormatoBComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +62,7 @@ import { DirectorAnteproyectoComponent } from './componentes/director-anteproyec
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService],
+  providers: [AdministradorService,DirectorService,JefaturaService,UsuarioService,CoordinadorService,EvaluadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

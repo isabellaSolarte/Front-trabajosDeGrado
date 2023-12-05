@@ -12,17 +12,21 @@ export class DirectorAnteproyectoComponent {
   constructor(private router: Router,private services:DirectorService,private route: ActivatedRoute){}
 
   fileName:string = "";
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'directorMain';
   guardarArchivo(event: any) {
     const file = event.target.files[0];
     if (file) {
-
+      const params = this.route.snapshot.params;
+      console.log(params['id']);
       const formData = new FormData();
-      const idUser=104619021330;
-      //const idUser = currentUser.getCurrentId();
       formData.append('archivo', file, file.name);
       console.log('entro',formData.get('archivo'))
       this.fileName = file.name;
-      this.services.enviarArchivo(formData,idUser).subscribe(
+      this.services.enviarArchivo(formData,params['id']).subscribe(//en lugar de usuario, el proceso
         (res) => {
           console.log('Archivo enviado correctamente');
           // Realizar las acciones necesarias después de enviar el archivo
@@ -33,6 +37,27 @@ export class DirectorAnteproyectoComponent {
         }
       );
     }
+  }
+  cancelar(){
+    this.router.navigate(['directorMain']);
+  }
+  subirArchivo(){
+    this.mensajeExito();
+  }
+  mostrarModal(){
+    this.showModal = true;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo subir el archivo'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha subido el archivo exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
   }
 
 

@@ -23,10 +23,12 @@ export class LoginComponent {
     _rol:[],
     _correo: ''
   };
+  credencialesVacias: boolean = false;
+  
   constructor(private router:Router,private services:UsuarioService){}
   login(){
     if(!this.creenciales._username  || !this.creenciales._clave ) {
-      console.error('Las credenciales están vacías');
+      this.credencialesVacias = true;
     }
     else{
       //llamar al service
@@ -35,9 +37,14 @@ export class LoginComponent {
           console.log(res);
           this.usuario = res;
           currentUser.setCurrentId(this.usuario._id);
+          currentUser.setCurrentNombre(this.usuario._nombre);
           this.verificarVista(this.usuario._rol);
         },
-        err => console.log(err)
+        err =>{
+          this.credencialesVacias = true;
+          console.log(err);
+        }
+         
       );
     }
   }
@@ -50,8 +57,21 @@ export class LoginComponent {
     else{
       if (rol[0]._id == 2) {
         this.router.navigate(['/directorMain']);
-      } else{
-        this.router.navigate(['/jefaturaRegistro']);
+      } 
+      else{
+        if(rol[0]._id == 3){
+          this.router.navigate(['/jefaturaMain']);
+        }
+        else{
+          if(rol[0]._id == 5){
+            this.router.navigate(['/evaluadorRegistros']);
+          }
+          else{
+            if(rol[0]._id == 6){
+              this.router.navigate(['/coordinadorRegistro']);
+            }
+          }
+        }
       }
     }
   }

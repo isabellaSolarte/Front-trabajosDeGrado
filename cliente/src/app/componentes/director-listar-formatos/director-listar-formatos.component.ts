@@ -110,7 +110,6 @@ export class DirectorListarFormatosComponent {
     }
   }
   enviarFormatoJefatura(){
-    //TO-DO ruta con el id del formato this.proceso.fa
     console.log(this.proceso.fa);
     this.services.sendFormato(this.proceso.fa,this.proceso.id).subscribe(
       (res: any) => {
@@ -122,6 +121,12 @@ export class DirectorListarFormatosComponent {
       }
     );
 
+  }
+  descargarComentario(id:number):void {
+    this.services.getRuta(id);
+    this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
+      this.router.navigate(['directorComentario']);
+    });
   }
   cerrarMensaje() {
     this.mostrarMensaje=false;

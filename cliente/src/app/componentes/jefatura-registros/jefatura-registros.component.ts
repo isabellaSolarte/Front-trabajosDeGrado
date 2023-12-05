@@ -6,6 +6,7 @@ import { currentUser } from '../control-vista/currentUser';
 import { HttpClient } from '@angular/common/http';
 import { CurrentUser } from '../control-vista/currentUser';
 
+
 @Component({
   selector: 'app-jefatura-registros',
   templateUrl: './jefatura-registros.component.html',
@@ -30,7 +31,7 @@ export class JefaturaRegistrosComponent {
   }
   getRevisiones(){
     //this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
-    this.services.getRevisiones(104).subscribe(
+    this.services.getRevisiones(currentUser.getCurrentId()).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
@@ -43,18 +44,15 @@ export class JefaturaRegistrosComponent {
   }
   descargarFormatoA(id:number, nombre:string):void {
     this.services.getRuta(id,nombre);
-    this.cambiarEstado(id);
     this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
       this.router.navigate(['jefaturaRegistro']);
     });
   }
-  aprobarFormato(idEstudiante:number){
+  enviarCoordinacion(idEstudiante:number){
     this.services.getCambiarEstado(idEstudiante).subscribe(
       (res: any) => {
         console.log(res);
-
         this.mensajeExito();
-
       },
       err =>{
         console.log(err);
@@ -70,20 +68,44 @@ export class JefaturaRegistrosComponent {
       err => console.log(err)
     );
   }
+  getColorByEstado(estado: number): string {
+    switch (estado) {
+      case 1:
+        return 'orange';
+      case 2:
+        return 'blue';
+      case 3:
+        return 'green';
+      default:
+        return '';
+    }
+  }
+  irEvaluadores(idProceso:number){
+    this.router.navigate(['/evaluadores',idProceso]); ///directorListar
+  }
+  irAnteproyecto(){
+    this.router.navigate(['/jefaturaAnteproyecto']); ///directorListar
+  }
   mostrarModal(){
     this.showModal = true;
   }
   mensajeError(){
     this.modalImage = 'assets/cancelar.png';
-    this.modalMessage = 'No es posible aprobar el formato'
+    this.modalMessage = 'No es posible enviar el formato'
     this.modalTitle = '!Algo ha salido mal!'
     this.showModal = true;
   }
   mensajeExito(){
     this.modalImage = 'assets/comprobado.png';
-    this.modalMessage = 'Se ha aprobado el formato exitosamente'
+    this.modalMessage = 'Se ha enviado el formato exitosamente'
     this.modalTitle = 'Todo salió bien'
     this.showModal = true;
+  }
+  evaluadores(){
+    this.router.navigate(['evaluadores']);
+  }
+  iratras(){
+    this.router.navigate(['jefaturaMain']);
   }
 
 }

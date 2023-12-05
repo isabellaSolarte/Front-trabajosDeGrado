@@ -55,6 +55,33 @@
   .upload {
     display: none;
   }
+
+    /*botones*/
+  .btn-subir {
+    background-color: #13245E;
+    color: #F8F8F8; 
+    margin: 10px; /* Espacio superior para separar el botón del formulario */
+    margin-top: 20px;
+  }
+  .btn-subir:hover{
+    transform: scale(0.9);
+    transition: all .3s;
+  }
+  .btn-cancelar:hover{
+    transform: scale(0.9);
+    transition: all .3s;
+  }
+  .btn-cancelar {
+    background-color: #4D4D4D;
+    color: #F8F8F8; 
+    margin: 10px; /* Espacio superior para separar el botón del formulario */
+    margin-top: 20px;
+  }
+  .Botón-subir{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
 /*Footer*/
 #footer {
     display: flex;

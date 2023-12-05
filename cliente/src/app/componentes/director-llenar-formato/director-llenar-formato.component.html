@@ -1,18 +1,18 @@
 <div class="wrapper">  
     <div class="cabecera">
-        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda" (click)="irMain()" style="cursor: pointer;">
         <div class="titulo-pagina">
-            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Director</h1>
         </div>
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
-        <div class="navbar-collapse justify-content-end">
+        <div class="container-fluid d-flex justify-content-between">
             <button class="btn btn-custom-color" (click)="irMain()">
                 <i class="fas fa-arrow-left"></i> Atrás
-              </button>
-          </div> 
+            </button>
+        </div>
     </nav>
-
+    <app-header></app-header>
     <div class="content container py-4">
                 <div class="row">
                     <!-- Columna Izquierda -->

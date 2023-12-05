@@ -57,6 +57,7 @@
 
 .nav-link:hover {
   color: #FFA500; /* Cambia el color al pasar el ratón, si lo deseas */
+  cursor: pointer;
 }
 
 .nav-link i {
@@ -74,7 +75,7 @@
 }
 .fixed-card {
   width: 300px; /* Establece el ancho fijo deseado */
-  height: 420px; /* Establece la altura fija deseada */
+  height: 500px; /* Establece la altura fija deseada */
 }
 
   .book-icon {

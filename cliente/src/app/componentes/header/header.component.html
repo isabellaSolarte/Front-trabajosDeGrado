@@ -1,0 +1,11 @@
+<script src="https://kit.fontawesome.com/21574fd700.js" crossorigin="anonymous"></script>
+<div class="respmenu">
+    <input type="checkbox">
+    <i class="fas fa-bars"></i>
+    <i class="fas fa-times"></i>
+    <nav>
+      <ul>
+        <li class="itemcito" *ngFor="let ruta of rutasUsuario"><a (click)="cambiarComponente(ruta.ruta)">{{ruta.nombre}}</a></li>
+      </ul>
+    </nav>
+  </div>

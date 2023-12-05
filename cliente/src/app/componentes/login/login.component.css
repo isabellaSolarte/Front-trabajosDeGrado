@@ -1,166 +1,105 @@
-/* login.component.css */
-
-
-  .login-container {
-    background-size: 90% 90%;
-    background-image: url('../../../assets/Fac_Cien_Hum_Soc01.jpg') ;
-    background-size: cover;
+section{
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-repeat: no-repeat; /* Evitar que la imagen se repita */
-    height: 95.91vh;
-    margin: 0;
-    position:relative; /* Añadido para posicionar correctamente el contenido sobre el fondo */
-  }
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
 
-
-.left-container {
-    flex: 1;
-    background-color: white;
-    position: relative;
-    height: 60%;
-    width: 10%; /* Ajusta el ancho según sea necesario */
-    text-align: center;
-    margin-left: 20%;
-  
+    background: url('../../../assets/nuevo.png') no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.logo {
-    width: 30%; 
-    height: auto;
-    display: block;
-    margin-left: 10pc;
+.separador{
+    background: url('../../../assets/separador.png');
+    width: 3px;
+    height: 50px;
+}
+
+.header{
+    display: flex;
+}
+
+.title{
+    margin-left: 5px;
+    color: white;
+}
+
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background: rgba(0, 0, 0, 0.5);
+    /*border: 2px solid rgba(255, 255, 255, 0.5);*/
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 2em;
+    color: white;
+    text-align: left;
+
+}
+
+.inputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
     position: absolute;
     top: 50%;
+    left: 5px;
     transform: translateY(-50%);
-}
-.grado {
-    margin-top: 10%;
-    width: 20%; 
- 
-}
-.bottom-text {
-    color: #13245E;
-    margin-top: 70%;
-}
-
-
-.right-container {
-    flex: 1;
-    background-color: #13245E;
     color: white;
-    height: 60%;
-    box-sizing: border-box;
-    margin-right: 20%;
-    text-align: center;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
 }
 
-.login-form {
-    max-width: 300px;
-    margin: 0 auto;
-    text-align: center;
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label,
+.inputbox input:not(:placeholder-shown) ~ label {
+    top: -5px;
+    font-size: 12px;
+}
+.inputbox input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding:0 35px 0 5px;
+    color: white;
 }
 
-.login-form input {
-    width: 80%;
+.inputbox i{
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 1.2em;
+    top: 20px;
+}
+
+button{
+    width: 100%;
     height: 40px;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    margin: 10px;;
-    box-sizing: border-box;
-}
-
-.login-form button {
-    width: 40%;
-    padding: 10px;
-    background-color: #D67E18;
+    border-radius: 40px;
+    background: #D67E18;
     color: white;
     border: none;
-    border-radius: 4px;
+    outline: none;
     cursor: pointer;
+    font-size: 1em;
+    font-weight: 60;
 }
 
-/*Footer*/
-#footer {
-    display: flex;
-    align-items: center;
-    margin-top: auto;
-    padding: 10px;
-    background: #D67E18;
-    height: 40px;
-}
-.imagen-con-textoF{
-    display: flex;
-    align-items: center;
-}
-.texto-con-lineaF{
-    display: flex;
-    align-items: center;
-}
-.texto-con-lineaF{
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 14px; /* Tamaño de fuente deseado */
-    color: aliceblue;
-    margin-left: 20px;
-    
-}
-.texto-con-lineaF span{
-    padding-left: 15px;
-    margin-right: 10px; /* Ajusta el espacio entre el texto y la línea vertical */
-    
-}
-.linea-verticalF {
-    border-right: 2px solid rgb(255, 255, 255);
-    padding-right: 15px; /* Añade espacio entre la línea y el texto */
-    margin-right: 15px; 
-
-}
-.footer-con-imagen {
-    padding-left: 10px;
-}
-.wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.table.rounded {
-border-radius: 30px; /* Ajusta el valor según el nivel de redondeo deseado */
-overflow: hidden; /* Oculta cualquier contenido que se salga de los bordes redondos */
-}
-
-@media screen and (max-width: 768px) {
-    .left-container {
-        width: 30%;
-        margin-left: 15%;
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .logo {
-        width: 100%;
-        margin-left: 0;
-        top: 20%; 
-        transform: translateY(-50%);
-    }
-
-    .grado {
-        width: 40%; 
-        margin-top: 10%;
-    }
-    .bottom-text {
-        margin-top: 20%; 
-    }
-
-    .right-container {
-        margin-right: 15%;
-    }
-    .login-form{
-        margin-top: 20%;
-    }
-    .login-form input,
-    .login-form button {
-        width: 100%;
-    }
+form span{
+    color: rgb(255, 93, 93);
 }

@@ -3,6 +3,7 @@ import{HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Formato } from '../componentes/modelo/FormatoADirector';
 import { Proceso } from '../componentes/modelo/Proceso';
+import { currentUser } from '../componentes/control-vista/currentUser';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,8 +14,8 @@ export class DirectorService {
   saveFormatoA(form: Formato, id: number) {
     return this.http.post(`${this.API_URI}/formatoA/?id=${id}`, form);
   }
-  getProcesses(){
-    return this.http.get(`${this.API_URI}/procesos/`);
+  getProcesses(idUser:number){
+    return this.http.get(`${this.API_URI}/procesos/?usr=${idUser}`);
   }
   getFormato(id: number){
     return this.http.get(`${this.API_URI}/formatoA/${id}`);
@@ -41,4 +42,35 @@ export class DirectorService {
     console.log("antes de entrar al servidor"+ formData)
     return this.http.post(`${this.API_URI}/anteproyecto/upload/${idUser}`,formData);
   }
+  getRuta(codUser: number): void {
+    this.http.get(`${this.API_URI}/comentario/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
+        (response: any) => {
+            const blob = new Blob([response], { type: 'application/pdf' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'AJUSTES_TI_A_'+'_'+codUser+'.pdf';
+            link.click();
+        },
+        (error) => {
+            console.error('Error al obtener la ruta del archivo:', error);
+            // Puedes manejar el error según tus necesidades, como mostrar un mensaje al usuario
+        }
+    );
+  }
+  getFormatoB(codUser: number):void{
+    this.http.get(`${this.API_URI}/formatos/b/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
+      (response: any) => {
+          const blob = new Blob([response], { type: 'application/pdf' });
+          const link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = 'TI_B_'+'_'+codUser+'.pdf';
+          link.click();
+      },
+      (error) => {
+          console.error('Error al obtener la ruta del archivo:', error);
+          // Puedes manejar el error según tus necesidades, como mostrar un mensaje al usuario
+      }
+  );
+  }
+
 }

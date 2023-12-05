@@ -2,7 +2,7 @@
     <div class="cabecera">
         <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
         <div class="titulo-pagina">
-            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO</h1>
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Director</h1>
         </div>
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
@@ -15,12 +15,9 @@
           </button>
         </div>
       </nav>
+      <app-header></app-header>
     <div class="container py-4">
-        <h1 class="titulo">Procesos Delegados</h1> 
-    </div>      
-   
-    <div class="container py-4">
-      <h2 class="titulo">Formatos</h2>
+      <h1 class="titulo">Formatos A</h1>
       <div class="table-responsive ">
         <table class="table table-striped rounded">
             <thead>
@@ -30,6 +27,7 @@
                     <th>Fecha</th>
                     <th>Tiempo estimado de realización</th>
                     <th>Enviar formato jefatura</th>
+                    <th>Descargar comentarios</th>
               
                 </tr>
               </thead>
@@ -42,6 +40,13 @@
                   <td>{{formato._realizacion}}</td>
                   <td>
                     <button class="btn btn-enviar" (click)="enviarFormatoJefatura()" title="Enviar">Enviar</button>
+                  </td>
+                  <td>
+                    <div class="button-container">
+                      <button (click)="descargarComentario(proceso.estudiantes[0])" class="btn btn-primary" name = "Descargar_formato" title="Descargar">
+                          <i class='fas fa-download'></i>
+                      </button>                               
+                      </div>
                   </td>
                 </tr>
              
