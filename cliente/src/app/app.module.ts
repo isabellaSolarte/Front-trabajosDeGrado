@@ -30,6 +30,7 @@ import { CoordinadorComentariosComponent } from './componentes/coordinador-comen
 import { EvaluadorService } from './services/evaluador.service';
 import { EvaluadorLlenarFormatoBComponent } from './componentes/evaluador-llenar-formato-b/evaluador-llenar-formato-b.component';
 import { HeaderComponent } from './componentes/header/header.component';
+import { LlenarFormatoTICComponent } from './componentes/llenar-formato-ti-c/llenar-formato-ti-c.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { HeaderComponent } from './componentes/header/header.component';
     CoordinadorComentariosComponent,
     EvaluadorLlenarFormatoBComponent,
     HeaderComponent,
+    LlenarFormatoTICComponent,
   ],
   imports: [
     BrowserModule,
