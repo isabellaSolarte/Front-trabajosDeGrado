@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Formato } from '../componentes/modelo/FormatoADirector';
 import { Proceso } from '../componentes/modelo/Proceso';
 import { Evaluador } from '../componentes/modelo/Evaluador';
+import { FormatoC } from '../componentes/modelo/FormatoC';
+import { currentUser } from '../componentes/control-vista/currentUser';
 @Injectable({
   providedIn: 'root'
 })
@@ -54,5 +56,10 @@ export class JefaturaService {
   asignarEvaluadores(id: number,evaluador:Evaluador[]) {
     return this.http.post(`${this.API_URI}/evaluadores/?id=${id}`,evaluador);
   }
+  create(prcId:number, formatoC:FormatoC)
+  {
+    return this.http.post(`${this.API_URI}/formatos/c/?id=${prcId}&usr=${currentUser.getCurrentId()}`,formatoC);
+  }
+
 
 }

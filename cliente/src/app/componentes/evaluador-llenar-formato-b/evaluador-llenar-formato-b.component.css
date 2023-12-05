@@ -114,9 +114,6 @@ label {
   display: flex;
 }
 
-
-
-
 /* Añade un poco de espacio a la derecha del ícono para separarlo del texto */
 .btn-custom i {
   margin-right: 5px;

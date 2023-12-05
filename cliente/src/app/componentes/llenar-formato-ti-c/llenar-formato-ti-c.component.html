@@ -2,98 +2,52 @@
     <div class="cabecera">
         <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda"  style="cursor: pointer;">
         <div class="titulo-pagina">
-            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Director</h1>
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Jefatura</h1>
         </div>
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
         <div class="container-fluid d-flex justify-content-between">
-            <button class="btn btn-custom-color" >
+            <button class="btn btn-custom-color" (click)="iratras()">
                 <i class="fas fa-arrow-left"></i> Atrás
             </button>
         </div>
     </nav>
     <app-header></app-header>
     <div class="content container py-4">
-                <div class="row">
-                    <!-- Columna Izquierda -->
-                    <div class="col-md-6 col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        <form class="scrollable-form">
-                            <div class="form-group">
-                                <label for="propuesta">Titulo<span class="required">*</span></label>
-                                <select class="form-control" id="propuesta" name="_propuesta" >
-                                    <option value="Trabajo de investigación">Trabajo de investigación</option>
-                                    <option value="Práctica profesional">Práctica profesional</option>
-                                </select>
-                                
-                            </div>
-                            <div class="form-group">
-                                <label for="codEstudiante1">Codigo1 <span class="required">*</span></label>
-                                <input type="text" class="form-control" id="codEstudiante1" name="objetivos" placeholder="Código estudiante" >
-                                <datalist id="estudiante_1">
-                                   <!--<option *ngFor="let estudiante of estudiantes; let i = index" value = {{estudiantes[i]._codigo}}  ></option>--> 
-                                </datalist>
-                            </div>
-                            <div class="form-group">
-                                <label for="codEstudiante1">Codigo 2<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="codEstudiante1" name="objetivos" placeholder="Código estudiante" >
-                                <datalist id="estudiante_1">
-                                   <!--<option *ngFor="let estudiante of estudiantes; let i = index" value = {{estudiantes[i]._codigo}}  ></option>-->
-                                </datalist>
-                            </div>
-                            
-                           
-                            <div class="form-group">
-                                <label for="asesor">Asesor<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="asesor" name="asesor" placeholder="Nombre asesor" >
-                            </div>
-                    
-                            <div class="form-group">
-                                <label for="con_entrega">Linea de desarrollo <span class="required">*</span></label>
-                                <div class="scrollable-textarea">
-                                    <textarea type="text" class="form-control" id="con_entrega" name="_con_entrega"  placeholder="Condiciones"></textarea>
-                                </div>
-                            </div>
-                             
-                        </form>
-                    </div>
-                    
-                    <!-- Columna Derecha -->
-                    <div class="col-md-6">
-                        <form class="scrollable-form">
-                            <div class="form-group">
-                                <label for="titulo">Director<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="recursos" name="_recursos"  placeholder="Título">
-                            </div>
-                            <div class="form-group">
-                                <label for="estudiante1">Estudiante 1<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="estudiante1" name="_estudiante1" placeholder="Nombre estudiante">
-                            </div>
-                            <div class="form-group">
-                                <label for="estudiante2">Estudiante 2</label>
-                                <input type="text" class="form-control" id="estudiante2" name="_estudiante2" placeholder="Nombre estudiante">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="realizacion">Observaciones<span class="required">*</span></label>
-                                <input type="text" class="form-control" id="realizacion" name="_realizacion"  placeholder="Tiempo estimado">
-                            </div> 
-                       
-                        </form>
-                    </div>
-                    
+        <h1 class="titulo">Llenar formato C</h1>
+        <form class="scrollable-form">
+
+                <div class="form-group">
+                    <input type="checkbox" id="propuesta1" name="propuesta1" (change)="actualizarFormato('estructura')">
+                    <label for="propuesta1">ESTRUCTURA (¿Consta de las partes pertinentes?)<span class="required">*</span></label>
                 </div>
+                <div class="form-group">
+                    <input type="checkbox" id="propuesta2" name="propuesta2" (change)="actualizarFormato('con_comite')">
+                    <label for="propuesta2">CONCEPTO DEL COMITÉ DE PROGRAMA (¿Fue satisfactorio?)<span class="required">*</span></label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="propuesta3" name="propuesta3" (change)="actualizarFormato('con_depto')">
+                    <label for="propuesta3">CONCEPTO DEL DEPARTAMENTO (¿Fue satisfactorio?)<span class="required">*</span></label>
+                </div>
+
+                <label for="propuesta1">PRESENTACION Y APORTES (¿Están indicados con claridad?)<span class="required">*</span></label>
+                <input type="text" class="form-control" id="desarrollo" name="desarrollo" placeholder="Linea de desarrollo" [(ngModel)]="formato.desarrollo" >
+                
+                <label for="propuesta">Observaciones</label>
+                <textarea class="form-control" id="observaciones" name="observaciones" placeholder="Escribe observaciones" [(ngModel)]="formato.observaciones" ></textarea>
+            
+        </form>    
         </div>
         <div class="Botón-crear">
-            <button class="btn btn-custom" >Guardar</button>
+            <button class="btn btn-custom" (click)="crearFormatoC()">Guardar</button>
         </div>
-        <!--<app-modal
+        <app-modal
             [showModal]="showModal"
             [modalTitle]="modalTitle"
             [modalMessage]="modalMessage"
             [modalImagen] = "modalImage"
             [navegacion] = "navegacion"
         ></app-modal>    
-        -->
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">
         <div class="texto-con-lineaF">
