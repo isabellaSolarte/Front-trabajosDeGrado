@@ -39,7 +39,8 @@
         </form>    
         </div>
         <div class="Botón-crear">
-            <button class="btn btn-custom" (click)="crearFormatoC()">Guardar</button>
+            <button class="btn btn-cancelar" (click)="crearFormatoC()">Guardar</button>
+            <button *ngIf="controlEnviar === true" (click)="enviarCoordinador()" class="btn btn-guardar" >Enviar coordinador</button>
         </div>
         <app-modal
             [showModal]="showModal"

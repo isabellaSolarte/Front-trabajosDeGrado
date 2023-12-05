@@ -34,7 +34,6 @@ export class LlenarFormatoTICComponent {
     this.services.create(params['id'],this.formato).subscribe(
         res => {
           console.log(res);
-          this.mensajeExito();
           this.controlEnviar = true;
         },
         err => {
@@ -42,6 +41,21 @@ export class LlenarFormatoTICComponent {
           this.mensajeError();
         }
     );
+  }
+  enviarCoordinador(){
+    const params = this.router.snapshot.params;
+    console.log(params['id']);
+    this.services.sendFormC(params['id']).subscribe(
+      res => {
+        console.log(res);
+        this.mensajeExito1();
+      },
+      err => {
+        console.error(err);
+        this.mensajeError1();
+      }
+    );
+
   }
   actualizarFormato(clave: keyof FormatoC) {
     // Incrementa la propiedad correspondiente
@@ -59,6 +73,18 @@ export class LlenarFormatoTICComponent {
   mensajeExito(){
     this.modalImage = 'assets/comprobado.png';
     this.modalMessage = 'Se ha llenado el formato C exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
+  }
+  mensajeError1(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo enviar el formato C'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito1(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha enviado el formato C exitosamente'
     this.modalTitle = 'Todo salió bien'
     this.showModal = true;
   }
