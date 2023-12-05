@@ -63,6 +63,7 @@ export class JefaturaService {
   {
     return this.http.post(`${this.API_URI}/formatos/c/?id=${prcId}&usr=${currentUser.getCurrentId()}`,formatoC);
   }
-
-
+  sendFormC(id:number){
+    return this.http.patch(`${this.API_URI}/formatos/c/send/?id=${id}&usr=${currentUser.getCurrentId()}`,{});
+}
 }
