@@ -31,10 +31,12 @@ export class CoordinadorComentariosComponent {
       this.services.enviarArchivo(formData,params['id']).subscribe(
         (res) => {
           console.log('Archivo enviado correctamente');
+          this.mensajeExito();
           // Realizar las acciones necesarias después de enviar el archivo
         },
         error => {
           console.error('Error al enviar el archivo:', error);
+          this.mensajeError();
           // Manejar el error de manera adecuada
         }
       );
