@@ -4,7 +4,10 @@
     <i class="fas fa-times"></i>
     <nav>
       <ul>
-        <li class="itemcito" *ngFor="let ruta of rutasUsuario"><a (click)="cambiarComponente(ruta.ruta)">{{ruta.nombre}}</a></li>
+        <li class="itemcito" *ngFor="let ruta of rutasUsuario">
+          <a (click)="cambiarComponente(ruta.ruta)">{{ruta.nombre}}</a>
+        </li>
+        
       </ul>
     </nav>
   </div>
