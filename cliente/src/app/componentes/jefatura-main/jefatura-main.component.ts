@@ -23,6 +23,9 @@ export class JefaturaMainComponent {
   irRegistros(){
     this.router.navigate(['jefaturaRegistro']);
   }
+  irProcesos(){
+    this.router.navigate(['jefaturaProcesos']);
+  }
   
 
 }

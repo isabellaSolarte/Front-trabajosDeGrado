@@ -16,15 +16,19 @@ export class JefaturaProcesosComponent {
   ngOnInit(): void{
     this.getProcesos();
   }
-
   getProcesos(){ //listar procesos
-   /* this.services.getProcesses(currentUser.getCurrentId()).subscribe(
+   this.services.getProcesosB().subscribe(
       (res: any) => {
         console.log(res);
         this.procesos = res;
       },
       err => console.log(err)
-    );*/
+    );
   }
-  irLlenarFormato(idProceso:number){}
+  irLlenarFormato(idProceso:number){
+    this.router.navigate(['/llenaFormatoC',idProceso]);
+  }
+  iratras(){
+    this.router.navigate(['jefaturaMain']);
+  }
 }

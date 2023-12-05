@@ -28,7 +28,7 @@
                     <th>Tiempo estimado de realización</th>
                     <th>Enviar formato jefatura</th>
                     <th>Descargar comentarios</th>
-              
+                    <th>Descargar formato B</th>
                 </tr>
               </thead>
             <tbody>
@@ -44,7 +44,14 @@
                   <td>
                     <div class="button-container">
                       <button (click)="descargarComentario(proceso.estudiantes[0])" class="btn btn-primary" name = "Descargar_formato" title="Descargar">
-                          <i class='fas fa-download'></i>
+                          <i class='fas fa-download'></i> Comentarios
+                      </button>                               
+                      </div>
+                  </td>
+                  <td>
+                    <div class="button-container">
+                      <button (click)="descargarFormatoB(proceso.id)" class="btn btn-custom" name = "Descargar_formato" title="Descargar">
+                          <i class='fas fa-download'></i> Fomato B
                       </button>                               
                       </div>
                   </td>

@@ -26,6 +26,9 @@
     }
   }
 /*Navbar*/
+.btn-custom{
+  background-color: #D67E18;
+}
 .btn-custom-color {
     background-color: #D67E18;
     color: #fff; /* Color del texto, si es necesario */

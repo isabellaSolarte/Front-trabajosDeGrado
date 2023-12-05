@@ -25,7 +25,7 @@ export class LlenarFormatoTICComponent {
   modalTitle: string = '';
   modalMessage: string = '';
   modalImage:string = '';
-  navegacion:string = 'evaluadorRegistros';
+  navegacion:string = 'jefaturaProcesos';
   constructor(private route:Router,private services:JefaturaService,private router: ActivatedRoute){}
   crearFormatoC(){
     const params = this.router.snapshot.params;
@@ -48,7 +48,7 @@ export class LlenarFormatoTICComponent {
     this.formato[clave]++;
   }
   iratras(){
-    //todo
+    this.route.navigate(['jefaturaProcesos']);
   }
   mensajeError(){
     this.modalImage = 'assets/cancelar.png';
