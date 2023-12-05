@@ -27,21 +27,21 @@
   .respmenu nav ul li.itemcito:hover a {
     color: orange; /* Cambia el color al pasar el cursor sobre el enlace */
   }
-  
+
   .itemcito a {
     text-decoration: none;
-    color: white;/* Cambia el color del texto a blanco */ 
+    color: white;/* Cambia el color del texto a blanco */
     text-align: center; /* Centra el texto horizontalmente */
   }
   .respmenu .fa-bars, .respmenu .fa-times {
     font-size: 24px;
     pointer-events: none;
   }
-  
+
   .respmenu input[type="checkbox"] {
     opacity: 0;
   }
-  
+
   .respmenu {
     color: white;
     position: relative;
@@ -49,41 +49,40 @@
     min-height: 24px;
   }
   .respmenu nav ul li:not(:last-child)::after {
-    content: "/";
     margin: 5%;
   }
 
-  
+
   .respmenu nav {
     display: none;
   }
-  
+
   .respmenu input:checked ~ nav {
     display: block;
   }
-  
+
   .respmenu input:checked ~ .fa-bars {
     display: none;
   }
-  
+
   .respmenu input:not(:checked) ~ .fa-times {
     display: none;
   }
-  
-  
+
+
 .respmenu nav ul li a{
     padding-left: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
     white-space: nowrap; /* Evita que el texto se divida en líneas */
-  
+
 }
 .respmenu nav ul {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
-  
+
 }
 
 
