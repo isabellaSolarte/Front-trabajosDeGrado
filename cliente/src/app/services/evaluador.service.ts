@@ -44,6 +44,8 @@ export class EvaluadorService{
     return this.http.delete(`${this.API_URI}/formatos/b/?id=${prcId}&usr=${currentUser.getCurrentId()}`);
   }
   //TODO:Luchis las papas
-
+  sendFormB(id:number){
+      return this.http.patch(`${this.API_URI}/formatos/b/send/?id=${id}&usr=${currentUser.getCurrentId()}`,{});
+  }
 
 }
