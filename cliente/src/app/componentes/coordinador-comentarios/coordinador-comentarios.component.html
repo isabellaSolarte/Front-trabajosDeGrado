@@ -1,0 +1,53 @@
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="../../../assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Director</h1>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+      <div class="container-fluid d-flex justify-content-between">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link"  data-toggle="tooltip" title="Subir formato">
+                  <i class="fas fa-upload"></i> Subir formato
+                </a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+    
+  <div class="container py-4">
+    <div class="file-upload-container" (click)="fileInput.click()">
+      <div class="file-upload-icon">
+        <i class="fas fa-cloud-upload-alt"></i>
+      </div>
+      <div class="file-upload-text">
+        <p>Arrastra o elige un archivo</p>
+        <input class="upload" type="file" #fileInput (change)="guardarComentarios($event)" style="display: none;">
+        <span>{{ fileName }}</span>
+      </div>
+    </div>
+    <div class="Botón-subir">
+      <button (click)="cancelar()" class="btn btn-cancelar">Cancelar</button>
+      <button (click)="subirArchivo()" class="btn btn-subir" >Subir archivo</button>
+    </div>
+  </div>
+  
+  
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

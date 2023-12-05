@@ -42,11 +42,10 @@ export class JefaturaAnteproyectoComponent {
     this.router.navigate(['/evaluadores',idProceso]); ///directorListar
   }
   descargarAnteproyecto(id:number, nombre:string){
-    this.services.getRuta(id,nombre);
+    this.services.getRutaAnteproyecto(id,nombre);
       this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
-        this.router.navigate(['jefaturaRegistro']);
+        this.router.navigate(['jefaturaAnteproyecto']);
       });
-
   }
   irRegistros(){
     this.router.navigate(['jefaturaRegistro']);

@@ -1,25 +1,25 @@
-.cabecera {
-    background-color: #F8F8F8;
-    width: 100%;
-    height: 15vh;/* Cambia la altura según tus preferencias */
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
+    .cabecera {
+        background-color: #F8F8F8;
+        width: 100%;
+        height: 15vh;/* Cambia la altura según tus preferencias */
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
 
-.icono-izquierda {
-    width: auto; /* Establece el ancho de la imagen como un porcentaje del ancho de la cabecera */
-    max-height: 100%; /* Limita la altura de la imagen al 100% de la altura de la cabecera */
-}
+    .icono-izquierda {
+        width: auto; /* Establece el ancho de la imagen como un porcentaje del ancho de la cabecera */
+        max-height: 100%; /* Limita la altura de la imagen al 100% de la altura de la cabecera */
+    }
 
-.titulo-pagina {
-    flex: 1;
-    padding-left: 10px;
-}
+    .titulo-pagina {
+        flex: 1;
+        padding-left: 10px;
+    }
 
-.titulo-pagina h1{
-    color: #525663;
-}
+    .titulo-pagina h1{
+        color: #525663;
+    }
 
     /*Navbar*/
     .btn-custom-color {
