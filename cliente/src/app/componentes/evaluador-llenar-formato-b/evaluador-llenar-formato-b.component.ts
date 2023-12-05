@@ -23,6 +23,7 @@ export class EvaluadorLlenarFormatoBComponent {
     no_revisiones: 0,
     revision: ''
   };
+  controlEnviar: boolean = false;
   showModal: boolean = false;
   modalTitle: string = '';
   modalMessage: string = '';
@@ -41,12 +42,16 @@ export class EvaluadorLlenarFormatoBComponent {
         res => {
           console.log(res);
           this.mensajeExito();
+          this.controlEnviar = true;
         },
         err => {
           console.error(err);
           this.mensajeError();
         }
     );
+  }
+  enviarDirector(){
+    //to-do
   }
   actualizarFormato(clave: keyof FormatoB) {
     // Incrementa la propiedad correspondiente
