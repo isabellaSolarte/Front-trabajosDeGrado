@@ -12,9 +12,11 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ModalComponent } from './componentes/modal/modal.component';
 import { DirectorAnteproyectoComponent } from './componentes/director-anteproyecto/director-anteproyecto.component';
 import { EvaluadoresComponent } from './componentes/evaluadores/evaluadores.component';
-import { DirectorComentariosComponent } from './componentes/director-comentarios/director-comentarios.component';
 import { CoordinadorRegistrosComponent } from './componentes/coordinador-registros/coordinador-registros.component';
 import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyecto/jefatura-anteproyecto.component';
+import { CoordinadorComentariosComponent } from './componentes/coordinador-comentarios/coordinador-comentarios.component';
+import { EvaluadorRegistrosComponent } from './componentes/evaluador-registros/evaluador-registros.component';
+import { EvaluadorLlenarFormatoBComponent } from './componentes/evaluador-llenar-formato-b/evaluador-llenar-formato-b.component';
 const routes: Routes = [
   { path: 'administrador', component: AdministradorComponent },
   { path: 'crearUsuario', component: AdministradorCrearComponent },
@@ -26,11 +28,13 @@ const routes: Routes = [
   { path:'jefaturaRegistro', component:JefaturaRegistrosComponent },
   { path:'login', component:LoginComponent },
   { path:'modal', component:ModalComponent },
-  { path:'directortAnteproyecto', component:DirectorAnteproyectoComponent },
+  { path:'directortAnteproyecto/:id', component:DirectorAnteproyectoComponent },
   { path:'evaluadores/:id', component:EvaluadoresComponent },
-  { path:'directorComentario', component:DirectorComentariosComponent },
   { path:'coordinadorRegistro', component:CoordinadorRegistrosComponent },
-  { path:'jefaturaAnteproyecto', component:JefaturaAnteproyectoComponent }
+  { path:'jefaturaAnteproyecto', component:JefaturaAnteproyectoComponent },
+  { path:'evaluadorLlenarFormatoB/:id', component:EvaluadorLlenarFormatoBComponent },
+  { path:'coordinadorComentarios/:id', component:CoordinadorComentariosComponent },
+  { path:'evaluadorRegistros', component:EvaluadorRegistrosComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -25,6 +25,7 @@
 .btn-custom-color {
     background-color: #D67E18;
     color: #fff; /* Color del texto, si es necesario */
+    margin-right: 10px;
 }
   
 .btn-custom-color:hover {
@@ -67,46 +68,6 @@
   .divider {
     display: none;
   }
-}
-
-/*carta*/
-.card {
-    margin-top: 5%;
-}
-.fixed-card {
-  width: 300px; /* Establece el ancho fijo deseado */
-  height: 500px; /* Establece la altura fija deseada */
-}
-
-  .book-icon {
-    margin-top: 3%;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%; /* Crea un círculo con bordes redondeados */
-    border: 2px solid #525663;
-  }
-  
-  .d-flex {
-    display: flex;
-  }
-  .justify-content-center {
-    justify-content: center;
-  }
-  .align-items-center {
-    align-items: center;
-  }
-.custom-button {
-    background-color: #13245E;
-    color: #fff; /* Cambiar el color del texto si es necesario */
-    border-color: none;
-  }
-  
-  .custom-button:hover {
-    background-color: #0E1E49; /* Cambiar el color al pasar el ratón si lo deseas */
-  }
-  .custom-green-button {
-    background-color: #D67E18; /* Cambia este valor al color que desees */
-    color: #ffffff; /* Color del texto */
 }
 /*Footer*/
 #footer {

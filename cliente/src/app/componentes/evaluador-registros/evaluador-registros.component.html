@@ -1,0 +1,80 @@
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="../../../assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Evaluador</h1>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+      <div class="navbar-collapse justify-content-end">
+          <button class="btn btn-custom-color" (click)="cerrarsesion()">
+              <i class="fas  fa-sign-out-alt"></i> Cerrar Sesión
+            </button>
+        </div> 
+  </nav>
+    
+  <div class="container py-4">
+    <div class="container py-4">
+      <h1 class="titulo">Anteproyectos a revisar</h1>
+      <br>
+      <div class="table-responsive ">
+          <table class="table table-striped rounded">
+              <thead>
+                  <tr>
+                      <th>ID</th>
+                      <th>Tipo</th>
+                      <th>Título</th>
+                      <th>Estudiantes</th>
+                      <th>Descargar</th>
+                      <th>Llenar formato B</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+                      <ng-container *ngFor="let revision of revisiones; let i = index">
+                          <tr>
+                          <td>{{revision.id}}</td>
+                          <td>{{revision.tipo}}</td>
+                          <td>{{revision.titulo}}</td>
+                          <td>
+                              <ul>
+                                  <li *ngFor="let estudiante of revision.estudiantes">{{estudiante.nombre}}</li>
+                              </ul>
+                          </td>
+                          <td>
+                              <div class="button-container">
+                                <button (click)="descargarAnteproyecto(revision.estudiantes[0].codigo, revision.estudiantes[0].nombre)" class="btn btn-primary" name = "Descargar_formato" title="Descargar">
+                                  <i class='fas fa-download'></i>
+                              </button>                               
+                              </div>
+                          </td>
+                          <td>
+                              <button class="btn btn-success"  title="Agregar" name="agregar" (click)="irLlenarFormatoB(revision.id)" style="margin-left: 5px;">
+                                  <i class="fas fa-book"></i> Formato B
+                              </button>
+                          </td>
+                        </tr>
+                      </ng-container>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  </div>
+  
+  
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

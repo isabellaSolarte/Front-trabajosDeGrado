@@ -63,8 +63,13 @@ export class LoginComponent {
           this.router.navigate(['/jefaturaMain']);
         }
         else{
-          if(rol[0]._id == 4){
-            this.router.navigate(['/coordinadorRegistro']);
+          if(rol[0]._id == 5){
+            this.router.navigate(['/evaluadorRegistros']);
+          }
+          else{
+            if(rol[0]._id == 6){
+              this.router.navigate(['/coordinadorRegistro']);
+            }
           }
         }
       }

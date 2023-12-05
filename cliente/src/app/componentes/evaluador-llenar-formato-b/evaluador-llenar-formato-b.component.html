@@ -1,0 +1,74 @@
+<div class="wrapper">
+    <div class="cabecera">
+        <img src="assets/escudo.jpg" alt="Icono" class="icono-izquierda">
+        <div class="titulo-pagina">
+            <h1 class="titulo">GESTIÓN DE TRABAJOS DE GRADO | Evaluador</h1>
+        </div>
+    </div>
+    <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
+        <button class="btn btn-custom-color" (click)="iratras()">
+          <i class="fas fa-arrow-left"></i> Atrás
+        </button>
+    </nav>
+  
+    <div class="container py-4">
+        <h1 class="titulo">Llenar formato B</h1>
+        <form class="scrollable-form">
+            <div class="form-group">
+                <input type="checkbox" id="propuesta1" name="propuesta1">
+                <label for="propuesta1">PRESENTACION Y APORTES (¿Están indicados con claridad?)<span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta2" name="propuesta2">
+                <label for="propuesta2">OBJETIVOS (Establecidos claramente?)<span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta" name="propuesta3">
+                <label for="propuesta">METODOLOGÍA (Se indica explícitamente?)<span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta" name="propuesta4">
+                <label for="propuesta">CONDICIONES DE ENTREGA (Se establecen claramente?)<span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta" name="propuesta5">
+                <label for="propuesta">CONDICIONES DE ENTREGA (Se establecen claramente?)<span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta" name="propuesta6">
+                <label for="propuesta">CRONOGRAMA (se indica en forma clara y completa?)<span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta" name="propuesta7">
+                <label for="propuesta">PATROCINIO (existe?)<span class="required">*</span></label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta" name="propuesta8">
+                <label for="propuesta">Aprobado</label>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="propuesta" name="propuesta9">
+                <label for="propuesta">No aprobado </label>
+            </div>
+            <label for="propuesta">Observaciones</label>
+            <textarea class="form-control" id="v" name="observaciones" placeholder="Escribe observaciones"></textarea>
+     
+            
+        </form>
+    </div>
+  
+    <div id="footer" class="footer-con-imagen">
+        <div class="imagen-con-textoF">
+        <div class="texto-con-lineaF">
+            <div class="linea-verticalF">
+            <span>
+                © 2023 Universidad del Cauca, Inc.
+            </span>
+            </div>
+            <span>Terms Privacy Security</span>
+        </div>
+        </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

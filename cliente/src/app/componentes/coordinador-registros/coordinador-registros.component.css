@@ -34,7 +34,11 @@
 .titulo-pagina h1{
     color: #525663;
 }
-/**/
+/*Titulo pagina*/
+.titulo{
+  color: #525663; 
+}
+/*estado*/
 .status-container {
   display: inline-flex;
   align-items: center;

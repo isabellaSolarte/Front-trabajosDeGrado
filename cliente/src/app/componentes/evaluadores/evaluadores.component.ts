@@ -15,7 +15,7 @@ export class EvaluadoresComponent {
   modalTitle: string = '';
   modalMessage: string = '';
   modalImage:string = '';
-  navegacion:string = 'jefaturaRegistro';
+  navegacion:string = 'jefaturaAnteproyecto';
   constructor(private route: Router, private services:JefaturaService,private router: ActivatedRoute){}
   ngOnInit(){
     this.getEvaluadores();
