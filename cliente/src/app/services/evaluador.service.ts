@@ -44,4 +44,6 @@ export class EvaluadorService{
     return this.http.delete(`${this.API_URI}/formatos/b/?id=${prcId}&usr=${currentUser.getCurrentId()}`);
   }
   //TODO:Luchis las papas
-} 
+
+
+}

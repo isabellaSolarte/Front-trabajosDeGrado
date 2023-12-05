@@ -57,4 +57,20 @@ export class DirectorService {
         }
     );
   }
+  getFormatoB(codUser: number):void{
+    this.http.get(`${this.API_URI}/formatos/b/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
+      (response: any) => {
+          const blob = new Blob([response], { type: 'application/pdf' });
+          const link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = 'TI_B_'+'_'+codUser+'.pdf';
+          link.click();
+      },
+      (error) => {
+          console.error('Error al obtener la ruta del archivo:', error);
+          // Puedes manejar el error según tus necesidades, como mostrar un mensaje al usuario
+      }
+  );
+  }
+
 }

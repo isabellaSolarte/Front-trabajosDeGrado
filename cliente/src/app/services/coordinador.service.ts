@@ -31,5 +31,8 @@ export class CoordinadorService {
   getCambiarEstado(cod:number){
     return this.http.patch(`${this.API_URI}/revisiones/state/${cod}`,cod);
   }
+  declineFormA(prcId:number,usr:number){
+    return this.http.patch(`${this.API_URI}/coordinacion/formatos/a/correcciones/${prcId}/${usr}`, {prcId,usr});
+  }
 
 }

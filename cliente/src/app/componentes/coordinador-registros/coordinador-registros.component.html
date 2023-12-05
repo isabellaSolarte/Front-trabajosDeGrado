@@ -7,7 +7,7 @@
     </div>
     <nav class="navbar navbar-top navbar-expand-lg" style="background-color: #13245E;">
       <div class="navbar-collapse justify-content-end">
-        </div> 
+        </div>
   </nav>
   <app-header></app-header>
     <div class="container py-4">
@@ -24,6 +24,7 @@
                         <th>Estado</th>
                         <th>Descargar</th>
                         <th>Aprobar formato A</th>
+                        <th>Rechazar formato A</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -49,14 +50,20 @@
                                 <div class="button-container">
                                     <button (click)="descargarFormatoA(revision.estudiantes[0].codigo, revision.estudiantes[0].nombre)" class="btn btn-primary" name = "Descargar_formato" title="Descargar">
                                         <i class='fas fa-download'></i>
-                                    </button>                               
+                                    </button>
                                 </div>
                             </td>
                             <td>
-                                <button class="btn btn-success" (click)="aprobar(revision.estudiantes[0].codigo)" title="Agregar" name="agregar" style="margin-left: 5px;">
-                                    <i class="fas fa-check"></i> 
+                              <button class="btn btn-success" (click)="aprobar(revision.estudiantes[0].codigo)" title="Agregar" name="agregar" style="margin-left: 5px;">
+                                  <i class="fas fa-check"></i>
+                              </button>
+                          </td>
+                            <td>
+                                <button class="btn btn-danger" (click)="rechazar(revision.id)" title="Rechazar" name="rechazar" style="margin-left: 5px;">
+                                    <i class="fas fa-times"></i>
                                 </button>
                             </td>
+
                             <td>
                                 <button class="btn btn-success"  title="Agregar" name="agregar" (click)="irComentarios(revision.id)" style="margin-left: 5px;">
                                     <i class="fas fa-upload"></i>Subir comentarios
@@ -68,7 +75,15 @@
             </table>
         </div>
     </div>
-  
+    <app-modal
+            [showModal]="showModal"
+            [modalTitle]="modalTitle"
+            [modalMessage]="modalMessage"
+            [modalImagen] = "modalImage"
+            [navegacion] = "navegacion"
+        ></app-modal>
+
+
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">
         <div class="texto-con-lineaF">
@@ -83,4 +98,3 @@
     </div>
   </div>
   <router-outlet></router-outlet>
-  

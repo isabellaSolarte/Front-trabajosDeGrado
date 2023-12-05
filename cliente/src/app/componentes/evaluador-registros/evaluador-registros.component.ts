@@ -22,7 +22,7 @@ export class EvaluadorRegistrosComponent {
   }
   getRegistrosEvaluador(){
     //this.services.getRegistroEvaluador(currentUser.getCurrentId()).subscribe(
-    this.services.getRegistroEvaluador(currentUser.getCurrentId()).subscribe(
+    this.services.getRegistroEvaluador(104619021313).subscribe(
       (res: any) => {
         console.log(res);
         this.revisiones = res;
