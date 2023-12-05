@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { FormatoB } from '../modelo/FormatoB';
-
+import { EvaluadorService } from 'src/app/services/evaluador.service';
 @Component({
   selector: 'app-evaluador-llenar-formato-b',
   templateUrl: './evaluador-llenar-formato-b.component.html',
@@ -9,38 +9,38 @@ import { FormatoB } from '../modelo/FormatoB';
 })
 export class EvaluadorLlenarFormatoBComponent {
   formato: FormatoB={
-    _id: 0,
-    _aportes:0, 
-    _objetivos: 0, 
-    _metodologia: 0,
-   _entrega: 0,
-    _estructura: 0,
-    _cronograma: 0,
-    _patrocinio: 0,
-    _concepto: 0,
-    _recibido: '',
-    _observaciones: '',
-    _no_revisiones: 0,
-    _revision: ''
+    id: 0,
+    aportes:0, 
+    objetivos: 0, 
+    metodologia: 0,
+    entrega: 0,
+    estructura: 0,
+    cronograma: 0,
+    patrocinio: 0,
+    concepto: 0,
+    recibido: '',
+    observaciones: '',
+    no_revisiones: 0,
+    revision: ''
   };
-  constructor(private route:Router){}
+  constructor(private route:Router,private services:EvaluadorService,private router: ActivatedRoute){}
   
   iratras(){
     this.route.navigate(['/evaluadorRegistros']);
   }
   crearFormatoB(){
-    /*console.log(this.formato);
-    this.services.saveFormatoA(this.formato).subscribe(
+    const params = this.router.snapshot.params;
+    console.log(params['id']);
+    console.log(this.formato);
+    this.services.create(params['id'],this.formato).subscribe(
         res => {
           console.log(res);
           // Mostrar el mensaje de confirmación
-          this.mensajeExito();
         },
         err => {
           console.error(err);
-          this.mensajeError();
         }
-    );*/
+    );
   }
   actualizarFormato(clave: keyof FormatoB) {
     // Incrementa la propiedad correspondiente

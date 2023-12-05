@@ -15,35 +15,35 @@
         <h1 class="titulo">Llenar formato B</h1>
         <form class="scrollable-form">
             <div class="form-group">
-                <input type="checkbox" id="propuesta1" name="propuesta1" (change)="actualizarFormato('_aportes')">
+                <input type="checkbox" id="propuesta1" name="propuesta1" (change)="actualizarFormato('aportes')">
                 <label for="propuesta1">PRESENTACION Y APORTES (¿Están indicados con claridad?)<span class="required">*</span></label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="propuesta2" name="propuesta2" (change)="actualizarFormato('_objetivos')">
+                <input type="checkbox" id="propuesta2" name="propuesta2" (change)="actualizarFormato('objetivos')">
                 <label for="propuesta2">OBJETIVOS (Establecidos claramente?)<span class="required">*</span></label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="propuesta" name="propuesta3" (change)="actualizarFormato('_metodologia')">
+                <input type="checkbox" id="propuesta" name="propuesta3" (change)="actualizarFormato('metodologia')">
                 <label for="propuesta">METODOLOGÍA (Se indica explícitamente?)<span class="required">*</span></label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="propuesta" name="propuesta4" (change)="actualizarFormato('_entrega')">
+                <input type="checkbox" id="propuesta" name="propuesta4" (change)="actualizarFormato('entrega')">
                 <label for="propuesta">CONDICIONES DE ENTREGA (Se establecen claramente?)<span class="required">*</span></label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="propuesta" name="propuesta6" (change)="actualizarFormato('_cronograma')">
+                <input type="checkbox" id="propuesta" name="propuesta6" (change)="actualizarFormato('cronograma')">
                 <label for="propuesta">CRONOGRAMA (se indica en forma clara y completa?)<span class="required">*</span></label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="propuesta" name="propuesta7" (change)="actualizarFormato('_patrocinio')">
+                <input type="checkbox" id="propuesta" name="propuesta7" (change)="actualizarFormato('patrocinio')">
                 <label for="propuesta">PATROCINIO (existe?)<span class="required">*</span></label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="propuesta" name="propuesta8" (change)="actualizarFormato('_concepto')">
+                <input type="checkbox" id="propuesta" name="propuesta8" (change)="actualizarFormato('concepto')">
                 <label for="propuesta">Se aprueba el anteproyecto?</label>
             </div>
             <label for="propuesta">Observaciones</label>
-            <textarea class="form-control" id="observaciones" name="observaciones" placeholder="Escribe observaciones" [(ngModel)]="formato._observaciones"></textarea>
+            <textarea class="form-control" id="observaciones" name="observaciones" placeholder="Escribe observaciones" [(ngModel)]="formato.observaciones"></textarea>
      
             
         </form>
