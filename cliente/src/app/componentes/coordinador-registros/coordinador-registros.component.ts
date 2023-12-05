@@ -106,9 +106,13 @@ export class CoordinadorRegistrosComponent {
     this.services.declineFormA(prcId,currentUser.getCurrentId()).subscribe(
       (res: any) => {
         console.log(res);
-
+        this.mensajeExito1();
       },
-      err => console.log(err)
+      err => {
+        console.log(err);
+        this.mensajeError1();
+      }
+      
     );
     //luchis
   }
@@ -118,9 +122,21 @@ export class CoordinadorRegistrosComponent {
     this.modalTitle = '!Algo ha salido mal!'
     this.showModal = true;
   }
+  mensajeError1(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo rechazar el formato'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
   mensajeExito(){
     this.modalImage = 'assets/comprobado.png';
     this.modalMessage = 'Se ha aprobado el formato exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
+  }
+  mensajeExito1(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha rechazado el formato exitosamente'
     this.modalTitle = 'Todo salió bien'
     this.showModal = true;
   }
