@@ -3,6 +3,7 @@ import{HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Formato } from '../componentes/modelo/FormatoADirector';
 import { Proceso } from '../componentes/modelo/Proceso';
+import { currentUser } from '../componentes/control-vista/currentUser';
 @Injectable({
   providedIn: 'root'
 })
