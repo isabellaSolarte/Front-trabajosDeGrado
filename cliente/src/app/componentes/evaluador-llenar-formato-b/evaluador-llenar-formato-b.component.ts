@@ -51,7 +51,18 @@ export class EvaluadorLlenarFormatoBComponent {
     );
   }
   enviarDirector(){
-    //to-do
+    const params = this.router.snapshot.params;
+    console.log(params['id']);
+    this.services.sendFormB(params['id']).subscribe(
+      res => {
+        console.log(res);
+        this.mensajeExito1();
+      },
+      err => {
+        console.error(err);
+        this.mensajeError1();
+      }
+  );
   }
   actualizarFormato(clave: keyof FormatoB) {
     // Incrementa la propiedad correspondiente
@@ -66,6 +77,18 @@ export class EvaluadorLlenarFormatoBComponent {
   mensajeExito(){
     this.modalImage = 'assets/comprobado.png';
     this.modalMessage = 'Se ha llenado el formato B exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
+  }
+  mensajeError1(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo enviar el formato B'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito1(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha enviado el formato B exitosamente'
     this.modalTitle = 'Todo salió bien'
     this.showModal = true;
   }
