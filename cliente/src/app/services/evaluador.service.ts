@@ -12,13 +12,13 @@ export class EvaluadorService{
   getRegistroEvaluador(codigoEvaluador:number){
     return this.http.get(`${this.API_URI}/evaluadores/listAnteproyecto/${codigoEvaluador}`);
   }
-  getRuta(codUser: number,nombre:string): void {
-    this.http.get(`${this.API_URI}/formatoA/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
+  getRutaAnteproyecto(codUser: number,nombre:string): void {
+    this.http.get(`${this.API_URI}/anteproyecto/download/${codUser}`, { responseType: 'arraybuffer' }).subscribe(
         (response: any) => {
             const blob = new Blob([response], { type: 'application/pdf' });
             const link = document.createElement('a');
             link.href = window.URL.createObjectURL(blob);
-            link.download = 'TI_A_'+nombre+'_'+codUser+'.pdf';
+            link.download = 'ANTEPROYECTO_'+nombre+'_'+codUser+'.pdf';
             link.click();
         },
         (error) => {
@@ -44,6 +44,8 @@ export class EvaluadorService{
     return this.http.delete(`${this.API_URI}/formatos/b/?id=${prcId}&usr=${currentUser.getCurrentId()}`);
   }
   //TODO:Luchis las papas
-
+  sendFormB(id:number){
+      return this.http.patch(`${this.API_URI}/formatos/b/send/?id=${id}&usr=${currentUser.getCurrentId()}`,{});
+  }
 
 }
