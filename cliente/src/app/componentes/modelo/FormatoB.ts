@@ -8,8 +8,8 @@ export interface FormatoB{
     _cronograma: number; 
     _patrocinio: number;
     _concepto: number; 
-    _recibido: Date;
+    _recibido: string;
     _observaciones: string;
     _no_revisiones: number;
-    _revision: Date;
+    _revision: string;
 }
