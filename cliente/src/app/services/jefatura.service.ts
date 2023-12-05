@@ -56,6 +56,9 @@ export class JefaturaService {
   asignarEvaluadores(id: number,evaluador:Evaluador[]) {
     return this.http.post(`${this.API_URI}/evaluadores/?id=${id}`,evaluador);
   }
+  getProcesosB(){
+    return this.http.get(`${this.API_URI}/procesos/listB/`);
+  }
   create(prcId:number, formatoC:FormatoC)
   {
     return this.http.post(`${this.API_URI}/formatos/c/?id=${prcId}&usr=${currentUser.getCurrentId()}`,formatoC);
