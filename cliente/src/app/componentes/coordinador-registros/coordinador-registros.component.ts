@@ -51,7 +51,7 @@ export class CoordinadorRegistrosComponent {
         console.log(err);
         this.mensajeError();
       }
-      
+
     );
   }
 
@@ -102,7 +102,14 @@ export class CoordinadorRegistrosComponent {
         return '';
     }
   }
-  rechazar(){
+  rechazar(prcId:number){
+    this.services.declineFormA(prcId,currentUser.getCurrentId()).subscribe(
+      (res: any) => {
+        console.log(res);
+
+      },
+      err => console.log(err)
+    );
     //luchis
   }
   mensajeError(){
