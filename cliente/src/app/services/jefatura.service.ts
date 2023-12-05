@@ -54,5 +54,8 @@ export class JefaturaService {
   asignarEvaluadores(id: number,evaluador:Evaluador[]) {
     return this.http.post(`${this.API_URI}/evaluadores/?id=${id}`,evaluador);
   }
+  getProcesosB(){
+    return this.http.get(`${this.API_URI}/procesos/listB/`);
+  }
 
 }
