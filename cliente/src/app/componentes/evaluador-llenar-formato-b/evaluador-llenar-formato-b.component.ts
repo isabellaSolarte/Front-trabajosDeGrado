@@ -23,6 +23,11 @@ export class EvaluadorLlenarFormatoBComponent {
     no_revisiones: 0,
     revision: ''
   };
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'evaluadorRegistros';
   constructor(private route:Router,private services:EvaluadorService,private router: ActivatedRoute){}
   
   iratras(){
@@ -35,15 +40,28 @@ export class EvaluadorLlenarFormatoBComponent {
     this.services.create(params['id'],this.formato).subscribe(
         res => {
           console.log(res);
-          // Mostrar el mensaje de confirmación
+          this.mensajeExito();
         },
         err => {
           console.error(err);
+          this.mensajeError();
         }
     );
   }
   actualizarFormato(clave: keyof FormatoB) {
     // Incrementa la propiedad correspondiente
     this.formato[clave]++;
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo llenar el formato B'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha llenado el formato B exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
   }
 }

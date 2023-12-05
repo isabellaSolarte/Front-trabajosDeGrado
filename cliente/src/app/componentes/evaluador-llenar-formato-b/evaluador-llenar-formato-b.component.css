@@ -84,8 +84,11 @@ label {
 .Botón-crear{
   align-items: center;
   justify-content: center;
+  text-align: center;
   display: flex;
+  margin-bottom: 30px;
 }
+
 
 
 

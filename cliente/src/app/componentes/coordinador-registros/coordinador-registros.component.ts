@@ -102,6 +102,9 @@ export class CoordinadorRegistrosComponent {
         return '';
     }
   }
+  rechazar(){
+    //luchis
+  }
   mensajeError(){
     this.modalImage = 'assets/cancelar.png';
     this.modalMessage = 'No se pudo aprobar el formato'

@@ -44,13 +44,20 @@
             </div>
             <label for="propuesta">Observaciones</label>
             <textarea class="form-control" id="observaciones" name="observaciones" placeholder="Escribe observaciones" [(ngModel)]="formato.observaciones"></textarea>
-     
             
         </form>
-        <div class="Botón-crear">
-            <button class="btn btn-custom" (click)="crearFormatoB()">Guardar</button>
-        </div>
+        
     </div>
+    <div class="Botón-crear">
+        <button class="btn btn-custom" (click)="crearFormatoB()">Guardar</button>
+    </div>
+    <app-modal
+            [showModal]="showModal"
+            [modalTitle]="modalTitle"
+            [modalMessage]="modalMessage"
+            [modalImagen] = "modalImage"
+            [navegacion] = "navegacion"
+        ></app-modal>   
   
     <div id="footer" class="footer-con-imagen">
         <div class="imagen-con-textoF">
