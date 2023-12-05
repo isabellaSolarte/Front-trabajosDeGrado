@@ -17,6 +17,8 @@ import { JefaturaAnteproyectoComponent } from './componentes/jefatura-anteproyec
 import { CoordinadorComentariosComponent } from './componentes/coordinador-comentarios/coordinador-comentarios.component';
 import { EvaluadorRegistrosComponent } from './componentes/evaluador-registros/evaluador-registros.component';
 import { EvaluadorLlenarFormatoBComponent } from './componentes/evaluador-llenar-formato-b/evaluador-llenar-formato-b.component';
+import { LlenarFormatoTICComponent } from './componentes/llenar-formato-ti-c/llenar-formato-ti-c.component';
+import { JefaturaProcesosComponent } from './componentes/jefatura-procesos/jefatura-procesos.component';
 const routes: Routes = [
   { path: 'administrador', component: AdministradorComponent },
   { path: 'crearUsuario', component: AdministradorCrearComponent },
@@ -34,7 +36,9 @@ const routes: Routes = [
   { path:'jefaturaAnteproyecto', component:JefaturaAnteproyectoComponent },
   { path:'evaluadorLlenarFormatoB/:id', component:EvaluadorLlenarFormatoBComponent },
   { path:'coordinadorComentarios/:id', component:CoordinadorComentariosComponent },
-  { path:'evaluadorRegistros', component:EvaluadorRegistrosComponent }
+  { path:'evaluadorRegistros', component:EvaluadorRegistrosComponent },
+  { path:'llenaFormatoC/:id', component:LlenarFormatoTICComponent },
+  { path:'jefaturaProcesos', component:JefaturaProcesosComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -128,6 +128,9 @@ export class DirectorListarFormatosComponent {
       this.router.navigate(['directorComentario']);
     });
   }
+  descargarFormatoB(id:number){
+    //todo
+  }
   cerrarMensaje() {
     this.mostrarMensaje=false;
   }

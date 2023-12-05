@@ -16,19 +16,12 @@
     flex: 1;
     padding-left: 10px;
 }
-
-.titulo-pagina h1{
-    color: #525663;
-}
 @media (max-width: 768px) {
     .titulo {
         font-size: 24px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
     }
   }
 /*Navbar*/
-.btn-custom{
-  background-color: #D67E18;
-}
 .btn-custom-color {
     background-color: #D67E18;
     color: #fff; /* Color del texto, si es necesario */
@@ -44,15 +37,77 @@
 .titulo{
     color: #525663; 
 }
-
-/*Boton enviar*/
-.btn-enviar{
-  background-color: #13245E;
-  height: 45px;
-  width: 100px;
-  color: #fff;
+/**/
+.navbar-nav {
+  display: flex;
+  align-items: center;
 }
 
+.nav-item {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: #FFA500; /* Cambia el color al pasar el ratón, si lo deseas */
+  cursor: pointer;
+}
+
+.nav-link i {
+  margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+@media (max-width: 768px) {
+  .divider {
+    display: none;
+  }
+}
+
+/*carta*/
+.card {
+    margin-top: 5%;
+}
+.fixed-card {
+  width: 300px; /* Establece el ancho fijo deseado */
+  height: 400px; /* Establece la altura fija deseada */
+}
+
+  .book-icon {
+    margin-top: 3%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Crea un círculo con bordes redondeados */
+    border: 2px solid #525663;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  .justify-content-center {
+    justify-content: center;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+.custom-button {
+    background-color: #13245E;
+    color: #fff; /* Cambiar el color del texto si es necesario */
+    border-color: none;
+  }
+  
+  .custom-button:hover {
+    background-color: #0E1E49; /* Cambiar el color al pasar el ratón si lo deseas */
+  }
+  .custom-green-button {
+    background-color: #D67E18; /* Cambia este valor al color que desees */
+    color: #ffffff; /* Color del texto */
+}
 /*Footer*/
 #footer {
     display: flex;
@@ -96,55 +151,3 @@
     display: flex;
     flex-direction: column;
   }
-
-  .rectangle {
-    width: 200px; /* Ancho deseado del rectángulo */
-    height: 50px; /* Alto deseado del rectángulo */
-    background-color: #ffffff; /* Color de fondo del rectángulo (puedes cambiarlo) */
-    border: 1px solid #000; /* Borde del rectángulo (opcional) */
-    border-radius: 10px;
-    /* Alineación a la derecha */
-     margin-left :80%;
-  }
-  .ajustado {
-    width: 150px; /* Ancho deseado del rectángulo */
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 10px; /* Tamaño de fuente más pequeño */
-  }
-  
-  .ventana {
-    position: fixed;
-    top: 250px;
-    right: 120px;
-    width: 200px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    height: 60px;
-    align-items: center;
-}
-
-.icono {
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-.contenido {
-    flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
-    display: flex;
-    flex-direction: column; /* Apila el mensaje y el nombre verticalmente */
-}
-
-.mensaje {
-    font-size: 10px;
-    margin: 0%;
-}
-
-.nombre-estudiante {
-    font-size: 10px;
-}
-
