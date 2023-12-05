@@ -16,6 +16,11 @@ export class CoordinadorRegistrosComponent {
     2: 'En revisión',
     3: 'Aprobado'
   };
+  showModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+  modalImage:string = '';
+  navegacion:string = 'coordinadorRegistro';
   constructor(private router: Router,private services:CoordinadorService){}
   ngOnInit(): void {
     this.getRevisiones();
@@ -40,8 +45,13 @@ export class CoordinadorRegistrosComponent {
     this.services.getCambiarEstado(idEstudiante).subscribe(
       (res: any) => {
         console.log(res);
+        this.mensajeExito();
       },
-      err => console.log(err)
+      err => {
+        console.log(err);
+        this.mensajeError();
+      }
+      
     );
   }
 
@@ -91,5 +101,20 @@ export class CoordinadorRegistrosComponent {
       default:
         return '';
     }
+  }
+  rechazar(){
+    //luchis
+  }
+  mensajeError(){
+    this.modalImage = 'assets/cancelar.png';
+    this.modalMessage = 'No se pudo aprobar el formato'
+    this.modalTitle = '!Algo ha salido mal!'
+    this.showModal = true;
+  }
+  mensajeExito(){
+    this.modalImage = 'assets/comprobado.png';
+    this.modalMessage = 'Se ha aprobado el formato exitosamente'
+    this.modalTitle = 'Todo salió bien'
+    this.showModal = true;
   }
 }
