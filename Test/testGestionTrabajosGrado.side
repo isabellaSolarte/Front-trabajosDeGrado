@@ -2,7 +2,7 @@
   "id": "bab2742e-9f57-4a18-a929-f3e19f92dfd1",
   "version": "2.0",
   "name": "testGestionTrabajosGrado",
-  "url": "http://192.168.1.9:4200",
+  "url": "http://localhost:4200",
   "tests": [{
     "id": "4958a1d1-f959-492b-bb25-2a47996caf65",
     "name": "Crear usuario ID = 1061",
@@ -21,14 +21,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "0f78ef65-18dc-4fee-a8f4-5e85cc89c867",
+      "id": "517899c1-ec4a-4aea-8082-99116e536260",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -36,7 +36,7 @@
       "id": "19e21486-a869-49ca-8ea6-eb6137b99efd",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -69,10 +69,10 @@
       ],
       "value": "123"
     }, {
-      "id": "e5234827-bccf-4723-bc96-3ea329b39848",
+      "id": "98b09db2-6360-4904-9a82-cebbde08c0a7",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -288,14 +288,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "008697fe-6544-49d3-80cb-36af6acdd8da",
+      "id": "5920235b-1d4f-4da5-b028-d7c369bc3cee",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -303,7 +303,7 @@
       "id": "6ab87a85-6f90-4c44-be86-dfc1ed06fb26",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -336,10 +336,10 @@
       ],
       "value": "123"
     }, {
-      "id": "383b5d62-87ca-4e69-ba73-39d7f1aa35c7",
+      "id": "f02b4108-1c80-4a4c-aa23-8ac47c7eb242",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -412,14 +412,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "64871407-311a-43f0-80dd-7050eb1ec030",
+      "id": "a4fb5276-f4c3-4055-bd9d-263ed280fda3",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -427,7 +427,7 @@
       "id": "b8074968-38ff-4bd7-b44e-24ee139482fa",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -460,10 +460,10 @@
       ],
       "value": "123"
     }, {
-      "id": "cbf1ca12-fed2-470f-8842-0099513b530d",
+      "id": "fd79571e-74de-41ce-ab78-b6fbb7eb02fa",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -679,14 +679,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "79e99ce9-5137-4ec9-a4c7-e6691ff1018a",
+      "id": "daad77fb-27ed-4d9d-bd7a-ac2ae9bc49f5",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -694,7 +694,7 @@
       "id": "f2de3d2e-5cc8-45d6-bfad-a72129b58a17",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -727,10 +727,10 @@
       ],
       "value": "123"
     }, {
-      "id": "e69222f7-ce93-4e5b-b499-1970883f38ef",
+      "id": "20bb6516-dd52-4bdb-8093-05d28a83e321",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -792,14 +792,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "26d9064c-6bfd-48be-920a-e6d95217f385",
+      "id": "f481653b-5028-4dfa-99e5-91bc1a663259",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -807,7 +807,7 @@
       "id": "0c0b641f-20a6-4125-9d2c-4207349b8c09",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -840,10 +840,10 @@
       ],
       "value": "123"
     }, {
-      "id": "596235eb-b9a8-4c37-a62e-5a90ecbdeaa7",
+      "id": "aa6f4deb-db30-4789-b69c-8cc604b687cd",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -884,14 +884,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "e495b299-eda1-4b96-b7bb-9f87bcac4db1",
+      "id": "55bbdbd7-1e7b-40d1-9416-204440b35e43",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -899,7 +899,7 @@
       "id": "071f285f-148f-40e5-a3da-03b351f2e79e",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -932,10 +932,10 @@
       ],
       "value": "123"
     }, {
-      "id": "32ad1b55-f05d-48fa-8cdb-f24542ba93d9",
+      "id": "d6e7c054-78a9-4f0b-ac1a-2f9652051490",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -1008,14 +1008,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "c1096846-a2ac-4677-ab2f-3951eb93af83",
+      "id": "35c990c3-9a59-4e2a-a376-8acc7e3706c6",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -1023,7 +1023,7 @@
       "id": "0ee2ec86-6a3b-47aa-9185-7d9b490e31ba",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -1056,10 +1056,10 @@
       ],
       "value": "123"
     }, {
-      "id": "b98f46c2-a70f-44e0-896e-8563d523fd29",
+      "id": "97d2791e-f40d-47b8-9196-8c75390b96ca",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -1100,14 +1100,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "05f3640e-5bb4-4d23-bd6c-77b79ab08750",
+      "id": "ccc953eb-c5b2-4b5c-b238-c0bf5e3e332e",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -1115,7 +1115,7 @@
       "id": "f9774d03-54b6-475b-b676-60379b202346",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -1148,10 +1148,10 @@
       ],
       "value": "123"
     }, {
-      "id": "b5609baa-84fe-4fbe-8db9-ac78a5443767",
+      "id": "56eda6d3-7728-499b-8b91-ec444a2dd86b",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -1442,14 +1442,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "5198de1f-5a8c-463d-823a-8b8256f9c92e",
+      "id": "7e4336b1-a776-42d8-a66f-0184641206f3",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -1457,7 +1457,7 @@
       "id": "6a4f5b04-f0cc-47fb-9871-9e2698c02e19",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -1490,10 +1490,10 @@
       ],
       "value": "123"
     }, {
-      "id": "e07cda79-1285-4085-9b9d-d2b405ed48ff",
+      "id": "36fbb3db-55c7-4144-8853-2ca2d0ef5f3b",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -1810,14 +1810,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "5a8b5c5b-a20c-4a4a-8860-575922108317",
+      "id": "993fd124-ee0c-4fed-b35b-40d03bc26511",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -1825,14 +1825,14 @@
       "id": "064f7c8c-83ff-42be-aa27-02cd88c5487e",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
         ["xpath=//input[@name='login']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "user"
+      "value": "userJefatura"
     }, {
       "id": "c494f32b-be81-45e7-827c-d8729d22f735",
       "comment": "",
@@ -1856,17 +1856,28 @@
         ["xpath=//input[@name='password']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "password"
+      "value": "123"
     }, {
-      "id": "a30c05d0-4161-480c-b6ee-8a126769c01a",
+      "id": "49fc11bc-6d81-4e11-80e4-45fd1856a0da",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'Ingresar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3df06500-b39e-4b24-a4dc-a3fa0e841616",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bloque:nth-child(2) .icono-bloque",
+      "targets": [
+        ["css=.bloque:nth-child(2) .icono-bloque", "css:finder"],
+        ["xpath=(//img[@alt='Icono'])[4]", "xpath:img"],
+        ["xpath=//div[3]/div/div[2]/div/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -1877,14 +1888,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "16f2e43d-ec6a-4885-8f0d-c0834b11e910",
+      "id": "3817701a-f11c-4b42-bdf9-e50bcfef2b5d",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -1892,7 +1903,7 @@
       "id": "54d9c120-1ea3-40e8-b427-faa7ab9ad041",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -1925,10 +1936,10 @@
       ],
       "value": "123"
     }, {
-      "id": "add042af-9d07-49fb-a9b4-729bf504e587",
+      "id": "7098e1cd-772e-4bd2-92bc-ebed14245167",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -1977,29 +1988,29 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f67e11b8-6890-48ab-ae74-25e59c16be04",
+      "id": "1ad2a0a2-4e0c-4f71-bd9f-b88cb983fe72",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "3a1b2ae9-c6ed-473f-bf0d-101613d525a3",
+      "id": "4d5ab91a-80c8-4a9b-bf89-9f0ba1320fec",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
         ["xpath=//input[@name='login']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "user"
+      "value": "userJefatura"
     }, {
       "id": "00545b04-2805-4253-86dc-2e42952a8a91",
       "comment": "",
@@ -2023,17 +2034,28 @@
         ["xpath=//input[@name='password']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "password"
+      "value": "123"
     }, {
-      "id": "a786b951-9070-433d-8f75-a44a9115eb4f",
+      "id": "a57c2f44-7df9-402e-a1b2-03d0ac774aa8",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'Ingresar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "64b41c1a-f3fd-49f8-97b1-776876779334",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bloque:nth-child(2) .icono-bloque",
+      "targets": [
+        ["css=.bloque:nth-child(2) .icono-bloque", "css:finder"],
+        ["xpath=(//img[@alt='Icono'])[4]", "xpath:img"],
+        ["xpath=//div[3]/div/div[2]/div/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -2074,14 +2096,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "938e05d9-a1e2-4ff0-bc1f-b0daa783281b",
+      "id": "4bbe4cc5-2f6b-41df-9443-534424865346",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -2089,14 +2111,14 @@
       "id": "80fee025-a6b3-4cc8-8935-7ea2f283b7db",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
         ["xpath=//input[@name='login']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "user"
+      "value": "userJefatura"
     }, {
       "id": "be438189-9f2f-421d-8b1a-919abfa799f4",
       "comment": "",
@@ -2120,17 +2142,28 @@
         ["xpath=//input[@name='password']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "password"
+      "value": "123"
     }, {
-      "id": "084ceec0-b058-4d36-8eb7-22fa1a0e7717",
+      "id": "eb268825-444b-403e-9675-4df6f3e0487c",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'Ingresar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46c67bff-6ee0-4b92-bbe3-047ec89b495e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bloque:nth-child(2) .icono-bloque",
+      "targets": [
+        ["css=.bloque:nth-child(2) .icono-bloque", "css:finder"],
+        ["xpath=(//img[@alt='Icono'])[4]", "xpath:img"],
+        ["xpath=//div[3]/div/div[2]/div/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -2141,14 +2174,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "25ea15b8-4f79-4131-9737-3c2566c12154",
+      "id": "3d87ddf9-7df6-4412-8f21-5f687701087f",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -2156,7 +2189,7 @@
       "id": "7e8e6be8-60c8-4630-a8fb-40ff0ceddfed",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
@@ -2189,10 +2222,10 @@
       ],
       "value": "123"
     }, {
-      "id": "3a5dc800-ec76-4b05-9d42-a1d1e91bf2ce",
+      "id": "5f58ba20-3285-40d2-8947-0dd1ee948f31",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
@@ -2241,14 +2274,14 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "0d6f64ea-b7b6-4648-b9b9-d83173f66547",
+      "id": "e6ba2f3e-9f11-4da0-95c1-d275f2623d19",
       "comment": "",
       "command": "click",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
-        ["name=login", "name"],
-        ["css=.ng-untouched:nth-child(1)", "css:finder"],
-        ["xpath=//input[@name='login']", "xpath:attributes"],
+        ["name=user", "name"],
+        ["css=.inputbox:nth-child(4) > .ng-untouched", "css:finder"],
+        ["xpath=//input[@name='user']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
@@ -2256,14 +2289,14 @@
       "id": "eda6fb9a-91d3-4cdb-95d5-476cff5120d6",
       "comment": "",
       "command": "type",
-      "target": "name=login",
+      "target": "name=user",
       "targets": [
         ["name=login", "name"],
         ["css=.ng-valid", "css:finder"],
         ["xpath=//input[@name='login']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "user"
+      "value": "userJefatura"
     }, {
       "id": "cad9f39c-3cc1-42b0-a19f-be280fc9475e",
       "comment": "",
@@ -2287,17 +2320,28 @@
         ["xpath=//input[@name='password']", "xpath:attributes"],
         ["xpath=//input[2]", "xpath:position"]
       ],
-      "value": "password"
+      "value": "123"
     }, {
-      "id": "1ddb5b66-8248-4c1a-a971-e43f31d549e2",
+      "id": "49af63d3-c9f3-4c76-a445-670b5167114c",
       "comment": "",
       "command": "click",
-      "target": "css=button",
+      "target": "xpath=//button[@value='Log In']",
       "targets": [
         ["css=button", "css:finder"],
         ["xpath=//button[@value='Log In']", "xpath:attributes"],
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'Ingresar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76b946d0-ce25-418d-83e4-a6da0c5becfc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bloque:nth-child(2) .icono-bloque",
+      "targets": [
+        ["css=.bloque:nth-child(2) .icono-bloque", "css:finder"],
+        ["xpath=(//img[@alt='Icono'])[4]", "xpath:img"],
+        ["xpath=//div[3]/div/div[2]/div/img", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -2343,6 +2387,6 @@
     "timeout": 300,
     "tests": ["ec0b5631-3544-43fd-8f7a-b9c17eddba5c", "3faeb3cd-cf02-480f-b69d-e3217c42bb91"]
   }],
-  "urls": ["http://192.168.1.7:4200/", "http://192.168.1.6:4200/", "http://192.168.1.11:4200/", "http://192.168.1.9:4200/"],
+  "urls": ["http://192.168.1.7:4200/", "http://192.168.1.6:4200/", "http://192.168.1.11:4200/", "http://192.168.1.9:4200/", "http://127.0.0.1:4200/", "http://localhost:4200/"],
   "plugins": []
 }
