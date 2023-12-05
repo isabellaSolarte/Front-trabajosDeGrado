@@ -34,7 +34,7 @@ export class EvaluadorRegistrosComponent {
     return this.estados[state];
   }
   descargarAnteproyecto(id:number, nombre:string){
-    this.services.getRuta(id,nombre);
+    this.services.getRutaAnteproyecto(id,nombre);
       this.router.navigate(['/'], { skipLocationChange: true }).then(() => {
         this.router.navigate(['evaluadorRegistros']);
       });
