@@ -29,6 +29,7 @@ import { EvaluadorRegistrosComponent } from './componentes/evaluador-registros/e
 import { CoordinadorComentariosComponent } from './componentes/coordinador-comentarios/coordinador-comentarios.component';
 import { EvaluadorService } from './services/evaluador.service';
 import { EvaluadorLlenarFormatoBComponent } from './componentes/evaluador-llenar-formato-b/evaluador-llenar-formato-b.component';
+import { HeaderComponent } from './componentes/header/header.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { EvaluadorLlenarFormatoBComponent } from './componentes/evaluador-llenar
     EvaluadorRegistrosComponent,
     CoordinadorComentariosComponent,
     EvaluadorLlenarFormatoBComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
