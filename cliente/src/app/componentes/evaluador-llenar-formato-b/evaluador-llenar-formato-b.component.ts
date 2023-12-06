@@ -41,7 +41,6 @@ export class EvaluadorLlenarFormatoBComponent {
     this.services.create(params['id'],this.formato).subscribe(
         res => {
           console.log(res);
-          this.mensajeExito();
           this.controlEnviar = true;
         },
         err => {
