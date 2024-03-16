@@ -8,7 +8,7 @@
 }
 
 .icono-izquierda {
-    width: auto; /* Establece el ancho de la imagen como un porcentaje del ancho de la cabecera */
+    width: auto;
     max-height: 100%; /* Limita la altura de la imagen al 100% de la altura de la cabecera */
 }
 
